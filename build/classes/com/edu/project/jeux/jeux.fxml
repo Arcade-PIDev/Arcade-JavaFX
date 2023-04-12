@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.edu.project.jeux.jeuxController">
+    <stylesheets>
+        <URL value="@ticket.css" />
+      <URL value="@Style.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane layoutX="34.0" layoutY="136.0" prefHeight="596.0" prefWidth="486.0" styleClass="box1">
+         <children>
+            <AnchorPane layoutX="137.0" layoutY="14.0" prefHeight="164.0" prefWidth="186.0" styleClass="box1">
+               <children>
+                  <ImageView fitHeight="151.0" fitWidth="180.0" layoutX="5.0" layoutY="9.0">
+                     <image>
+                        <Image url="@../../../../../build/classes/com/edu/project/jeux/Gamer-esport-mascot-logo-template-on-transparent-background-PNG.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+            <Button fx:id="updatebutton" layoutX="203.0" layoutY="471.0" mnemonicParsing="false" onAction="#onupdate" style="-fx-background-color: ff8600; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="Update">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <TextField fx:id="genretf" layoutX="181.0" layoutY="275.0" prefHeight="26.0" prefWidth="274.0" />
+            <Label layoutX="49.0" layoutY="384.0" prefHeight="17.0" prefWidth="118.0" text="image" />
+            <TextField fx:id="imagetf" accessibleRole="PASSWORD_FIELD" layoutX="172.0" layoutY="380.0" prefHeight="26.0" prefWidth="274.0" />
+            <Label layoutX="48.0" layoutY="236.0" prefHeight="17.0" prefWidth="80.0" text="Description" />
+            <TextField fx:id="desctf" layoutX="181.0" layoutY="231.0" prefHeight="26.0" prefWidth="274.0" />
+            <Label layoutX="46.0" layoutY="280.0" prefHeight="17.0" prefWidth="60.0" text="Genre" />
+            <Label layoutX="49.0" layoutY="193.0" prefHeight="17.0" prefWidth="118.0" text="nom" />
+            <TextField fx:id="nomtf" layoutX="179.0" layoutY="188.0" prefHeight="26.0" prefWidth="274.0" />
+            <Button fx:id="btnbrowse" layoutX="391.0" layoutY="472.0" mnemonicParsing="false" onAction="#actionperformed" style="-fx-background-color: ff8600; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="browse">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="imageview" fitHeight="94.0" fitWidth="131.0" layoutX="33.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="49.0" layoutY="324.0" prefHeight="17.0" prefWidth="118.0" text="Color" />
+            <ColorPicker fx:id="colortf" layoutX="172.0" layoutY="329.0" prefHeight="25.0" prefWidth="280.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="540.0" layoutY="85.0" prefHeight="730.0" prefWidth="994.0" styleClass="box1">
+         <children>
+            <TableView fx:id="tabjeux" layoutX="1.0" layoutY="60.0" prefHeight="642.0" prefWidth="979.0" style="-fx-background-color: ffffff;">
+              <columns>
+                <TableColumn fx:id="colnom" prefWidth="142.0" text="nom" />
+                  <TableColumn fx:id="coldesc" prefWidth="139.0" text="description" />
+                  <TableColumn fx:id="colgenre" minWidth="0.0" prefWidth="153.0" text="Genre" />
+                  <TableColumn fx:id="colcolor" minWidth="0.0" prefWidth="153.0" text="Color" />
+                  <TableColumn fx:id="colimage" minWidth="0.0" prefWidth="126.0" text="image" />
+                  <TableColumn fx:id="actions" prefWidth="135.0" text="Actions" />
+              </columns>
+            </TableView>
+            <TextField layoutX="20.0" layoutY="7.0" prefHeight="26.0" prefWidth="817.0" />
+            <ImageView fitHeight="18.0" fitWidth="13.0" layoutX="32.0" layoutY="12.0">
+               <image>
+                  <Image url="@../../../../../../Downloads/symbole-de-linterface-de-recherche.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
