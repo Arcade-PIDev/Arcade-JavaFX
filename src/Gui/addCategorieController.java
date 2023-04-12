@@ -55,14 +55,23 @@ public class addCategorieController implements Initializable{
     }    
     
     @FXML
-        public void addCategorie()
+        public void annulerCategorie(ActionEvent event)
         {
+            
+        }
+    @FXML
+        public void addCategorie(ActionEvent event) throws Exception
+        {
+                System.out.println("error3");
             cat.setNomCategorie(nomCategorie.getText());
             cat.setDescription(descriptionCategorie.getText());
+            cat.setImage(ImageCategorie.getText());
             CategorieService serv = new CategorieService();
             
             try{
+                System.out.println("error1");
                 serv.ajouter(cat);
+                System.out.println("error2");
                 /*
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
                     Parent root = loader.load();
@@ -102,7 +111,7 @@ public class addCategorieController implements Initializable{
            String fileName = sb.toString();
 
             File source = file;
-            File dest = new File("C:\\Users\\meriam\\Desktop\\webVersionFinal\\public\\shop\\images\\" + fileName + ".png");
+            File dest = new File("" + fileName + ".png");
 
             try {
                 Files.copy(source.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);

@@ -31,7 +31,7 @@ public class CategorieService implements IService<Categorie>{
     
     @Override
     public void ajouter(Categorie c) throws SQLException {
-        String req = "INSERT INTO `categorie`(`id`, `nom_categorie`, `description`, `image`, `creation_date`, `modification_date`, `is_enabled`) VALUES (?,?,?,NOW(),?)";
+        String req = "INSERT INTO `categorie`(`nom_categorie`, `description`, `image`, `creation_date`, `modification_date`, `is_enabled`) VALUES (?,?,?,NOW(),null,?)";
         PreparedStatement pstm = con.prepareStatement(req);
         pstm.setString(1, c.getNomCategorie());
         pstm.setString(2, c.getDescription());
@@ -41,9 +41,8 @@ public class CategorieService implements IService<Categorie>{
     }
     
     @Override
-    public List<Categorie>  afficher() {
+    public List<Categorie>  afficher() throws SQLException{
        List<Categorie> personnes = new ArrayList<>();
-         
         try {
              String req ="SELECT * FROM `Categorie` ";
              

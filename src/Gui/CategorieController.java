@@ -43,7 +43,7 @@ public class CategorieController implements Initializable {
     
     
     @FXML
-    private Pane contentCategorie;
+    private Pane afficherAddCategorie;
     
     @FXML
     private HBox itemC;
@@ -75,50 +75,6 @@ public class CategorieController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        /*
-        CategorieService serv = new CategorieService();
-                
-            List<Categorie> catList = serv.afficher();*/
-            /*
-        catList.forEach(cat ->{
-            //cat = catList.get(0);
-            this.nomCategorie.setText(cat.getNomCategorie());
-                    this.descriptionCategorie.setText(cat.getDescription());
-                    this.imageCategorie.setImage(new Image("http://127.0.0.1:8000/eshop/categorie/"+cat.getImage(),60,60,true,true));
-                    this.creationDate.setText(cat.getCreationDate()+"");
-                    this.modificationDate.setText(cat.getModificationDate()+"");
-                    this.isEnabled.setText(cat.isIsEnabled()+"");
-                    System.out.println(cat);
-                    
-        });*/
-            
-            /*
-            for (int i = 0; i < catList.size(); i++) {
-                Categorie cat = catList.get(i);
-                this.nomCategorie.setText(cat.getNomCategorie());
-                this.descriptionCategorie.setText(cat.getDescription());
-                this.imageCategorie.setImage(new Image("http://127.0.0.1:8000/eshop/categorie/" + cat.getImage(), 60, 60, true, true));
-                this.creationDate.setText(cat.getCreationDate() + "");
-                this.modificationDate.setText(cat.getModificationDate() + "");
-                this.isEnabled.setText(cat.isIsEnabled() + "");
-                System.out.println(cat);
-            }*/
-            
-            /*
-            int i=0;
-        for (Categorie cat : catList) {
-            cat = catList.get(i);
-            this.idCategorie.setText(cat.getId()+"");
-            this.nomCategorie.setText(cat.getNomCategorie());
-            this.descriptionCategorie.setText(cat.getDescription());
-            this.imageCategorie.setImage(new Image("http://127.0.0.1:8000/eshop/categorie/" + cat.getImage()));
-            this.creationDate.setText(cat.getCreationDate() + "");
-            this.modificationDate.setText(cat.getModificationDate() + "");
-            this.isEnabled.setText(cat.isIsEnabled() + "");
-            i++;
-        }*/
-        
-        
         CategorieService serv = new CategorieService();
         try {
             List<Categorie> catList = serv.afficher();
@@ -143,34 +99,16 @@ public class CategorieController implements Initializable {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        
-        
-        /*
-        try {
-            for (Categorie cat : catList) {
-                 if(!catList.isEmpty()){
-                    cat = catList.get(0);
-                    this.nomCategorie.setText(cat.getNomCategorie());
-                    this.descriptionCategorie.setText(cat.getDescription());
-                    this.imageCategorie.setImage(new Image("http://127.0.0.1:8000/eshop/categorie/"+cat.getImage(),60,60,true,true));
-                    this.creationDate.setText(cat.getCreationDate()+"");
-                    this.modificationDate.setText(cat.getModificationDate()+"");
-                    this.isEnabled.setText(cat.isIsEnabled()+"");
-                 }
-            }
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }*/
     }    
     
     @FXML
-    private void addCategorie(MouseEvent event) throws Exception{
+    private void addCategorie(ActionEvent event) throws Exception{
         try {
-            FXMLLoader loader = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            FXMLLoader loader = FXMLLoader.load(getClass().getResource("home.fxml"));
             Parent root = loader.load();
             HomeController controller= loader.getController();
             controller.changePage("ajouterCategorie");
-            //contentCategorie.getScene().setRoot(root);
+    afficherAddCategorie.getChildren().setAll(root);     
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }

@@ -49,11 +49,11 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="67.0" prefWidth="925.0" spacing="30.0">
                      <children>
-                        <Button fx:id="annulerCategorie" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" style="-fx-background-radius: 3em; -fx-background-color: #3d09ac;" text="Annuler" textFill="WHITE">
+                        <Button fx:id="annulerCategorie" onAction="#annulerCategorie"  mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" style="-fx-background-radius: 3em; -fx-background-color: #3d09ac;" text="Annuler" textFill="WHITE">
                            <font>
                               <Font size="20.0" />
                            </font></Button>
-                        <Button fx:id="addCategorie" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #f04086; -fx-background-radius: 3em;" text="Ajouter" textFill="WHITE">
+                        <Button fx:id="ajouterCategorie" onAction="#addCategorie" mnemonicParsing="false" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: #f04086; -fx-background-radius: 3em;" text="Ajouter" textFill="WHITE">
                            <font>
                               <Font size="20.0" />
                            </font></Button>

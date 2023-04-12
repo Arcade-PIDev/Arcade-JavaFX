@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 
 /**
  * FXML Controller class
@@ -43,6 +44,8 @@ public class ContentCategorieController implements Initializable {
     private Label modificationDate;
     @FXML
     private Label isEnabled;
+    @FXML
+    private Pane contentCategorie;
     @FXML
     private ImageView EditCategorie;
     @FXML
@@ -94,9 +97,7 @@ public class ContentCategorieController implements Initializable {
             Parent root = loader.load();
             HomeController controller= loader.getController();
             controller.changePage("Categories");
-            
             idCategorie.getScene().setRoot(root);
-            
 
         } catch (Exception ex) {
                 System.out.println(ex);

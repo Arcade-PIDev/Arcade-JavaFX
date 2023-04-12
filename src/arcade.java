@@ -20,7 +20,7 @@ public class arcade extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException{
     //try {
-        Parent root = FXMLLoader.load(getClass().getResource("Gui/Categorie.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Gui/addCategorie.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
 

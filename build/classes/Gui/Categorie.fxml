@@ -13,7 +13,7 @@
    <children>
       <Pane fx:id="contentCategorie" layoutX="-3.0" prefHeight="900.0" prefWidth="1288.0" style="-fx-background-color: #1d0761;">
          <children>
-            <Button fx:id="addCategorie" onMouseClicked="#addCategorie" layoutX="1142.0" layoutY="10.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em;" text="Ajouter" textFill="WHITE">
+            <Button fx:id="addCategorie" layoutX="1142.0" layoutY="10.0" mnemonicParsing="false" onAction="#addCategorie" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em;" text="Ajouter" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -21,11 +21,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-         </children>
-      </Pane>
-      <FlowPane fx:id="content" layoutY="82.0" prefHeight="791.0" prefWidth="1266.0">
-         <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="1276.0" spacing="40.0" style="-fx-background-color: #0e063d; -fx-background-radius: 2em;">
+            <HBox alignment="CENTER_LEFT" layoutY="79.0" prefHeight="66.0" prefWidth="1276.0" spacing="40.0" style="-fx-background-color: #0e063d; -fx-background-radius: 2em;">
                <children>
                   <Label alignment="CENTER" prefHeight="33.0" prefWidth="91.0" text="id" textFill="WHITE">
                      <font>
@@ -65,6 +61,7 @@
                </children>
             </HBox>
          </children>
-      </FlowPane>
+      </Pane>
+      <FlowPane fx:id="content" layoutY="162.0" prefHeight="711.0" prefWidth="1276.0" />
    </children>
 </AnchorPane>
