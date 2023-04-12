@@ -73,6 +73,15 @@ public class CategorieService implements IService<Categorie>{
         pstm.setInt(1, id);
 
         pstm.executeUpdate();
+    }
+        
+    @Override
+    public void update(Categorie t) throws SQLException {
 
+        String req = "UPDATE `categorie` SET nom_categorie='" + t.getNomCategorie()
+                + "',description='" + t.getDescription() + "',modification_date=NOW(),is_enabled=" + t.isIsEnabled() + " WHERE id=" + t.getId() + "";
+
+        PreparedStatement pstm = con.prepareStatement(req);
+        pstm.executeUpdate();
     }
 }

@@ -43,7 +43,7 @@ public class CategorieController implements Initializable {
     
     
     @FXML
-    private Pane afficherAddCategorie;
+    private Pane contentCategorie;
     
     @FXML
     private HBox itemC;
@@ -66,7 +66,7 @@ public class CategorieController implements Initializable {
     @FXML
     private ImageView deleteCategorie;
     @FXML
-    private Button addCategorie;
+    private Button addBtn;
     
     
     /**
@@ -102,17 +102,20 @@ public class CategorieController implements Initializable {
     }    
     
     @FXML
-    private void addCategorie(ActionEvent event) throws Exception{
-        try {
-            FXMLLoader loader = FXMLLoader.load(getClass().getResource("home.fxml"));
-            Parent root = loader.load();
-            HomeController controller= loader.getController();
-            controller.changePage("ajouterCategorie");
-    afficherAddCategorie.getChildren().setAll(root);     
+    private void addBtn(ActionEvent event) throws Exception{
+            contentCategorie.getChildren().removeAll(contentCategorie.getChildren());
+            content.getChildren().removeAll(content.getChildren());
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("addCategorie.fxml"));
+                Parent root = loader.load();
+                addCategorieController cont = loader.getController();
+                contentCategorie.getChildren().add(root);
+                content.getChildren().add(root);
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
         
     }
+
 
 }

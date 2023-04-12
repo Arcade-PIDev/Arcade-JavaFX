@@ -19,13 +19,17 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -37,6 +41,10 @@ public class addCategorieController implements Initializable{
     @FXML
     private TextField nomCategorie;
     @FXML
+    private AnchorPane contentCategorie;
+    @FXML
+    private VBox content;
+    @FXML
     private TextField descriptionCategorie;
     @FXML
     private Button uploadCategorie;
@@ -45,7 +53,13 @@ public class addCategorieController implements Initializable{
     @FXML
     private Button addCategorie;
     @FXML
-    private TextField ImageCategorie;
+    private TextField imageCategorie;
+    @FXML
+    private Label nomCategorieError;
+    @FXML
+    private Label descriptionError;
+    @FXML
+    private Label imageError;
     Categorie cat = new Categorie();
     final FileChooser fileChooser = new FileChooser();
     
@@ -57,48 +71,86 @@ public class addCategorieController implements Initializable{
     @FXML
         public void annulerCategorie(ActionEvent event)
         {
-            
-        }
-    @FXML
-        public void addCategorie(ActionEvent event) throws Exception
-        {
-                System.out.println("error3");
-            cat.setNomCategorie(nomCategorie.getText());
-            cat.setDescription(descriptionCategorie.getText());
-            cat.setImage(ImageCategorie.getText());
-            CategorieService serv = new CategorieService();
-            
-            try{
-                System.out.println("error1");
-                serv.ajouter(cat);
-                System.out.println("error2");
-                /*
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
+            try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
                     Parent root = loader.load();
-                    Home controller = loader.getController();
+                    HomeController controller = loader.getController();
                     controller.changePage("Categories");
 
-                    addCategorie.getScene().setRoot(root);*/
+                    addCategorie.getScene().setRoot(root);
+
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+        }
+        
+    @FXML
+    private void addCategorie(ActionEvent event) {
+        nomCategorieError.setText("");
+        descriptionError.setText("");
+        imageError.setText("");
+
+        if (nomCategorie.getText().length() != 0 && descriptionCategorie.getText().length() != 0 && imageCategorie.getText().length() != 0) {
+            if (Pattern.matches("^[a-zA-Z]*$", nomCategorie.getText()) == true && Pattern.matches("^[a-zA-Z]*$", descriptionCategorie.getText()) == true) {
+
+                cat.setNomCategorie(nomCategorie.getText());
+                cat.setDescription(descriptionCategorie.getText());
+                CategorieService serv = new CategorieService();
+                try {
+                    serv.ajouter(cat);
+
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
+                    Parent root = loader.load();
+                    HomeController controller = loader.getController();
+                    controller.changePage("Categories");
+
+                    addCategorie.getScene().setRoot(root);
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+            } else {
+                if (Pattern.matches("^[a-zA-Z]*$", nomCategorie.getText()) == false) {
+                    nomCategorieError.setText("This field can only contain letters");
+                }
+                if (Pattern.matches("^[a-zA-Z]*$", descriptionCategorie.getText()) == false) {
+                    descriptionError.setText("This field can only contain letters");
+                }
             }
-        catch (Exception ex){
-                System.out.println(ex);
+
+        } else {
+            if (nomCategorie.getText().length() == 0) {
+                nomCategorieError.setText("Champs Obligatoire");
+            }
+
+            if (descriptionCategorie.getText().length() == 0) {
+                descriptionError.setText("Champs Obligatoire");
+            }
+
+            if (imageCategorie.getText().length() == 0) {
+                imageError.setText("Champs Obligatoire");
+            }
+            if (Pattern.matches("^[a-zA-Z]*$", nomCategorie.getText()) == false) {
+                nomCategorieError.setText("This field can only contain letters");
+            }
+            if (Pattern.matches("^[a-zA-Z]*$", descriptionCategorie.getText()) == false) {
+                descriptionError.setText("This field can only contain letters");
             }
 
         }
-        
+
+    }
         
     private Desktop desktop = Desktop.getDesktop();
-    Stage primaryStage;
-
+    Stage primaryStage;    
+    
     @FXML
-    private void upload(ActionEvent event) {
-
+    private void uploadCategorie(ActionEvent event) {
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("JPG", "*.jpg"),
                 new FileChooser.ExtensionFilter("PNG", "*.png"));
         fileChooser.setTitle("Save");
         File file = fileChooser.showOpenDialog(primaryStage);
-        ImageCategorie.clear();
+        imageCategorie.clear();
 
         if (file != null) {
             // generate a fileName
@@ -111,7 +163,7 @@ public class addCategorieController implements Initializable{
            String fileName = sb.toString();
 
             File source = file;
-            File dest = new File("" + fileName + ".png");
+            File dest = new File("C:\\xampp\\htdocs\\pi\\public\\eshop\\categorie\\" + fileName + ".png");
 
             try {
                 Files.copy(source.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
@@ -120,7 +172,7 @@ public class addCategorieController implements Initializable{
             }
 
             List<File> files = Arrays.asList(file);
-            printLog(ImageCategorie, files,fileName);
+            printLog(imageCategorie, files,fileName);
             cat.setImage(fileName+".png");
         }
     }

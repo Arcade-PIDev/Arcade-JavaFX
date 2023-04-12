@@ -5,9 +5,13 @@
  */
 package Gui;
 
+import Entities.Categorie;
 import Services.CategorieService;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -107,24 +111,23 @@ public class ContentCategorieController implements Initializable {
 
     @FXML
     private void EditCategorie(MouseEvent event) {
-/*
             try {
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("EditCategory.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("EditCategorie.fxml"));
             Parent root = loader.load();
-            EditCategoryController controller= loader.getController();
-            Categorie c =new Categorie(Integer.parseInt(idCategorie.getText()),nomCategorie.getText(),descriptionCategorie.getText(),Boolean.parseBoolean(isEnabled.getText()));
+            EditCategorieController controller= loader.getController();
+            Categorie c =new Categorie(Integer.parseInt(this.idCategorie.getText()),this.nomCategorie.getText(),this.descriptionCategorie.getText(),Boolean.parseBoolean(this.isEnabled.getText()));
             System.out.println(c);
-            controller.setCategory(c);
+                System.out.println("amira");
+            controller.setCategorie(c);
             
             FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("Home.fxml"));
             Parent homeRoot = homeLoader.load();
-            Home homeCtrl = homeLoader.getController();
-            homeCtrl.changePage( " Category - Edit", root);
+            HomeController homeCtrl = homeLoader.getController();
+            homeCtrl.changePage(root);
             idCategorie.getScene().setRoot(homeRoot);
 
-        } catch (IOException ex) {
-                System.out.println(ex);
-        }*/
+        } catch (Exception ex) {
+            Logger.getLogger(CategorieController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

@@ -13,7 +13,7 @@
    <children>
       <Pane fx:id="contentCategorie" layoutX="-3.0" prefHeight="900.0" prefWidth="1288.0" style="-fx-background-color: #1d0761;">
          <children>
-            <Button fx:id="addCategorie" layoutX="1142.0" layoutY="10.0" mnemonicParsing="false" onAction="#addCategorie" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em;" text="Ajouter" textFill="WHITE">
+            <Button fx:id="addBtn" layoutX="1142.0" layoutY="10.0" mnemonicParsing="false" onAction="#addBtn" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em;" text="Ajouter" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>

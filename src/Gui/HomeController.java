@@ -78,10 +78,9 @@ public class HomeController implements Initializable {
                 System.out.println(ex.getMessage());
             }
         }
-          else if (state.equals("ajouterCategorie")) {
-              System.out.println("amira");
+        else if (state.equals("editCategorie")) {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("addCategorie.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("editCategorie.fxml"));
                 Parent root = loader.load();
                 mainContent.getChildren().clear(); // clear previous view
                 mainContent.getChildren().add(root);
@@ -89,8 +88,13 @@ public class HomeController implements Initializable {
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
-          }
+        }
+        
     }
-
+    
+    public void changePage(Parent node) {
+        mainContent.getChildren().removeAll(mainContent.getChildren());
+        mainContent.getChildren().add(node);
+    }
 
 }
