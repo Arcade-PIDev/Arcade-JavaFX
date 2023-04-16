@@ -6,7 +6,7 @@
 package Gui;
 
 import Entities.Categorie;
-import Services.CategorieService;
+import Service.CategorieService;
 import java.util.List;
 import javafx.scene.layout.Pane;
 import java.net.URL;
@@ -44,23 +44,6 @@ public class CategorieController implements Initializable {
     
     @FXML
     private Pane contentCategorie;
-    
-    @FXML
-    private HBox itemC;
-    @FXML
-    private Label idCategorie;
-    @FXML
-    private Label nomCategorie;
-    @FXML
-    private Label descriptionCategorie;
-    @FXML
-    private ImageView imageCategorie;
-    @FXML
-    private Label creationDate;
-    @FXML
-    private Label modificationDate;
-    @FXML
-    private Label isEnabled;
     @FXML
     private ImageView EditCategorie;
     @FXML

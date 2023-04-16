@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="contentCategorie" prefHeight="900.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.addProduitController">
+   <children>
+      <VBox fx:id="content" alignment="TOP_CENTER" fillWidth="false" layoutX="147.0" layoutY="-24.0" prefHeight="744.0" prefWidth="1012.0" spacing="15.0">
+         <children>
+            <TextField fx:id="nomProduit" blendMode="COLOR_BURN" prefHeight="53.0" prefWidth="417.0" promptText="Nom Produit" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label fx:id="nomProduitError" textFill="#c20b0b" />
+            <TextField fx:id="description" blendMode="COLOR_BURN" prefHeight="52.0" prefWidth="417.0" promptText="Description" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label fx:id="descriptionError" textFill="#c20b0b" />
+            <HBox alignment="CENTER_LEFT" prefHeight="91.0" prefWidth="431.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="image" blendMode="COLOR_BURN" prefHeight="59.0" prefWidth="313.0" promptText="Image" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Button fx:id="upload" mnemonicParsing="false" onAction="#upload" prefHeight="53.0" prefWidth="128.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Upload" textFill="#e7e5e7" />
+               </children>
+            </HBox>
+            <Label fx:id="imageError" textFill="#c20b0b" />
+            <TextField fx:id="prix" blendMode="COLOR_BURN" prefHeight="52.0" prefWidth="417.0" promptText="Prix" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label fx:id="prixError" textFill="#c20b0b" />
+            <TextField fx:id="quantite" blendMode="COLOR_BURN" prefHeight="52.0" prefWidth="417.0" promptText="Quantite" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Label fx:id="quantiteError" textFill="#c20b0b" />
+            <ComboBox fx:id="categories" blendMode="COLOR_BURN" prefHeight="48.0" prefWidth="399.0" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;" />
+            <Label fx:id="categoriesError" textFill="#c20b0b" />
+            <HBox prefHeight="63.0" prefWidth="302.0" spacing="20.0">
+               <children>
+                  <Button fx:id="cancel" lineSpacing="3.0" mnemonicParsing="false" onAction="#cancel" prefHeight="53.0" prefWidth="136.0" style="-fx-background-color: #6610f2; -fx-background-radius: 2em; -fx-cursor: hand;" text="cancel" textFill="#e7e5e5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="addProduct" lineSpacing="3.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="52.0" prefWidth="128.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Submit" textFill="#e7e5e5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <Label layoutX="43.0" layoutY="-82.0" prefHeight="75.0" prefWidth="357.0" style="-fx-font-weight: bold;" text="Ajout Produit" textFill="WHITE">
+         <font>
+            <Font size="46.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

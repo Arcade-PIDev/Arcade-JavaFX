@@ -36,7 +36,7 @@
                         <Cursor fx:constant="TEXT" />
                      </cursor>
                   </TextField>
-                  <Button fx:id="uploadCategorie" mnemonicParsing="false" onAction="#uploadCategorie" prefHeight="40.0" prefWidth="117.0" style="-fx-background-color: #fd8a16; -fx-background-radius: 2em; -fx-cursor: hand;" text="Upload" textFill="#e7e5e7" />
+                  <Button fx:id="uploadCategorie" mnemonicParsing="false" onAction="#uploadCategorie" prefHeight="40.0" prefWidth="117.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Upload" textFill="#e7e5e7" />
                </children>
             </HBox>
             <Label fx:id="imageError" textFill="#c20b0b" />
@@ -47,7 +47,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="addCategorie" lineSpacing="3.0" mnemonicParsing="false" onAction="#addCategorie" prefHeight="42.0" prefWidth="128.0" style="-fx-background-color: #fd8a16; -fx-background-radius: 2em; -fx-cursor: hand;" text="Submit" textFill="#e7e5e5">
+                  <Button fx:id="addCategorie" lineSpacing="3.0" mnemonicParsing="false" onAction="#addCategorie" prefHeight="42.0" prefWidth="128.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Submit" textFill="#e7e5e5">
                      <font>
                         <Font size="14.0" />
                      </font>

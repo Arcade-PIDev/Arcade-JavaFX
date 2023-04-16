@@ -6,7 +6,7 @@
 package Gui;
 
 import Entities.Categorie;
-import Services.CategorieService;
+import Service.CategorieService;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -83,9 +83,8 @@ public class EditCategorieController implements Initializable {
 
                 CategorieService serv = new CategorieService();
                 try {
-                    System.out.println("amira1");
                     serv.update(categorie);
-                    System.out.println("amira2");
+                    
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
                         Parent root = loader.load();

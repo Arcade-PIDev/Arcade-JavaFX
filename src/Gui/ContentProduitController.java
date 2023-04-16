@@ -5,8 +5,8 @@
  */
 package Gui;
 
-import Entities.Categorie;
-import Service.CategorieService;
+import Entities.Produit;
+import Service.ProduitService;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,20 +28,26 @@ import javafx.scene.layout.Pane;
  *
  * @author Amira
  */
-public class ContentCategorieController implements Initializable {
+public class ContentProduitController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
     
-        @FXML
+    @FXML
+    private Label idProduit;
+    @FXML
     private Label idCategorie;
     @FXML
-    private Label nomCategorie;
+    private Label nomProduit;
     @FXML
-    private Label descriptionCategorie;
+    private Label description;
     @FXML
-    private ImageView imageCategorie;
+    private ImageView image;
+    @FXML
+    private Label prix;
+    @FXML
+    private Label quantite;
     @FXML
     private Label creationDate;
     @FXML
@@ -49,24 +55,34 @@ public class ContentCategorieController implements Initializable {
     @FXML
     private Label isEnabled;
     @FXML
-    private Pane contentCategorie;
+    private Pane contentProduit;
     @FXML
-    private ImageView EditCategorie;
+    private ImageView EditProduit;
     @FXML
-    private ImageView deleteCategorie;
-    @FXML
-    private Button addCategorie;
+    private ImageView delete;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
     
-        public void setIdCategorie(String IdCategorie) {
-        this.idCategorie.setText(IdCategorie);
+    public void setIdProduit(String idProduit) {
+        this.idProduit.setText(idProduit);
+    }
+    
+    public void setIdCategorie(String idCategorie) {
+        this.idCategorie.setText(idCategorie);
+    }
+    
+    public void setPrix(String prix) {
+        this.prix.setText(prix);
+    }
+    
+    public void setQuantiteStock(String quantite) {
+        this.quantite.setText(quantite);
     }
 
-    public void setNomCategorie(String nomCategorie) {
-        this.nomCategorie.setText(nomCategorie);
+    public void setNomProduit(String nomProduit) {
+        this.nomProduit.setText(nomProduit);
     }
 
     public void setCreationDate(String creationDate) {
@@ -78,28 +94,30 @@ public class ContentCategorieController implements Initializable {
     }
 
     public void setImage(String url) {
-        this.imageCategorie.setImage(new Image(url));
+        this.image.setImage(new Image(url));
     }
 
     public void setModificationDate(String modificationDate) {
         this.modificationDate.setText(modificationDate);
     }
 
-    public void setDescription(String descriptionCategorie) {
-        this.descriptionCategorie.setText(descriptionCategorie);
+    public void setDescription(String description) {
+        this.description.setText(description);
     }
     
+    
+    
     @FXML
-    private void deleteCategorie(MouseEvent event) {
-        int id = Integer.parseInt(idCategorie.getText());
-        CategorieService serv = new CategorieService();
+    private void delete(MouseEvent event) {
+        int id = Integer.parseInt(idProduit.getText());
+        ProduitService serv = new ProduitService();
         try {            
             serv.delete(id);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
             Parent root = loader.load();
             HomeController controller= loader.getController();
-            controller.changePage("Categories");
-            idCategorie.getScene().setRoot(root);
+            controller.changePage("Produits");
+            idProduit.getScene().setRoot(root);
 
         } catch (Exception ex) {
                 System.out.println(ex);
@@ -108,24 +126,22 @@ public class ContentCategorieController implements Initializable {
     }
 
     @FXML
-    private void EditCategorie(MouseEvent event) {
+    private void EditProduit(MouseEvent event) {
             try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("EditCategorie.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("EditProduit.fxml"));
             Parent root = loader.load();
-            EditCategorieController controller= loader.getController();
-            Categorie c =new Categorie(Integer.parseInt(this.idCategorie.getText()),this.nomCategorie.getText(),this.descriptionCategorie.getText(),Boolean.parseBoolean(this.isEnabled.getText()));
-            System.out.println(c);
-                System.out.println("amira");
-            controller.setCategorie(c);
+            EditProduitController controller= loader.getController();
+            Produit c =new Produit(Integer.parseInt(idProduit.getText()),Integer.parseInt(idCategorie.getText()),nomProduit.getText(),Integer.parseInt(prix.getText()),Integer.parseInt(quantite.getText()),description.getText(),Boolean.parseBoolean(isEnabled.getText()));
+            //System.out.println(c);
+            controller.setProduct(c);
             
             FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("Home.fxml"));
             Parent homeRoot = homeLoader.load();
             HomeController homeCtrl = homeLoader.getController();
             homeCtrl.changePage(root);
-            idCategorie.getScene().setRoot(homeRoot);
-
+            idProduit.getScene().setRoot(homeRoot);
         } catch (Exception ex) {
-            Logger.getLogger(CategorieController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProduitController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

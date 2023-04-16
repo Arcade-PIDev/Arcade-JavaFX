@@ -6,7 +6,7 @@
 package Gui;
 
 import Entities.Categorie;
-import Services.CategorieService;
+import Service.CategorieService;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
@@ -110,10 +110,10 @@ public class addCategorieController implements Initializable{
                 }
             } else {
                 if (Pattern.matches("^[a-zA-Z]*$", nomCategorie.getText()) == false) {
-                    nomCategorieError.setText("This field can only contain letters");
+                    nomCategorieError.setText("Seulement des lettres");
                 }
                 if (Pattern.matches("^[a-zA-Z]*$", descriptionCategorie.getText()) == false) {
-                    descriptionError.setText("This field can only contain letters");
+                    descriptionError.setText("Seulement des lettres");
                 }
             }
 
@@ -130,10 +130,10 @@ public class addCategorieController implements Initializable{
                 imageError.setText("Champs Obligatoire");
             }
             if (Pattern.matches("^[a-zA-Z]*$", nomCategorie.getText()) == false) {
-                nomCategorieError.setText("This field can only contain letters");
+                nomCategorieError.setText("Seulement des lettres");
             }
             if (Pattern.matches("^[a-zA-Z]*$", descriptionCategorie.getText()) == false) {
-                descriptionError.setText("This field can only contain letters");
+                descriptionError.setText("Seulement des lettres");
             }
 
         }

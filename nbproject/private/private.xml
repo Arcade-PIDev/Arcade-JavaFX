@@ -3,17 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/addCategorieController.java</file>
             <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/ContentCategorieController.java</file>
             <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Service/IService.java</file>
-            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/EditCategorie.fxml</file>
-            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/HomeController.java</file>
             <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Service/CategorieService.java</file>
-            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Entities/Categorie.java</file>
-            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/CategorieController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/EditCategorieController.java</file>
+            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/ContentProduitController.java</file>
+            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/contentProduit.fxml</file>
+            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Service/ProduitService.java</file>
+            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/EditProduit.fxml</file>
             <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/arcade.java</file>
-            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/addCategorie.fxml</file>
+            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/EditProduitController.java</file>
+            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/ProduitController.java</file>
+            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/addCategorieController.java</file>
+            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/HomeController.java</file>
+            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Entities/Categorie.java</file>
+            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/addProduitController.java</file>
+            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Entities/Produit.java</file>
+            <file>file:/C:/Users/Amira/Desktop/esprit/arcade/src/Gui/EditCategorieController.java</file>
         </group>
     </open-files>
 </project-private>

@@ -5,6 +5,8 @@
  */
 package Entities;
 
+import java.util.Date;
+
 /**
  *
  * @author Amira
@@ -12,9 +14,45 @@ package Entities;
 public class Produit {
     private int id,categorie,quantiteStock,prix;
     private String nomProduit, image,description;
+    private Date creationDate,ModificationDate;
+    private boolean isEnabled;
+
+    public boolean isIsEnabled() {
+        return isEnabled;
+    }
+
+    public void setIsEnabled(boolean isEnabled) {
+        this.isEnabled = isEnabled;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public Date getModificationDate() {
+        return ModificationDate;
+    }
+
+    public void setModificationDate(Date ModificationDate) {
+        this.ModificationDate = ModificationDate;
+    }
 
     public Produit(){};
 
+    public Produit(int id, int categorie, String nomProduit, int prix,int  quantiteStock, String description,Boolean isEnabled) {
+        this.id = id;
+        this.categorie = categorie;
+        this.quantiteStock = quantiteStock;
+        this.prix = prix;
+        this.nomProduit = nomProduit;
+        this.isEnabled = isEnabled;
+        this.description = description;
+    }
+    
     public Produit(int id, int categorie, int quantiteStock, int prix, String nomProduit, String image, String description) {
         this.id = id;
         this.categorie = categorie;

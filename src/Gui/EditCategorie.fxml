@@ -36,7 +36,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="editCategorie" lineSpacing="3.0" mnemonicParsing="false" onAction="#editCategorie" prefHeight="46.0" prefWidth="112.0" style="-fx-background-color: #fd8a16; -fx-background-radius: 2em; -fx-cursor: hand;" text="Edit" textFill="#e7e5e5">
+                  <Button fx:id="editCategorie" lineSpacing="3.0" mnemonicParsing="false" onAction="#editCategorie" prefHeight="46.0" prefWidth="112.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Edit" textFill="#e7e5e5">
                      <font>
                         <Font size="14.0" />
                      </font>

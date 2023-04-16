@@ -19,13 +19,13 @@ public class database {
     final String user="root";
     final String password="";
     
-    static database instance ;
+    static database instance;
     private Connection con;
     
     private database(){
         try {
             con = DriverManager.getConnection(url, user, password);
-            System.out.println("connection established");
+            //System.out.println("connection established");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }

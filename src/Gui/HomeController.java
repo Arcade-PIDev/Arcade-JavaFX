@@ -89,6 +89,28 @@ public class HomeController implements Initializable {
                 System.out.println(ex.getMessage());
             }
         }
+        else if (state.equals("Produits")) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Produit.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().clear(); // clear previous view
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        else if (state.equals("editProduit")) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("EditProduit.fxml"));
+                Parent root = loader.load();
+                mainContent.getChildren().clear(); // clear previous view
+                mainContent.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
         
     }
     
