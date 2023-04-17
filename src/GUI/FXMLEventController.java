@@ -28,6 +28,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -88,6 +89,21 @@ public class FXMLEventController implements Initializable{
         nomE.setCellValueFactory(new PropertyValueFactory<>("NomEvent"));
         lieuE.setCellValueFactory(new PropertyValueFactory<>("lieu"));
         afficheE.setCellValueFactory(new PropertyValueFactory<>("AfficheE"));
+       /*afficheE.setCellFactory(column -> new TableCell<Evenement, String>() {
+            private final ImageView imageView = new ImageView();
+
+            @Override
+            protected void updateItem(String imagePath, boolean empty) {
+                super.updateItem(imagePath, empty);
+
+                if (empty || imagePath == null) {
+                    setGraphic(null);
+                } else {
+                    imageView.setImage(getImageView(imagePath).getImage());
+                    setGraphic(imageView);
+                }
+            }
+        });*/
         descE.setCellValueFactory(new PropertyValueFactory<>("DescriptionEvent"));
         dateD.setCellValueFactory(new PropertyValueFactory<>("DateDebutE"));
         dateF.setCellValueFactory(new PropertyValueFactory<>("DateFinE"));
@@ -117,7 +133,14 @@ public class FXMLEventController implements Initializable{
     });
       
     }
-   
+    
+   private ImageView getImageView(String imagePath) {
+    Image image = new Image(imagePath);
+    ImageView imageView = new ImageView(image);
+    imageView.setFitWidth(50);
+    imageView.setPreserveRatio(true);
+    return imageView;
+}
 
     @FXML
     private void ShowAllEvenement(ActionEvent event) {

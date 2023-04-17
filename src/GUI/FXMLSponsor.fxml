@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="607.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLSponsorController">
+   <children>
+      <TableView fx:id="tableViewS" layoutX="23.0" layoutY="24.0" prefHeight="503.0" prefWidth="727.0">
+        <columns>
+          <TableColumn fx:id="nomSp" prefWidth="75.0" text="Nom" />
+          <TableColumn fx:id="numTel" prefWidth="62.0" text="Num Tel" />
+            <TableColumn fx:id="email" prefWidth="88.0" text="Email" />
+            <TableColumn fx:id="adresse" prefWidth="116.0" text="Adresse" />
+            <TableColumn fx:id="domaine" prefWidth="91.0" text="Domaine" />
+            <TableColumn fx:id="logo" minWidth="0.0" prefWidth="81.0" text="Logo" />
+            <TableColumn fx:id="montant" prefWidth="125.0" text="Montant Sponsoring" />
+            <TableColumn fx:id="eventFk" prefWidth="88.0" text="Evenement" />
+        </columns>
+      </TableView>
+      <Button layoutX="623.0" layoutY="542.0" mnemonicParsing="false" onAction="#editSelectedSponsor" prefHeight="38.0" prefWidth="102.0" text="Modifier" textFill="#1cc32f">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Button>
+      <Button layoutX="495.0" layoutY="542.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="38.0" prefWidth="111.0" text="Supprimer" textFill="#ee0909">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Button>
+      <Button fx:id="addButton" layoutX="47.0" layoutY="539.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="166.0" text="Ajouter Sponsor" textFill="#091ceb">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+   </children>  
+</AnchorPane>

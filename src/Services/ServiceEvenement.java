@@ -127,6 +127,16 @@ public class ServiceEvenement implements IService<Evenement> {
         }
     }
 
+    public String getNomEvenement(int id) {
+         Iterable<Evenement> evenements = null;
+   for (Evenement e : evenements) {
+      if (e.getId() == id) {
+         return e.getNomEvent();
+      }
+   }
+   return null; // or throw an exception if no event is found with the given id
+}
+
 
     
 }

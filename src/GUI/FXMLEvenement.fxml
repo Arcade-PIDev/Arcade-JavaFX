@@ -1,37 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="607.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLEventController">
+<AnchorPane id="AnchorPane" prefHeight="607.0" prefWidth="759.0" style="-fx-background-color: #2A2A67;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLEventController">
    <children>
-      <TableView fx:id="tableViewE" layoutX="47.0" layoutY="23.0" prefHeight="503.0" prefWidth="691.0">
-        <columns>
-          <TableColumn fx:id="nomE" prefWidth="75.0" text="Nom" />
-          <TableColumn fx:id="lieuE" prefWidth="62.0" text="Lieu" />
-            <TableColumn fx:id="afficheE" prefWidth="88.0" text="Affiche" />
-            <TableColumn fx:id="descE" prefWidth="116.0" text="Description" />
-            <TableColumn fx:id="dateD" prefWidth="91.0" text="Date Debut" />
-            <TableColumn fx:id="dateF" minWidth="0.0" prefWidth="81.0" text="Date Fin" />
-            <TableColumn fx:id="nbrP" prefWidth="99.0" text="Nbr Places" />
-            <TableColumn fx:id="prixE" prefWidth="76.0" text="Prix Ticket" />
-        </columns>
-      </TableView>
-      <Button layoutX="623.0" layoutY="542.0" mnemonicParsing="false" onAction="#editSelectedEvenement" prefHeight="38.0" prefWidth="102.0" text="Modifier" textFill="#1cc32f">
+    <TableView fx:id="tableViewE" layoutX="47.0" layoutY="78.0" prefHeight="448.0" prefWidth="688.0">
+    <columns>
+        <TableColumn fx:id="nomE" prefWidth="75.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Nom" />
+        <TableColumn fx:id="lieuE" prefWidth="62.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Lieu" />
+        <TableColumn fx:id="afficheE" prefWidth="88.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Affiche" />
+        <TableColumn fx:id="descE" prefWidth="116.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Description" />
+        <TableColumn fx:id="dateD" prefWidth="91.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Date Debut" />
+        <TableColumn fx:id="dateF" minWidth="0.0" prefWidth="81.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Date Fin" />
+        <TableColumn fx:id="nbrP" prefWidth="91.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Nbr Places" />
+        <TableColumn fx:id="prixE" prefWidth="84.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Prix Ticket" />
+    </columns>
+
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+</TableView>
+
+
+      <Button layoutX="633.0" layoutY="542.0" mnemonicParsing="false" onAction="#editSelectedEvenement" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: #098C29;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font></Button>
+      <Button layoutX="514.0" layoutY="542.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: #F90B28;" text="Supprimer" textFill="WHITE">
          <font>
             <Font name="Arial" size="14.0" />
          </font></Button>
-      <Button layoutX="495.0" layoutY="542.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="38.0" prefWidth="111.0" text="Supprimer" textFill="#ee0909">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font></Button>
-      <Button fx:id="addButton" layoutX="47.0" layoutY="539.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="166.0" text="Ajouter Evenement" textFill="#091ceb">
+      <Button fx:id="addButton" layoutX="47.0" layoutY="539.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="166.0" style="-fx-background-color: #120854;" text="Ajouter Evenement" textFill="WHITE">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Button>
+      <ImageView fitHeight="58.0" fitWidth="75.0" layoutX="677.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../logo3.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="47.0" layoutY="14.0" prefHeight="51.0" prefWidth="481.0" text="Liste Des Evenements: " textFill="WHITE">
+         <font>
+            <Font name="Eras Demi ITC" size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

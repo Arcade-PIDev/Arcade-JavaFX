@@ -7,6 +7,7 @@ package GUI;
 
 import Entities.Evenement;
 import Services.ServiceEvenement;
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +22,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 /**
@@ -48,6 +50,22 @@ public class FXMLControllerModifierE {
     private DatePicker DPDateF;
     
     private Evenement evenement;
+    
+     @FXML
+    private Button chooseAffiche;
+    
+    @FXML
+        private void chooseAffiche(ActionEvent event) {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Choisir une affiche");
+            fileChooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif")
+            );
+            File file = fileChooser.showOpenDialog(((Node) event.getSource()).getScene().getWindow());
+            if (file != null) {
+                TFAffiche.setText(file.getAbsolutePath());
+            }
+        }
     
     
     public void setEvenement(Evenement evenement) {
@@ -114,7 +132,16 @@ public class FXMLControllerModifierE {
                 Evenement e = new Evenement();
                    e.setNomEvent(TFNom.getText());
                    e.setLieu(TFLieu.getText());
-                   e.setAfficheE(TFAffiche.getText());
+                   String affichePath = TFAffiche.getText();
+                    if (affichePath == null || affichePath.isEmpty()) {
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Erreur");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Veuillez choisir une affiche");
+                        alert.showAndWait();
+                        return;
+                    }
+                   e.setAfficheE(affichePath);
                    e.setDescriptionEvent (TADesc.getText());
                    e.setNbrPlaces(Integer.parseInt(TFNbrP.getText()));
                    e.setPrixTicket(Float.parseFloat(TFPrix.getText()));
@@ -166,6 +193,7 @@ public class FXMLControllerModifierE {
 
              EventController.refreshTable();
          });
+          chooseAffiche.setOnAction(this::chooseAffiche);
 }
    
 }

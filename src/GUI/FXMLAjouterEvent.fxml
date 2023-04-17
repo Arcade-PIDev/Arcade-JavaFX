@@ -55,5 +55,6 @@
             <Font size="14.0" />
          </font></Button>
       <Button fx:id="backButton" layoutX="41.0" layoutY="527.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Liste Events" />
+      <Button fx:id="chooseAffiche" layoutX="378.0" layoutY="142.0" mnemonicParsing="false" text="Choisir" />
    </children>
 </AnchorPane>
