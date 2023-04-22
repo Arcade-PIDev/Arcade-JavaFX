@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="1203.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.validerCommandeController">
+   <children>
+      <HBox layoutX="239.0" layoutY="81.0" prefHeight="348.0" prefWidth="841.0" style="-fx-background-color: #4609c3; -fx-background-radius: 6em; -fx-border-radius: 6em;">
+         <children>
+            <VBox alignment="BASELINE_LEFT" prefHeight="348.0" prefWidth="507.0" spacing="10.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="321.0" text="Votre Commande" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Line endX="343.29290771484375" endY="0.00207597017288208" opacity="0.72" startX="-100.0" stroke="#e7e7e7" />
+                  <Label text="UserName" textFill="#f8f9fc">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="userName" prefHeight="31.0" prefWidth="128.0" textFill="#00fadf">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label text="Prix Total" textFill="#f8f9fc">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="prixTotalText" prefHeight="31.0" prefWidth="157.0" textFill="#00fadf">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="validerCommande" alignment="CENTER" mnemonicParsing="false" onAction="#validerCommande" prefHeight="27.0" prefWidth="385.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Valider Commande" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="40.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="348.0" prefWidth="335.0">
+               <children>
+                  <ImageView fx:id="QrCode" fitHeight="251.0" fitWidth="273.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="60.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

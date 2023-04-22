@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="1203.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.PanierController">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" prefHeight="497.0" prefWidth="676.0" style="-fx-background-color: transparent; -fx-background: transparent;">
+         <content>
+            <FlowPane fx:id="content" alignment="TOP_CENTER" hgap="15.0" prefHeight="517.0" prefWidth="695.0" style="-fx-background-color: null; -fx-background-image: null;" vgap="15.0">
+               <padding>
+                  <Insets left="7.0" right="7.0" />
+               </padding>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="564.0" spacing="370.0" style="-fx-background-color: #4609c3; -fx-border-radius: 20; -fx-background-radius: 2em;">
+                     <FlowPane.margin>
+                        <Insets top="20.0" />
+                     </FlowPane.margin>
+                     <children>
+                        <Label text="Produit">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" text="Quantité">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </FlowPane>
+         </content>
+      </ScrollPane>
+      <VBox alignment="BASELINE_LEFT" layoutX="706.0" layoutY="16.0" prefHeight="332.0" prefWidth="456.0" spacing="10.0" style="-fx-background-color: #4609c3; -fx-background-radius: 6em; -fx-border-radius: 6em;">
+         <children>
+            <Label text="Commande" textFill="WHITE">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="81.0" prefWidth="423.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Price can change depending on shipping method and taxes of your state" wrappingWidth="390.333984375">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <Line endX="228.2928924560547" endY="1.6033649444580078E-5" startX="-100.0" stroke="#e7e7e7" />
+            <HBox prefHeight="68.0" prefWidth="416.0" spacing="150.0">
+               <children>
+                  <Label text="UserName" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="userName" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="128.0" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <Button fx:id="ProceedToCheckout" alignment="CENTER" mnemonicParsing="false" onAction="#ProceedToCheckout" prefHeight="27.0" prefWidth="385.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Proceed to checkout" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="40.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+   <padding>
+      <Insets top="20.0" />
+   </padding>
+</AnchorPane>

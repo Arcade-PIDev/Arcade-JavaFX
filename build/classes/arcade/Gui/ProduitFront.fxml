@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1680.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.ProduitFrontController">
+   <children>
+      <FlowPane fx:id="content" hgap="15.0" layoutX="195.0" layoutY="10.0" prefHeight="820.0" prefWidth="1310.0" vgap="15.0">
+         <padding>
+            <Insets left="7.0" right="7.0" top="15.0" />
+         </padding>
+      </FlowPane>
+   </children>
+</AnchorPane>
