@@ -118,16 +118,17 @@ public class FXMLControllerAjouterE {
             Evenement e = new Evenement();
             e.setNomEvent(TFNom.getText());
             e.setLieu(TFLieu.getText());
-            String affichePath = TFAffiche.getText();
-                if (affichePath == null || affichePath.isEmpty()) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Erreur");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Veuillez choisir une affiche");
-                    alert.showAndWait();
-                    return;
-                }
+           String affichePath = TFAffiche.getText();
+            if (affichePath == null || affichePath.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur");
+                alert.setHeaderText(null);
+                alert.setContentText("Veuillez choisir une affiche");
+                alert.showAndWait();
+                return;
+            }
             e.setAfficheE(affichePath);
+
             e.setDescriptionEvent(TADesc.getText());
             e.setNbrPlaces(nbrPlaces);
             e.setPrixTicket(prixTicket);

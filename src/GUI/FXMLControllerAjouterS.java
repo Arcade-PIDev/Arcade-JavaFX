@@ -84,6 +84,52 @@ public class FXMLControllerAjouterS {
             alert.showAndWait();
             return;
             }
+            
+               
+                String emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+                if (!TFemail.getText().matches(emailRegex)) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText(null);
+                    alert.setContentText("L'adresse e-mail n'est pas valide");
+                    alert.showAndWait();
+                    return;
+                }
+
+                
+            int NumTelSponsor;
+            try {
+                NumTelSponsor = Integer.parseInt(TFNumTel.getText());
+                if (NumTelSponsor <= 0) {
+                    throw new NumberFormatException();
+                }
+            } catch (NumberFormatException e) {
+                
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur");
+                alert.setHeaderText(null);
+                alert.setContentText("Numero de telephone doit etre un entier positive");
+                alert.showAndWait();
+                return;
+            }
+
+    
+            float MontantSponsoring;
+            try {
+                MontantSponsoring = Float.parseFloat(TFmontant.getText());
+                if (MontantSponsoring <= 0) {
+                    throw new NumberFormatException();
+                }
+            } catch (NumberFormatException e) {
+
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur");
+                alert.setHeaderText(null);
+                alert.setContentText("Montant sponsoring doit etre un entier positive");
+                alert.showAndWait();
+                return;
+            }
+
 
        
             Sponsor s = new Sponsor();
@@ -99,6 +145,7 @@ public class FXMLControllerAjouterS {
                     return;
                 }
             s.setLogoSponsor(logoPath);
+            
             s.setAdresseSponsor(TAadresse.getText());
             s.setEmailSponsor(TFemail.getText());
             s.setMontantSponsoring(Float.valueOf(TFmontant.getText()));

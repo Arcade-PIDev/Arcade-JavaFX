@@ -5,56 +5,77 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="592.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLControllerAjouterE">
+<AnchorPane id="AnchorPane" prefHeight="618.0" prefWidth="442.0" style="-fx-background-color: #2A2A67;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLControllerAjouterE">
    <children>
-      <TextField fx:id="TFNom" layoutX="216.0" layoutY="43.0" prefHeight="27.0" prefWidth="149.0" />
-      <Label layoutX="45.0" layoutY="43.0" text="Nom:" textFill="#46069a">
+        <Label layoutX="24.0" layoutY="8.0" prefHeight="51.0" prefWidth="481.0" text="Ajouter Evenements: " textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="Eras Demi ITC" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TFNom" layoutX="216.0" layoutY="77.0" prefHeight="27.0" prefWidth="221.0" />
+      <Label layoutX="45.0" layoutY="77.0" text="Nom:" textFill="WHITE">
+         <font>
+            <Font name="Eras Demi ITC" size="16.0" />
          </font></Label>
-      <Label layoutX="43.0" layoutY="141.0" prefHeight="27.0" prefWidth="85.0" text="Affiche:" textFill="#46069a">
+      <Label layoutX="43.0" layoutY="175.0" prefHeight="27.0" prefWidth="85.0" text="Affiche:" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+           <Font name="Eras Demi ITC" size="16.0" />
          </font></Label>
-      <DatePicker fx:id="DPDateD" layoutX="216.0" layoutY="306.0" />
-      <Label layoutX="41.0" layoutY="308.0" text="Date Debut:" textFill="#46069a">
+      <DatePicker fx:id="DPDateD" layoutX="216.0" layoutY="340.0" prefHeight="25.0" prefWidth="221.0" />
+      <Label layoutX="41.0" layoutY="342.0" text="Date Debut:" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="Eras Demi ITC" size="16.0" />
          </font></Label>
-      <Label layoutX="47.0" layoutY="93.0" text="Lieu:" textFill="#46069a">
+      <Label layoutX="47.0" layoutY="127.0" text="Lieu:" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="Eras Demi ITC" size="16.0" />
          </font></Label>
-      <TextField fx:id="TFLieu" layoutX="216.0" layoutY="97.0" prefHeight="27.0" prefWidth="149.0" />
-      <TextArea fx:id="TADesc" layoutX="216.0" layoutY="407.0" prefHeight="90.0" prefWidth="174.0" />
-      <Label layoutX="41.0" layoutY="407.0" text="Description:" textFill="#46069a">
+      <TextField fx:id="TFLieu" layoutX="216.0" layoutY="131.0" prefHeight="27.0" prefWidth="221.0" />
+      <TextArea fx:id="TADesc" layoutX="216.0" layoutY="441.0" prefHeight="90.0" prefWidth="221.0" />
+      <Label layoutX="41.0" layoutY="441.0" text="Description:" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="Eras Demi ITC" size="16.0" />
          </font></Label>
-      <DatePicker fx:id="DPDateF" layoutX="216.0" layoutY="359.0" />
-      <Label layoutX="40.0" layoutY="358.0" text="Date Fin:" textFill="#46069a">
+      <DatePicker fx:id="DPDateF" layoutX="216.0" layoutY="393.0" prefHeight="25.0" prefWidth="221.0" />
+      <Label layoutX="40.0" layoutY="392.0" text="Date Fin:" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+           <Font name="Eras Demi ITC" size="16.0" />
          </font></Label>
-      <TextField fx:id="TFNbrP" layoutX="216.0" layoutY="204.0" />
-      <Label layoutX="43.0" layoutY="203.0" text="Nombre de places:" textFill="#46069a">
+      <TextField fx:id="TFNbrP" layoutX="216.0" layoutY="238.0" prefHeight="25.0" prefWidth="221.0" />
+      <Label layoutX="43.0" layoutY="237.0" text="Nombre de places:" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="Eras Demi ITC" size="16.0" />
          </font></Label>
-      <Label layoutX="41.0" layoutY="258.0" text="Prix Ticket:" textFill="#46069a">
+      <Label layoutX="41.0" layoutY="292.0" text="Prix Ticket:" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="Eras Demi ITC" size="16.0" />
          </font></Label>
-      <TextField fx:id="TFPrix" layoutX="216.0" layoutY="259.0" />
-      <TextField fx:id="TFAffiche" layoutX="216.0" layoutY="141.0" prefHeight="27.0" prefWidth="149.0" />
-      <Button layoutX="236.0" layoutY="518.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="43.0" prefWidth="135.0" text="Ajouter">
+      <TextField fx:id="TFPrix" layoutX="216.0" layoutY="293.0" prefHeight="25.0" prefWidth="221.0" />
+      <TextField fx:id="TFAffiche" layoutX="216.0" layoutY="175.0" prefHeight="27.0" prefWidth="157.0" />
+      
+         <Button layoutX="245.0" layoutY="553.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="43.0" prefWidth="174.0" style="-fx-background-color: #FF00FF;" text="Ajouter Evenement" textFill="WHITE">
          <font>
-            <Font size="14.0" />
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+          <Button fx:id="backButton" layoutX="43.0" layoutY="569.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="132.0" style="-fx-background-color: #40E0D0;" text="Retour Liste" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="15.0" />
          </font></Button>
-      <Button fx:id="backButton" layoutX="41.0" layoutY="527.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Liste Events" />
-      <Button fx:id="chooseAffiche" layoutX="378.0" layoutY="142.0" mnemonicParsing="false" text="Choisir" />
+         <Button fx:id="chooseAffiche" layoutX="377.0" layoutY="177.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="64.0" style="-fx-background-color: #9400D3;" text="Choisir" textFill="WHITE">
+      <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="124.0" fitWidth="107.0" layoutX="420.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo3.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

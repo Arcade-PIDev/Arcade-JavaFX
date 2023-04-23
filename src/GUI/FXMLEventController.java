@@ -7,6 +7,8 @@ package GUI;
 
 import Entities.Evenement;
 import Services.ServiceEvenement;
+import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
@@ -76,6 +78,9 @@ public class FXMLEventController implements Initializable{
    
     @FXML
     private Button addButton;
+    
+     @FXML
+    private TextField searchField;
    
     private ObservableList<Evenement> evenements = FXCollections.observableArrayList();
 /**
@@ -88,22 +93,26 @@ public class FXMLEventController implements Initializable{
         evenements.addAll(sp.afficher());
         nomE.setCellValueFactory(new PropertyValueFactory<>("NomEvent"));
         lieuE.setCellValueFactory(new PropertyValueFactory<>("lieu"));
-        afficheE.setCellValueFactory(new PropertyValueFactory<>("AfficheE"));
-       /*afficheE.setCellFactory(column -> new TableCell<Evenement, String>() {
-            private final ImageView imageView = new ImageView();
+        afficheE.setCellValueFactory(new PropertyValueFactory<>("afficheE"));
+            afficheE.setCellFactory(column -> new TableCell<Evenement, String>() {
+                private final ImageView imageView = new ImageView();
 
-            @Override
-            protected void updateItem(String imagePath, boolean empty) {
-                super.updateItem(imagePath, empty);
+                @Override
+                protected void updateItem(String imagePath, boolean empty) {
+                    super.updateItem(imagePath, empty);
 
-                if (empty || imagePath == null) {
-                    setGraphic(null);
-                } else {
-                    imageView.setImage(getImageView(imagePath).getImage());
-                    setGraphic(imageView);
+                    if (empty || imagePath == null) {
+                        setGraphic(null);
+                    } else {
+                        Image image = new Image(new File(imagePath).toURI().toString());
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        setGraphic(imageView);
+                    }
                 }
-            }
-        });*/
+            });
+
         descE.setCellValueFactory(new PropertyValueFactory<>("DescriptionEvent"));
         dateD.setCellValueFactory(new PropertyValueFactory<>("DateDebutE"));
         dateF.setCellValueFactory(new PropertyValueFactory<>("DateFinE"));
@@ -132,6 +141,9 @@ public class FXMLEventController implements Initializable{
         window.show();
     });
       
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+        rechercheAdvanced(null);
+    });
     }
     
    private ImageView getImageView(String imagePath) {
@@ -185,6 +197,44 @@ public class FXMLEventController implements Initializable{
             window.show();
         }
 }
-     
+    
+  
+
+          @FXML
+          private void rechercheAdvanced(KeyEvent event) {
+              String searchText = searchField.getText();
+              if (searchText == null || searchText.isEmpty()) {
+                  tableViewE.setItems(evenements);
+                  return;
+              }
+              ObservableList<Evenement> searchResults = FXCollections.observableArrayList();
+              for (Evenement evenment : evenements) {
+                  if (evenment.getNomEvent().toLowerCase().contains(searchText.toLowerCase()) || evenment.getLieu().toLowerCase().contains(searchText.toLowerCase())) {
+                      searchResults.add(evenment);
+                  }
+              }
+              tableViewE.setItems(searchResults);
+          }
+
+            @FXML
+            private void linkSponsorSideBar(ActionEvent event) throws IOException {
+                Parent sponsorView = FXMLLoader.load(getClass().getResource("FXMLSponsor.fxml"));
+                Scene sponsorScene = new Scene(sponsorView);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(sponsorScene);
+                window.show();
+            }
+            
+            
+            @FXML
+            private void linkEvenementSideBar(ActionEvent event) throws IOException {
+                Parent sponsorView = FXMLLoader.load(getClass().getResource("FXMLEvenement.fxml"));
+                Scene sponsorScene = new Scene(sponsorView);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(sponsorScene);
+                window.show();
+            }
+
+
     
 }

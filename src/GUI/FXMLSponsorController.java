@@ -9,6 +9,8 @@ import Entities.Evenement;
 import Entities.Sponsor;
 import Services.ServiceEvenement;
 import Services.ServiceSponsor;
+import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,8 +26,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -68,6 +72,9 @@ public class FXMLSponsorController implements Initializable{
    
     @FXML
     private Button addButton;
+    
+     @FXML
+    private TextField searchField;
    
     private ObservableList<Sponsor> sponsors = FXCollections.observableArrayList();
 /**
@@ -81,21 +88,24 @@ public class FXMLSponsorController implements Initializable{
         nomSp.setCellValueFactory(new PropertyValueFactory<>("NomSponsor"));
         numTel.setCellValueFactory(new PropertyValueFactory<>("NumTelSponsor"));
         logo.setCellValueFactory(new PropertyValueFactory<>("logoSponsor"));
-       /*afficheE.setCellFactory(column -> new TableCell<Evenement, String>() {
-            private final ImageView imageView = new ImageView();
+            logo.setCellFactory(column -> new TableCell<Sponsor, String>() {
+                private final ImageView imageView = new ImageView();
 
-            @Override
-            protected void updateItem(String imagePath, boolean empty) {
-                super.updateItem(imagePath, empty);
+                @Override
+                protected void updateItem(String logoPath, boolean empty) {
+                    super.updateItem(logoPath, empty);
 
-                if (empty || imagePath == null) {
-                    setGraphic(null);
-                } else {
-                    imageView.setImage(getImageView(imagePath).getImage());
-                    setGraphic(imageView);
+                    if (empty || logoPath == null) {
+                        setGraphic(null);
+                    } else {
+                        Image image = new Image(new File(logoPath).toURI().toString());
+                        imageView.setImage(image);
+                        imageView.setFitWidth(100);
+                        imageView.setFitHeight(100);
+                        setGraphic(imageView);
+                    }
                 }
-            }
-        });*/
+            });
         email.setCellValueFactory(new PropertyValueFactory<>("EmailSponsor"));
         adresse.setCellValueFactory(new PropertyValueFactory<>("AdresseSponsor"));
         domaine.setCellValueFactory(new PropertyValueFactory<>("DomaineSponsor"));
@@ -122,6 +132,10 @@ public class FXMLSponsorController implements Initializable{
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(addFormScene);
         window.show();
+    });
+        
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+        rechercheAdvanced(null);
     });
       
     }
@@ -177,6 +191,41 @@ public class FXMLSponsorController implements Initializable{
             window.show();
         }
      }
-     
+    
+    @FXML
+          private void rechercheAdvanced(KeyEvent event) {
+              String searchText = searchField.getText();
+              if (searchText == null || searchText.isEmpty()) {
+                  tableViewS.setItems(sponsors);
+                  return;
+              }
+              ObservableList<Sponsor> searchResults = FXCollections.observableArrayList();
+              for (Sponsor sponsor : sponsors) {
+                  if (sponsor.getNomSponsor().toLowerCase().contains(searchText.toLowerCase()) || sponsor.getEmailSponsor().toLowerCase().contains(searchText.toLowerCase())
+                          || sponsor.getAdresseSponsor().toLowerCase().contains(searchText.toLowerCase())|| sponsor.getDomaineSponsor().toLowerCase().contains(searchText.toLowerCase())) {
+                      searchResults.add(sponsor);
+                  }
+              }
+              tableViewS.setItems(searchResults);
+          }
+        
+           @FXML
+            private void linkSponsorSideBar(ActionEvent event) throws IOException {
+                Parent sponsorView = FXMLLoader.load(getClass().getResource("FXMLSponsor.fxml"));
+                Scene sponsorScene = new Scene(sponsorView);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(sponsorScene);
+                window.show();
+            }
+            
+            
+            @FXML
+            private void linkEvenementSideBar(ActionEvent event) throws IOException {
+                Parent sponsorView = FXMLLoader.load(getClass().getResource("FXMLEvenement.fxml"));
+                Scene sponsorScene = new Scene(sponsorView);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(sponsorScene);
+                window.show();
+            }
     
 }

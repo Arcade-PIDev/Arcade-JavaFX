@@ -25,7 +25,7 @@
     -fx-background-color: #070742;
     -fx-border-color: white;
     -fx-border-color: transparent #fff transparent transparent;
-    -fx-border-width: 0.2px;
+    -fx-border-width: 0.1px;
     -fx-border-insets: 0px 0px -0.5px 0px;
 }
 
@@ -37,5 +37,5 @@
     -fx-background-color: #070742;
     -fx-text-fill: white;
     -fx-border-color: white;
-    -fx-border-width: 0 0 0.5 0; /* set border-width to 0 for top, right, and bottom borders; 1 for left border */
+    -fx-border-width: 0.1 0 0.1 0; /* set border-width to 0 for top, right, and bottom borders; 1 for left border */
 }

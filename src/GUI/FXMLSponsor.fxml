@@ -1,37 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="607.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLSponsorController">
+<AnchorPane id="AnchorPane" prefHeight="607.0" prefWidth="952.0" style="-fx-background-color: #2A2A67;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLSponsorController">
    <children>
-      <TableView fx:id="tableViewS" layoutX="23.0" layoutY="24.0" prefHeight="503.0" prefWidth="727.0">
-        <columns>
-          <TableColumn fx:id="nomSp" prefWidth="75.0" text="Nom" />
-          <TableColumn fx:id="numTel" prefWidth="62.0" text="Num Tel" />
-            <TableColumn fx:id="email" prefWidth="88.0" text="Email" />
-            <TableColumn fx:id="adresse" prefWidth="116.0" text="Adresse" />
-            <TableColumn fx:id="domaine" prefWidth="91.0" text="Domaine" />
-            <TableColumn fx:id="logo" minWidth="0.0" prefWidth="81.0" text="Logo" />
-            <TableColumn fx:id="montant" prefWidth="125.0" text="Montant Sponsoring" />
-            <TableColumn fx:id="eventFk" prefWidth="88.0" text="Evenement" />
-        </columns>
-      </TableView>
-      <Button layoutX="623.0" layoutY="542.0" mnemonicParsing="false" onAction="#editSelectedSponsor" prefHeight="38.0" prefWidth="102.0" text="Modifier" textFill="#1cc32f">
+        <GridPane layoutY="-14.0" prefHeight="619.0" prefWidth="216.0" style="-fx-background-color: #070742;">
+        <Button fx:id="sponsorLink" onAction="#linkSponsorSideBar" prefHeight="39.0" prefWidth="211.0" style="-fx-background-color: #2A2A67; -fx-text-fill: white;" text="Sponsor" GridPane.rowIndex="9">
+            <font>
+                <Font name="Arial" size="16.0" />
+            </font>
+        </Button>
+         <ImageView fitHeight="108.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+            <image>
+               <Image url="@logo3.png" />
+            </image>
+         </ImageView>
+         <Label alignment="TOP_LEFT" prefHeight="55.0" prefWidth="208.0" text="                     ARCADE" textFill="#fffefe" GridPane.rowIndex="1">
+            <font>
+               <Font name="PT Bold Mirror" size="20.0" />
+            </font>
+         </Label>
+        <Button fx:id="eventLink" onAction="#linkEvenementSideBar" prefHeight="40.0" prefWidth="211.0" style="-fx-background-color: #2A2A67; -fx-text-fill: white;" text="Evenement" GridPane.rowIndex="8">
+            <font>
+                <Font name="Arial" size="16.0" />
+            </font>
+        </Button>
+         <columnConstraints>
+            <ColumnConstraints maxWidth="228.0" minWidth="211.0" prefWidth="211.0" />
+            <ColumnConstraints maxWidth="22.0" minWidth="5.0" prefWidth="22.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+            <RowConstraints maxHeight="48.0" minHeight="48.0" prefHeight="48.0" />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+    </GridPane>
+    <TableView fx:id="tableViewS" layoutX="254.0" layoutY="80.0" prefHeight="448.0" prefWidth="688.0">
+    <columns>
+        <TableColumn fx:id="nomSp" prefWidth="92.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Nom" />
+        <TableColumn fx:id="logo" prefWidth="94.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Logo" />
+        <TableColumn fx:id="numTel" prefWidth="95.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Num Tel" />
+        <TableColumn fx:id="email" prefWidth="72.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Email" />
+        <TableColumn fx:id="adresse" prefWidth="84.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Adresse" />
+        <TableColumn fx:id="domaine" minWidth="0.0" prefWidth="77.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Domaine" />
+        <TableColumn fx:id="montant" prefWidth="84.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Montant " />
+        <TableColumn fx:id="eventFk" prefWidth="90.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Evenement" />
+    </columns>
+ 
+       <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+</TableView>
+
+
+      <Button layoutX="834.0" layoutY="542.0" mnemonicParsing="false" onAction="#editSelectedSponsor" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: #40E0D0;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font></Button>
+      <Button layoutX="706.0" layoutY="542.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: #FF00FF;" text="Supprimer" textFill="WHITE">
          <font>
             <Font name="Arial" size="14.0" />
          </font></Button>
-      <Button layoutX="495.0" layoutY="542.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="38.0" prefWidth="111.0" text="Supprimer" textFill="#ee0909">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font></Button>
-      <Button fx:id="addButton" layoutX="47.0" layoutY="539.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="166.0" text="Ajouter Sponsor" textFill="#091ceb">
+      <Button fx:id="addButton" layoutX="254.0" layoutY="542.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="166.0" style="-fx-background-color: #120854;" text="Ajouter Sponsor" textFill="WHITE">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
       </Button>
-   </children>  
+      <Label layoutX="254.0" layoutY="16.0" prefHeight="51.0" prefWidth="481.0" text="Liste Des Sponsors: " textFill="WHITE">
+         <font>
+            <Font name="Eras Demi ITC" size="22.0" />
+         </font>
+      </Label>
+       
+      <Button fx:id="searchButton" layoutX="673.0" layoutY="18.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="75.0" style="-fx-background-color: #9400D3;" text="Recherche" textFill="WHITE">
+      <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="searchField" layoutX="755.0" layoutY="19.0" prefHeight="22.0" prefWidth="180.0" />
+   </children>
 </AnchorPane>

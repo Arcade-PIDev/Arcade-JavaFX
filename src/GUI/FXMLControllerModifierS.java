@@ -112,37 +112,39 @@ public class FXMLControllerModifierS {
                 }
 
                 
-                String phoneRegex = "^[0-9]+$";
-                if (!TFNumTel.getText().matches(phoneRegex)) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Le numéro de téléphone doit être un nombre positif");
-                    alert.showAndWait();
-                    return;
+                   
+            int NumTelSponsor;
+            try {
+                NumTelSponsor = Integer.parseInt(TFNumTel.getText());
+                if (NumTelSponsor <= 0) {
+                    throw new NumberFormatException();
                 }
-
-               
-                String addressRegex = "^[a-zA-Z0-9\\s,'-]*$";
-                if (!TAadresse.getText().matches(addressRegex)) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText(null);
-                    alert.setContentText("L'adresse n'est pas valide");
-                    alert.showAndWait();
-                    return;
-                }
-
+            } catch (NumberFormatException e) {
                 
-                String amountRegex = "^[0-9]+(\\.[0-9]{1,2})?$";
-                if (!TFmontant.getText().matches(amountRegex)) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Error");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Le montant doit être un nombre positif");
-                    alert.showAndWait();
-                    return;
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur");
+                alert.setHeaderText(null);
+                alert.setContentText("Numero de telephone doit etre un entier positive");
+                alert.showAndWait();
+                return;
+            }
+
+    
+            float MontantSponsoring;
+            try {
+                MontantSponsoring = Float.parseFloat(TFmontant.getText());
+                if (MontantSponsoring <= 0) {
+                    throw new NumberFormatException();
                 }
+            } catch (NumberFormatException e) {
+
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erreur");
+                alert.setHeaderText(null);
+                alert.setContentText("Montant sponsoring doit etre un entier positive");
+                alert.showAndWait();
+                return;
+            }
 
 
                 Sponsor s = new Sponsor();
