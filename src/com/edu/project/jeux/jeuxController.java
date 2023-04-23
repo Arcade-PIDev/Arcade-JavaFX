@@ -10,13 +10,24 @@ import static DBCnx.MyConnection.MyConnection;
 import com.edu.project.entities.jeux;
 import com.edu.project.entities.jeux;
 import com.edu.project.entities.jeux;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -35,6 +46,9 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -44,6 +58,7 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -104,6 +119,10 @@ public class jeuxController implements Initializable {
     private TableColumn<jeux, String> colgenre;
     @FXML
     private TableColumn<jeux, String> colcolor;
+    @FXML
+    private Button btnstat;
+    @FXML
+    private Button btnpdf;
 
     /**
      * Initializes the controller class.
@@ -145,15 +164,15 @@ public class jeuxController implements Initializable {
 
         LocalDate today = LocalDate.now();
         if (desctf.getText().isEmpty()) {
-            showAlert("Error", "desc field is required.");
+            showAlert("Error", "Le champ est vide.");
             return false;
         }
         if (genretf.getText().isEmpty()) {
-            showAlert("Error", "genre field is required.");
+            showAlert("Error", "Le champ est vide.");
             return false;
         }
         if (nomtf.getText().isEmpty()) {
-            showAlert("Error", "nom field is required.");
+            showAlert("Error", "Le champ est vide.");
             return false;
         }
 
@@ -200,7 +219,7 @@ public class jeuxController implements Initializable {
                             public void handle(MouseEvent event) {
                                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                                 alert.setTitle("Alert!");
-                                alert.setContentText("This is an alert");
+                                alert.setContentText("Voulez-vous supprimer ?");
                                 Optional<ButtonType> result = alert.showAndWait();
                                 if (result.get() == ButtonType.OK) {
 
@@ -290,7 +309,7 @@ public class jeuxController implements Initializable {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Jeux ");
                     alert.setHeaderText(null);
-                    alert.setContentText("updated successfully");
+                    alert.setContentText("Modifier");
                     alert.showAndWait();
                     showjeuxs();
                 } catch (SQLException ex) {
@@ -340,5 +359,119 @@ public class jeuxController implements Initializable {
 
         }
     }
+
+    public ObservableList<PieChart.Data> getPieChartData() {
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+        Connection conn = MyConnection();
+        String query = "SELECT genre, COUNT(*) AS count FROM jeux GROUP BY genre";
+        Statement st;
+        ResultSet rs;
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                String genre = rs.getString("genre");
+                int count = rs.getInt("count");
+                pieChartData.add(new PieChart.Data(genre, count));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return pieChartData;
+    }
+
+    @FXML
+    private void stat(ActionEvent event) {
+        ObservableList<PieChart.Data> pieChartData = getPieChartData();
+        PieChart chart = new PieChart(pieChartData);
+        chart.setTitle("Jeux par genre");
+        Scene scene = new Scene(new Group(chart), 500, 400);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+private void pdf(ActionEvent event) throws DocumentException {
+    Document document = new Document();
+    try {
+        // Create a temporary file with a unique name to store the PDF
+        File tempFile = File.createTempFile("liste Jeux", ".pdf");
+
+        // Set the file to be deleted on exit
+        tempFile.deleteOnExit();
+
+        // Write the PDF to the temporary file
+        PdfWriter.getInstance(document, new FileOutputStream(tempFile));
+        document.open();
+
+        // Add a title to the PDF
+        Paragraph title = new Paragraph("Liste Jeux");
+        title.setAlignment(Element.ALIGN_CENTER);
+        document.add(title);
+
+        PdfPTable pdfTable = new PdfPTable(4);
+        addTableHeader(pdfTable);
+        addRows(pdfTable, tabjeux.getItems());
+        document.add(pdfTable);
+
+        document.close();
+
+        // Create a new FileChooser to allow the user to choose where to save the file
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialFileName("Liste Jeux.pdf");
+
+        // Set the initial directory for the FileChooser to the user's home directory
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+
+        // Show the FileChooser and wait for the user to select a file
+        File file = fileChooser.showSaveDialog(tabjeux.getScene().getWindow());
+
+        // If the user selected a file, copy the contents of the temporary file to the selected file
+        if (file != null) {
+            Files.copy(tempFile.toPath(), file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        }
+    } catch (IOException | DocumentException e) {
+        e.printStackTrace();
+    }
+}
+
+private void addTableHeader(PdfPTable pdfTable) {
+    pdfTable.addCell("ID");
+    pdfTable.addCell("Nom");
+    pdfTable.addCell("Description");
+    pdfTable.addCell("Genre");
+    
+}
+
+private void addRows(PdfPTable pdfTable, ObservableList<jeux> jeuxList) {
+    for (jeux jeu : jeuxList) {
+        pdfTable.addCell(String.valueOf(jeu.getId()));
+        pdfTable.addCell(jeu.getNom());
+        pdfTable.addCell(jeu.getDescription());
+        pdfTable.addCell(jeu.getGenre());
+
+        // Add the image to the table
+        if (jeu.getImage() != null && !jeu.getImage().isEmpty()) {
+            try {
+                String imagePath = "C:\\Users\\pc\\Pictures\\Screenshots\\" + jeu.getImage();
+                com.itextpdf.text.Image pdfImg = com.itextpdf.text.Image.getInstance(imagePath);
+
+                // Set the size of the image to 100 x 100 pixels
+                pdfImg.scaleAbsolute(100, 100);
+
+                PdfPCell cell = new PdfPCell(pdfImg, true);
+                cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+                cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                pdfTable.addCell(cell);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            pdfTable.addCell("");
+        }
+    }
+}
+
 
 }

@@ -17,7 +17,7 @@
                <children>
                   <ImageView fitHeight="94.0" fitWidth="200.0" layoutX="5.0" layoutY="36.0">
                      <image>
-                        <Image url="@../../../../../build/classes/com/edu/project/jeux/i_top10-jeuxretro.png" />
+                        <Image url="@download.png" />
                      </image>
                   </ImageView>
                </children>
@@ -29,9 +29,9 @@
             </Button>
             <TextField fx:id="genretf" layoutX="171.0" layoutY="265.0" prefHeight="26.0" prefWidth="274.0" />
             <Label layoutX="39.0" layoutY="374.0" prefHeight="17.0" prefWidth="118.0" text="image" />
-            <TextField fx:id="imagetf" accessibleRole="PASSWORD_FIELD" layoutX="162.0" layoutY="370.0" prefHeight="26.0" prefWidth="274.0" />
+            <TextField fx:id="imagetf" accessibleRole="PASSWORD_FIELD" layoutX="172.0" layoutY="370.0" prefHeight="26.0" prefWidth="274.0" />
             <Label layoutX="38.0" layoutY="226.0" prefHeight="17.0" prefWidth="80.0" text="Description" />
-            <TextField fx:id="desctf" layoutX="171.0" layoutY="221.0" prefHeight="26.0" prefWidth="274.0" />
+            <TextField fx:id="desctf" layoutX="170.0" layoutY="221.0" prefHeight="26.0" prefWidth="274.0" />
             <Label layoutX="35.0" layoutY="270.0" prefHeight="17.0" prefWidth="60.0" text="Genre" />
             <Label layoutX="39.0" layoutY="183.0" prefHeight="17.0" prefWidth="118.0" text="nom" />
             <TextField fx:id="nomtf" layoutX="169.0" layoutY="178.0" prefHeight="26.0" prefWidth="274.0" />
@@ -42,7 +42,7 @@
             </Button>
             <ImageView fx:id="imageview" fitHeight="94.0" fitWidth="131.0" layoutX="23.0" layoutY="437.0" pickOnBounds="true" preserveRatio="true" />
             <Label layoutX="39.0" layoutY="314.0" prefHeight="17.0" prefWidth="118.0" text="Color" />
-            <ColorPicker fx:id="colortf" layoutX="162.0" layoutY="319.0" prefHeight="25.0" prefWidth="280.0" />
+            <ColorPicker fx:id="colortf" layoutX="172.0" layoutY="319.0" prefHeight="25.0" prefWidth="280.0" />
          </children>
       </AnchorPane>
    </children>

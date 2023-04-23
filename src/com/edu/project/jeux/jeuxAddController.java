@@ -78,15 +78,15 @@ public class jeuxAddController implements Initializable {
  
         LocalDate today = LocalDate.now();
         if (desctf.getText().isEmpty()) {
-            showAlert("Error", "desc field is required.");
+            showAlert("Error", "Le champ est vide.");
             return false;
         }
         if (genretf.getText().isEmpty()) {
-            showAlert("Error", "genre field is required.");
+            showAlert("Error", "Le champ est vide.");
             return false;
         }
            if (nomtf.getText().isEmpty()) {
-            showAlert("Error", "nom field is required.");
+            showAlert("Error", "Le champ est vide.");
             return false;
         }
 
@@ -146,7 +146,7 @@ private void insert() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Jeux ");
         alert.setHeaderText(null);
-        alert.setContentText("added  succesfuly");
+        alert.setContentText("Ajouter");
         alert.showAndWait();
     } catch (SQLException ex) {
         ex.printStackTrace();
