@@ -54,14 +54,14 @@ public class validerCommandeController implements Initializable{
         for (Map.Entry<Integer, Integer> entry : panier.entrySet()) {
             try {
                 Produit p = ps.getProduitById(entry.getKey());
-                data+="Nom du produit :"+p.getNomProduit() + " Description :"+p.getDescription()+ " Prix :"+p.getPrix() +" Quantite : "+ entry.getValue()+" ";
+                data+="Nom du produit:"+p.getNomProduit() + " Description:"+p.getDescription()+ " Prix:"+p.getPrix() +" Quantite:"+ entry.getValue()+" ";
                 prixTotal+=p.getPrix()*entry.getValue();
             } catch (Exception ex) {
                 Logger.getLogger(validerCommandeController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        String qr="http://api.qrserver.com/v1/create-qr-code/?data="+data+"             Prix Total :"+prixTotal+" ";
-         QrCode.setImage(new Image(qr, 275, 297, false, false));
+        String qr="http://api.qrserver.com/v1/create-qr-code/?data="+data+"  Prix Total :"+prixTotal+" ";
+         QrCode.setImage(new Image(qr, 300, 300, false, false));
          
          prixTotalText.setText(prixTotal+"");
     }    
@@ -70,10 +70,6 @@ public class validerCommandeController implements Initializable{
     private void validerCommande(ActionEvent event) {
         try {
             panier.clear();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ProduitFront.fxml"));
-            Parent root = loader.load();
-            ProduitFrontController controller = loader.getController();
-            
             FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("HomeFront.fxml"));
             Parent homeRoot = homeLoader.load();
             HomeFrontController homeCtrl = homeLoader.getController();

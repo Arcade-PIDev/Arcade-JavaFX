@@ -21,6 +21,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.FlowPane;
+import arcade.Service.WishlistService;
+
 /**
  * FXML Controller class
  *
@@ -61,6 +63,11 @@ public class ProduitFrontController implements Initializable{
                     itemController.setId(p.getId() + "");
                     itemController.setImage("http://127.0.0.1:8000/eshop/produit/" + p.getImage());
 
+                    WishlistService ws=new WishlistService();
+                    if( ws.afficher().contains(p.getId())){
+                    itemController.setWishlist("http://127.0.0.1:8000/eshop/" +"full.png");
+                    }
+                    
                     content.getChildren().add(root2);
                 } catch (IOException ex) {
                     Logger.getLogger(ProduitFrontController.class.getName()).log(Level.SEVERE, null, ex);

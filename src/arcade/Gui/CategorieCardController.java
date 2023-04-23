@@ -79,7 +79,7 @@ public class CategorieCardController implements Initializable {
             HomeFrontController cont = loader.getController();
             //cont.changePage("Produit",this.catId.getText());
             cont.changePage("Produit");
-            cont.getCat(this.catId.getText());
+            //cont.getCat(this.catId.getText());
 
             
             goToProductBtn.getScene().setRoot(root);

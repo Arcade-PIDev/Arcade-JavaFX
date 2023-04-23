@@ -20,6 +20,7 @@ import java.util.logging.Logger;
 import javafx.geometry.Pos;
 import javafx.util.Duration;
 import static arcade.Arcade.panier;
+import arcade.Service.WishlistService;
 
 /**
  * FXML Controller class
@@ -28,8 +29,6 @@ import static arcade.Arcade.panier;
  */
 public class ProduitCardController implements Initializable {
 
-    @FXML
-    private Pane categoryCard;
     @FXML
     private ImageView image;
     @FXML
@@ -40,14 +39,16 @@ public class ProduitCardController implements Initializable {
     private Label prodId;
     @FXML
     private ImageView cartbtn;
+    @FXML
+    private ImageView wishlistBtn;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
     
-        public void setNomProduit(String nomCategorie) {
-        this.name.setText(nomCategorie);
+        public void setNomProduit(String nom) {
+        this.name.setText(nom);
     }
 
     public void setImage(String url) {
@@ -62,6 +63,9 @@ public class ProduitCardController implements Initializable {
         this.prodId.setText(id);
     }
     
+    public void setWishlist(String url) {
+        this.wishlistBtn.setImage(new Image(url, 32, 32, false, false));
+    }
     
     @FXML
     private void addProductToCart(MouseEvent event) {
@@ -72,6 +76,24 @@ public class ProduitCardController implements Initializable {
         } else {
             panier.put(Integer.parseInt(prodId.getText()), 1);
             //System.out.print(panier.keySet());
+        }
+
+    }
+    
+    @FXML
+    private void addProductToWishlist(MouseEvent event) {
+        try {
+            WishlistService ws = new WishlistService();
+            if (ws.afficher().contains(Integer.parseInt(prodId.getText()))) {
+                ws.remove(Integer.parseInt(prodId.getText()));
+                wishlistBtn.setImage(new Image("http://127.0.0.1:8000/eshop/" + "empty.png", 32, 32, false, false));
+            } else {
+                ws.add(Integer.parseInt(prodId.getText()));
+                wishlistBtn.setImage(new Image("http://127.0.0.1:8000/eshop/" + "full.png", 32, 32, false, false));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ProduitCardController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
