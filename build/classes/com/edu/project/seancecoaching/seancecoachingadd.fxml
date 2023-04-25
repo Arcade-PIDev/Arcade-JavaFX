@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="899.0" styleClass="box1" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.edu.project.seancecoaching.seancecoachingAddController">
+   <children>
+      <AnchorPane layoutX="224.0" layoutY="15.0" prefHeight="556.0" prefWidth="470.0" styleClass="box1" stylesheets="@ticket.css">
+         <children>
+            <AnchorPane layoutX="137.0" layoutY="14.0" prefHeight="164.0" prefWidth="186.0" styleClass="box1" />
+            <Button fx:id="btnajouter" layoutX="260.0" layoutY="462.0" mnemonicParsing="false" onAction="#OnCreate" style="-fx-background-color: #2196F3; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="38.0" layoutY="224.0" prefHeight="17.0" prefWidth="77.0" text="Date debut" />
+            <TextField fx:id="desctf" layoutX="169.0" layoutY="332.0" prefHeight="26.0" prefWidth="274.0" />
+            <Label layoutX="29.0" layoutY="376.0" prefHeight="17.0" prefWidth="118.0" text="Image" />
+            <TextField fx:id="imagetf" accessibleRole="PASSWORD_FIELD" layoutX="171.0" layoutY="371.0" prefHeight="26.0" prefWidth="274.0" />
+            <Label layoutX="38.0" layoutY="261.0" prefHeight="17.0" prefWidth="60.0" text="Date fin" />
+            <Label layoutX="38.0" layoutY="298.0" prefHeight="17.0" prefWidth="60.0" text="Prix" />
+            <TextField fx:id="prixtf" layoutX="169.0" layoutY="293.0" prefHeight="26.0" prefWidth="274.0" />
+            <Label layoutX="21.0" layoutY="337.0" prefHeight="17.0" prefWidth="77.0" text="Description" />
+            <Label layoutX="39.0" layoutY="183.0" prefHeight="17.0" prefWidth="118.0" text="Titre" />
+            <TextField fx:id="titretf" layoutX="169.0" layoutY="178.0" prefHeight="26.0" prefWidth="274.0" />
+            <Button fx:id="btnbrowse" layoutX="367.0" layoutY="462.0" mnemonicParsing="false" onAction="#actionperformed" style="-fx-background-color: #2196F3; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="Naviguer" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="imageview" fitHeight="94.0" fitWidth="131.0" layoutX="23.0" layoutY="437.0" pickOnBounds="true" preserveRatio="true" />
+            <DatePicker fx:id="datedebtf" layoutX="164.0" layoutY="220.0" prefHeight="25.0" prefWidth="274.0" />
+            <DatePicker fx:id="datefintf" layoutX="164.0" layoutY="257.0" prefHeight="25.0" prefWidth="274.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
