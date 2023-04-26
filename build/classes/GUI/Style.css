@@ -1,14 +1,13 @@
-/*
- * Empty Stylesheet file.
- */
-
 .mainFxmlClass {
 
 }
 
+.table-view {
+    -fx-background-color: #1a1a1a;
+}
 
 .table-view .column-header-background {
-    -fx-background-color: #070742;
+    -fx-background-color: #2e2e2e;
     -fx-background-insets: 0;
     -fx-padding: 0 2 0 2;
     -fx-text-fill: white;
@@ -16,15 +15,14 @@
 }
 
 .table-view .table-row-cell {
-    -fx-background-color: #070742;
+    -fx-background-color: #1a1a1a;
     -fx-text-fill: white;
-    -fx-border-color: whitesmoke;
+    -fx-border-color: #303030;
 }
 
 .table-view .table-cell {
-    -fx-background-color: #070742;
-    -fx-border-color: white;
-    -fx-border-color: transparent #fff transparent transparent;
+    -fx-background-color: #1a1a1a;
+    -fx-border-color: transparent #303030 transparent transparent;
     -fx-border-width: 0.1px;
     -fx-border-insets: 0px 0px -0.5px 0px;
 }
@@ -34,8 +32,8 @@
 }
 
 .table-row-cell {
-    -fx-background-color: #070742;
+    -fx-background-color: #1a1a1a;
     -fx-text-fill: white;
-    -fx-border-color: white;
+    -fx-border-color: #303030;
     -fx-border-width: 0.1 0 0.1 0; /* set border-width to 0 for top, right, and bottom borders; 1 for left border */
 }

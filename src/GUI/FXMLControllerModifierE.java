@@ -9,6 +9,7 @@ import Entities.Evenement;
 import Services.ServiceEvenement;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
@@ -128,6 +129,18 @@ public class FXMLControllerModifierE {
                     alert.showAndWait();
                     return;
                 }
+                
+                LocalDate dateDebutE = DPDateD.getValue();
+                 LocalDate dateFinE = DPDateF.getValue();
+                if (dateFinE.isBefore(dateDebutE)) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Erreur");
+                    alert.setHeaderText(null);
+                    alert.setContentText("La date de fin doit être après la date de début");
+                    alert.showAndWait();
+                    return;
+                }
+
 
                 Evenement e = new Evenement();
                    e.setNomEvent(TFNom.getText());

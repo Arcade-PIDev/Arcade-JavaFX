@@ -10,12 +10,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="625.0" prefWidth="527.0" style="-fx-background-color: #2A2A67;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLControllerModifierS">
+<AnchorPane id="AnchorPane" prefHeight="625.0" prefWidth="527.0" style="-fx-background-color: linear-gradient(to bottom, #13001e, #150029, #170033, #19003e); " xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLControllerModifierS">
 
      <children>
           <Label layoutX="32.0" layoutY="8.0" prefHeight="51.0" prefWidth="481.0" text="Ajouter Sponsors: " textFill="WHITE">
          <font>
-            <Font name="Eras Demi ITC" size="22.0" />
+            <Font name="Impact" size="22.0" />
          </font>
       </Label>
       <TextField fx:id="TFNomSp" layoutX="216.0" layoutY="80.0" prefHeight="27.0" prefWidth="224.0" />
@@ -56,18 +56,18 @@
          </font></Label>
       <TextField fx:id="TFdomaine" layoutX="218.0" layoutY="276.0" prefHeight="25.0" prefWidth="224.0" />
       <TextField fx:id="TFLogo" layoutX="216.0" layoutY="178.0" prefHeight="27.0" prefWidth="149.0" />
-      <Button layoutX="245.0" layoutY="548.0" mnemonicParsing="false" onAction="#modifier" prefHeight="43.0" prefWidth="174.0" style="-fx-background-color: #FF00FF;" text="Modifier Sponsor" textFill="WHITE">
+      <Button layoutX="245.0" layoutY="548.0" mnemonicParsing="false" onAction="#modifier" prefHeight="43.0" prefWidth="174.0" style="-fx-background-color: linear-gradient(to bottom, #d400ff, #7a00cc);" text="Modifier Sponsor" textFill="WHITE">
          <font>
-             <Font name="Arial" size="14.0" />
+             <Font name="Impact" size="14.0" />
          </font></Button>
-       <Button fx:id="backButtonEdit" layoutX="43.0" layoutY="561.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="132.0" style="-fx-background-color: #40E0D0;" text="Retour Liste" textFill="WHITE">
+       <Button fx:id="backButtonEdit" layoutX="43.0" layoutY="561.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="132.0" style="-fx-background-color: linear-gradient(to bottom, #00FFFF, #40E0D0);" text="Retour Liste" textFill="WHITE">
          <font>
-            <Font name="Arial" size="15.0" />
+            <Font name="Impact" size="15.0" />
          </font></Button>
       
-       <Button fx:id="chooseLogo" layoutX="368.0" layoutY="179.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #9400D3;" text="Choisir" textFill="WHITE">
+       <Button fx:id="chooseLogo" layoutX="368.0" layoutY="179.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: linear-gradient(to bottom, #FF0080, #FF00FF);" text="Choisir" textFill="WHITE">
       <font>
-            <Font name="Arial" size="12.0" />
+            <Font name="Impact" size="12.0" />
          </font>
       </Button>
       <TextField fx:id="TFmontant" layoutX="218.0" layoutY="320.0" prefHeight="25.0" prefWidth="224.0" />

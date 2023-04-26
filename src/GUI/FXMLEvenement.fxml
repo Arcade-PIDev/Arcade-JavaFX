@@ -14,12 +14,12 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="607.0" prefWidth="952.0" style="-fx-background-color: #2A2A67;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLEventController">
+<AnchorPane id="AnchorPane" prefHeight="686.0" prefWidth="1359.0" style="-fx-background-color: linear-gradient(to bottom, #13001e, #150029, #170033, #19003e); " xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLEventController">
    <children>
-        <GridPane layoutY="-14.0" prefHeight="619.0" prefWidth="216.0" style="-fx-background-color: #070742;">
-        <Button fx:id="sponsorLink" onAction="#linkSponsorSideBar" prefHeight="39.0" prefWidth="211.0" style="-fx-background-color: #2A2A67; -fx-text-fill: white;" text="Sponsor" GridPane.rowIndex="9">
+        <GridPane layoutY="-14.0" prefHeight="703.0" prefWidth="216.0" style="-fx-background-color: linear-gradient(to bottom, #0a0a1a, #0d0d29, #101038, #141449); ">
+        <Button fx:id="sponsorLink" onAction="#linkSponsorSideBar" prefHeight="39.0" prefWidth="211.0" style="-fx-background-color: linear-gradient(to bottom, #400080, #4600a6, #4c00cc, #5200e6);   -fx-text-fill: white;" text="Sponsor" GridPane.rowIndex="9">
             <font>
-                <Font name="Arial" size="16.0" />
+                <Font name="Impact" size="16.0" />
             </font>
         </Button>
          <ImageView fitHeight="108.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
@@ -32,9 +32,9 @@
                <Font name="PT Bold Mirror" size="20.0" />
             </font>
          </Label>
-        <Button fx:id="eventLink" onAction="#linkEvenementSideBar" prefHeight="40.0" prefWidth="211.0" style="-fx-background-color: #2A2A67; -fx-text-fill: white;" text="Evenement" GridPane.rowIndex="8">
+        <Button fx:id="eventLink" onAction="#linkEvenementSideBar" prefHeight="40.0" prefWidth="211.0" style="-fx-background-color: linear-gradient(to bottom, #400080, #4600a6, #4c00cc, #5200e6);  -fx-text-fill: white;" text="Evenement" GridPane.rowIndex="8">
             <font>
-                <Font name="Arial" size="16.0" />
+                <Font name="Impact" size="16.0" />
             </font>
         </Button>
          <columnConstraints>
@@ -55,48 +55,50 @@
             <RowConstraints />
          </rowConstraints>
     </GridPane>
-    <TableView fx:id="tableViewE" layoutX="254.0" layoutY="80.0" prefHeight="448.0" prefWidth="688.0">
+  <TableView fx:id="tableViewE" layoutX="254.0" layoutY="80.0" prefHeight="465.0" prefWidth="1033.0" style="-fx-background-color: #222; -fx-font-size: 14px;">
     <columns>
-        <TableColumn fx:id="nomE" prefWidth="75.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Nom" />
-        <TableColumn fx:id="lieuE" prefWidth="62.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Lieu" />
-        <TableColumn fx:id="afficheE" prefWidth="88.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Affiche" />
-        <TableColumn fx:id="descE" prefWidth="116.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Description" />
-        <TableColumn fx:id="dateD" prefWidth="91.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Date Debut" />
-        <TableColumn fx:id="dateF" minWidth="0.0" prefWidth="81.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Date Fin" />
-        <TableColumn fx:id="nbrP" prefWidth="91.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Nbr Places" />
-        <TableColumn fx:id="prixE" prefWidth="84.0" style="-fx-background-color: #070742; -fx-text-fill: white;" text="Prix Ticket" />
+        <TableColumn fx:id="nomE" prefWidth="120.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Nom" />
+        <TableColumn fx:id="lieuE" prefWidth="100.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Lieu" />
+        <TableColumn fx:id="afficheE" prefWidth="120.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Affiche" />
+        <TableColumn fx:id="descE" prefWidth="250.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Description" />
+        <TableColumn fx:id="dateD" prefWidth="120.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Date Debut" />
+        <TableColumn fx:id="dateF" prefWidth="120.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Date Fin" />
+        <TableColumn fx:id="nbrP" prefWidth="100.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Nbr Places" />
+        <TableColumn fx:id="prixE" prefWidth="100.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Prix Ticket" />
     </columns>
-
-       <stylesheets>
+    
+    <stylesheets>
         <URL value="@style.css" />
     </stylesheets>
 </TableView>
 
 
-      <Button layoutX="834.0" layoutY="542.0" mnemonicParsing="false" onAction="#editSelectedEvenement" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: #40E0D0;" text="Modifier" textFill="WHITE">
+
+      <Button layoutX="1182.0" layoutY="610.0" mnemonicParsing="false" onAction="#editSelectedEvenement" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: linear-gradient(to bottom, #00FFFF, #40E0D0);" text="Modifier" textFill="WHITE">
          <font>
-            <Font name="Arial" size="15.0" />
+            <Font name="Impact" size="15.0" />
          </font></Button>
-      <Button layoutX="706.0" layoutY="542.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: #FF00FF;" text="Supprimer" textFill="WHITE">
+      <Button layoutX="1054.0" layoutY="610.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: linear-gradient(to bottom, #FF0080, #FF00FF);" text="Supprimer" textFill="WHITE">
          <font>
-            <Font name="Arial" size="14.0" />
-         </font></Button>
-      <Button fx:id="addButton" layoutX="254.0" layoutY="542.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="166.0" style="-fx-background-color: #120854;" text="Ajouter Evenement" textFill="WHITE">
+            <Font name="Impact" size="14.0" />
+         </font>
+      </Button> 
+      <Button fx:id="addButton" layoutX="254.0" layoutY="603.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="166.0" style="-fx-background-color: linear-gradient(to bottom, #d400ff, #7a00cc);" text="Ajouter Evenement" textFill="WHITE">
          <font>
-            <Font name="Arial" size="14.0" />
+            <Font name="Impact" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="254.0" layoutY="16.0" prefHeight="51.0" prefWidth="481.0" text="Liste Des Evenements: " textFill="WHITE">
-         <font>
-            <Font name="Eras Demi ITC" size="22.0" />
-         </font>
+      <Label layoutX="254.0" layoutY="4.0" prefHeight="51.0" prefWidth="481.0" text="Liste des Evenements" textFill="#00FFFF">
+            <font>
+               <Font name="PT Bold Mirror" size="22.0" />
+            </font>
       </Label>
        
-      <Button fx:id="searchButton" layoutX="666.0" layoutY="18.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="82.0" style="-fx-background-color: #9400D3;" text="Recherche" textFill="WHITE">
+      <Button layoutX="1010.0" layoutY="18.0" mnemonicParsing="false" onAction="#linkCalendar" prefHeight="24.0" prefWidth="82.0" style="-fx-background-color: linear-gradient(to bottom, #9400D3, #00FFFF);" text="Calendrier" textFill="WHITE">
       <font>
-            <Font name="Arial" size="12.0" />
+            <Font name="Impact" size="12.0" />
          </font>
       </Button>
-      <TextField fx:id="searchField" layoutX="755.0" layoutY="19.0" prefHeight="22.0" prefWidth="180.0" />
+      <TextField fx:id="searchField" layoutX="1099.0" layoutY="19.0" prefHeight="22.0" prefWidth="180.0" />
    </children>
 </AnchorPane>

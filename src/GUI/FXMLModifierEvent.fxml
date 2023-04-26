@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="618.0" prefWidth="442.0" style="-fx-background-color: #2A2A67;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLControllerModifierE">
+<AnchorPane id="AnchorPane" prefHeight="618.0" prefWidth="442.0" style="-fx-background-color: linear-gradient(to bottom, #13001e, #150029, #170033, #19003e); " xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLControllerModifierE">
    <children>
         <Label layoutX="24.0" layoutY="8.0" prefHeight="51.0" prefWidth="481.0" text="Modifier Evenements: " textFill="WHITE">
          <font>
-            <Font name="Eras Demi ITC" size="22.0" />
+            <Font name="Impact" size="22.0" />
          </font>
       </Label>
       <TextField fx:id="TFNom" layoutX="216.0" layoutY="77.0" prefHeight="27.0" prefWidth="221.0" />
@@ -58,18 +58,18 @@
       <TextField fx:id="TFPrix" layoutX="216.0" layoutY="293.0" prefHeight="25.0" prefWidth="221.0" />
       <TextField fx:id="TFAffiche" layoutX="216.0" layoutY="175.0" prefHeight="27.0" prefWidth="157.0" />
       
-         <Button layoutX="245.0" layoutY="553.0" mnemonicParsing="false" onAction="#modifier" prefHeight="43.0" prefWidth="174.0" style="-fx-background-color: #FF00FF;" text="Modifier Evenement" textFill="WHITE">
+         <Button layoutX="245.0" layoutY="553.0" mnemonicParsing="false" onAction="#modifier" prefHeight="43.0" prefWidth="174.0" style="-fx-background-color: linear-gradient(to bottom, #d400ff, #7a00cc);" text="Modifier Evenement" textFill="WHITE">
          <font>
-            <Font name="Arial" size="14.0" />
+            <Font name="Impact" size="14.0" />
          </font>
       </Button>
-          <Button fx:id="backButtonEdit" layoutX="43.0" layoutY="569.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="132.0" style="-fx-background-color: #40E0D0;" text="Retour Liste" textFill="WHITE">
+          <Button fx:id="backButtonEdit" layoutX="43.0" layoutY="569.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="132.0" style="-fx-background-color: linear-gradient(to bottom, #00FFFF, #40E0D0);" text="Retour Liste" textFill="WHITE">
          <font>
-            <Font name="Arial" size="15.0" />
+            <Font name="Impact" size="15.0" />
          </font></Button>
-         <Button fx:id="chooseAffiche" layoutX="377.0" layoutY="177.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="64.0" style="-fx-background-color: #9400D3;" text="Choisir" textFill="WHITE">
+         <Button fx:id="chooseAffiche" layoutX="377.0" layoutY="177.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="64.0" style="-fx-background-color: linear-gradient(to bottom, #FF0080, #FF00FF);" text="Choisir" textFill="WHITE">
       <font>
-            <Font name="Arial" size="12.0" />
+            <Font name="Impact" size="12.0" />
          </font>
       </Button>
       <ImageView fitHeight="124.0" fitWidth="107.0" layoutX="420.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">

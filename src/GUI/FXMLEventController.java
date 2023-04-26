@@ -234,6 +234,15 @@ public class FXMLEventController implements Initializable{
                 window.setScene(sponsorScene);
                 window.show();
             }
+            
+            @FXML
+            private void linkCalendar(ActionEvent event) throws IOException {
+                Parent sponsorView = FXMLLoader.load(getClass().getResource("FXMLCalendar.fxml"));
+                Scene sponsorScene = new Scene(sponsorView);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(sponsorScene);
+                window.show();
+            }
 
 
     
