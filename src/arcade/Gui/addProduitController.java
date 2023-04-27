@@ -129,7 +129,7 @@ public class addProduitController implements Initializable{
         quantiteError.setText("");
         
         if (nomProduit.getText().length() != 0 && description.getText().length() != 0  && categories.getSelectionModel().isEmpty() == false && image.getText().length() != 0) {
-            if (Pattern.matches("^[a-zA-Z]*$", nomProduit.getText()) == true && Pattern.matches("^[a-zA-Z]*$", description.getText()) == true && Pattern.matches("^[0-9]*$", prix.getText()) == true && Pattern.matches("^[0-9]*$", quantite.getText()) == true && Integer.parseInt(quantite.getText()) > -1 && Integer.parseInt(prix.getText()) > -1) {
+            if (Pattern.matches("^[a-zA-Z0-9 ,-/?:.]*$", nomProduit.getText()) == true && Pattern.matches("^[a-zA-Z0-9 ,-/?:.]*$", description.getText()) == true && Pattern.matches("^[0-9]*$", prix.getText()) == true && Pattern.matches("^[0-9]*$", quantite.getText()) == true && Integer.parseInt(quantite.getText()) > -1 && Integer.parseInt(prix.getText()) > -1) {
             
                 p.setNomProduit(nomProduit.getText());
                 p.setDescription(description.getText());
@@ -221,7 +221,7 @@ public class addProduitController implements Initializable{
 
         }
         }
-        //upload image
+
     private Desktop desktop = Desktop.getDesktop();
     Stage primaryStage;
 

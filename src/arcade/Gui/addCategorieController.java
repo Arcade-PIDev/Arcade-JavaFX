@@ -92,7 +92,7 @@ public class addCategorieController implements Initializable{
         imageError.setText("");
 
         if (nomCategorie.getText().length() != 0 && descriptionCategorie.getText().length() != 0 && imageCategorie.getText().length() != 0) {
-            if (Pattern.matches("^[a-zA-Z]*$", nomCategorie.getText()) == true && Pattern.matches("^[a-zA-Z]*$", descriptionCategorie.getText()) == true) {
+            if (Pattern.matches("^[a-zA-Z /,.]*$", nomCategorie.getText()) == true && Pattern.matches("^[a-zA-Z /,.]*$", descriptionCategorie.getText()) == true) {
 
                 cat.setNomCategorie(nomCategorie.getText());
                 cat.setDescription(descriptionCategorie.getText());

@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="contentCategorie" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.addCategorieController">
    <children>
-      <VBox fx:id="content" alignment="TOP_CENTER" fillWidth="false" layoutX="125.0" layoutY="69.0" prefHeight="713.0" prefWidth="1012.0" spacing="10.0">
+      <VBox fx:id="content" alignment="TOP_CENTER" fillWidth="false" layoutX="122.0" layoutY="300.0" prefHeight="469.0" prefWidth="1012.0" spacing="10.0">
          <children>
             <TextField fx:id="nomCategorie" blendMode="COLOR_BURN" prefHeight="64.0" prefWidth="417.0" promptText="Nom Categorie" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
                <VBox.margin>
@@ -59,7 +59,7 @@
             <Insets />
          </opaqueInsets>
       </VBox>
-      <Label layoutX="27.0" layoutY="7.0" prefHeight="75.0" prefWidth="357.0" style="-fx-font-weight: bold;" text="Ajout Categorie" textFill="WHITE">
+      <Label layoutX="61.0" layoutY="114.0" prefHeight="75.0" prefWidth="357.0" style="-fx-font-weight: bold;" text="Ajout Categorie" textFill="WHITE">
          <font>
             <Font size="46.0" />
          </font>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
@@ -17,5 +18,15 @@
       <Line endX="100.0" layoutX="141.0" layoutY="146.0" startX="-100.0" stroke="#f8f9fc" />
       <Label fx:id="prix" alignment="CENTER" layoutX="41.0" layoutY="175.0" prefHeight="89.0" prefWidth="201.0" text="Label" textFill="#f8f9fc" />
       <Label fx:id="prodId" layoutX="27.0" layoutY="211.0" prefHeight="17.0" prefWidth="55.0" visible="false" />
+      <ImageView fx:id="cartbtn" fitHeight="33.0" fitWidth="33.0" layoutX="225.0" layoutY="190.0" onMouseClicked="#addProductToCart" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/panier.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="wishlistBtn" fitHeight="33.0" fitWidth="33.0" layoutX="25.0" layoutY="190.0" onMouseClicked="#removeProductFromWishlist" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/full.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

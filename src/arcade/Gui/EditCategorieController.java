@@ -76,11 +76,11 @@ public class EditCategorieController implements Initializable {
     @FXML
     private void editCategorie(ActionEvent event) {
         if (nomCategorie.getText().length() != 0 && description.getText().length() != 0) {
-            if (Pattern.matches("^[a-zA-Z]*$", nomCategorie.getText()) == true && Pattern.matches("^[a-zA-Z]*$", description.getText()) == true) {
+            if (Pattern.matches("^[a-zA-Z /,.]*$", nomCategorie.getText()) == true && Pattern.matches("^[a-zA-Z /,.]*$", description.getText()) == true) {
 
                 categorie.setNomCategorie(nomCategorie.getText());
                 categorie.setDescription(description.getText());
-
+                
                 CategorieService serv = new CategorieService();
                 try {
                     serv.update(categorie);
@@ -100,10 +100,10 @@ public class EditCategorieController implements Initializable {
                     System.out.println(ex.getMessage());
                 }
             } else {
-                if (Pattern.matches("^[a-zA-Z]*$", nomCategorie.getText()) == false) {
+                if (Pattern.matches("^[a-zA-Z /,.]*$", nomCategorie.getText()) == false) {
                     nomCategorieError.setText("Seulement des lettres");
                 }
-                if (Pattern.matches("^[a-zA-Z]*$", description.getText()) == false) {
+                if (Pattern.matches("^[a-zA-Z /,.]*$", description.getText()) == false) {
                     descriptionError.setText("Seulement des lettres");
                 }
             }
@@ -115,10 +115,10 @@ public class EditCategorieController implements Initializable {
             if (description.getText().length() == 0) {
                 descriptionError.setText("Champs Obligatoire");
             }
-            if (Pattern.matches("^[a-zA-Z]*$", nomCategorie.getText()) == false) {
+            if (Pattern.matches("^[a-zA-Z /,.]*$", nomCategorie.getText()) == false) {
                 nomCategorieError.setText("Seulement des lettres");
             }
-            if (Pattern.matches("^[a-zA-Z]*$", description.getText()) == false) {
+            if (Pattern.matches("^[a-zA-Z /,.]*$", description.getText()) == false) {
                 descriptionError.setText("Seulement des lettres");
             }
         }

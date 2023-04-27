@@ -32,6 +32,8 @@ public class HomeFrontController implements Initializable {
     @FXML
     private MenuItem btnPanier;
     @FXML
+    private MenuItem btnWishlist;
+    @FXML
     private MenuItem btnProduits;
     @FXML
     private Label title;
@@ -68,6 +70,17 @@ public class HomeFrontController implements Initializable {
                 Logger.getLogger(ProduitFrontController.class.getName()).log(Level.SEVERE, null, ex);
             }
           }
+          else if(event.getSource() == btnWishlist){
+               title.setVisible(true);
+                title.setText("Wishlist");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Wishlist.fxml"));
+                Parent root = loader.load();
+                content.getChildren().add(root);
+            } catch (Exception ex) {
+                Logger.getLogger(PanierController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
           else if(event.getSource() == btnPanier){
                title.setVisible(true);
                 title.setText("Panier");
@@ -79,6 +92,7 @@ public class HomeFrontController implements Initializable {
                 Logger.getLogger(PanierController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+           
     }
     
     

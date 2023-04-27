@@ -26,7 +26,7 @@ public class Arcade extends Application{
     @Override
     public void start(Stage primaryStage) throws IOException{
     //try {
-        Parent root = FXMLLoader.load(getClass().getResource("Gui/HomeFront.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Gui/Home.fxml"));
         Scene scene = new Scene(root,1680,900);
         primaryStage.setScene(scene);
 

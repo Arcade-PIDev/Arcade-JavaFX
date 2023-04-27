@@ -22,6 +22,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Line;
 
 /**
  * FXML Controller class
@@ -32,20 +33,6 @@ public class HomeController implements Initializable {
 
     @FXML
     private AnchorPane anchorPane;
-    @FXML
-    private Button btnOverview;
-    @FXML
-    private Button btnUsers;
-    @FXML
-    private Button btnGames;
-    @FXML
-    private Button btnSettings;
-    @FXML
-    private Button btnSignout;
-    @FXML
-    private ImageView userImage;
-    @FXML
-    private Label usernameLabel;
     @FXML
     private Label titleLabel;
     @FXML
@@ -58,6 +45,8 @@ public class HomeController implements Initializable {
     private Button btnCategories;
     @FXML
     private Button btnProducts;
+    @FXML
+    private Line line;
 
     /**
      * Initializes the controller class.
@@ -84,7 +73,6 @@ public class HomeController implements Initializable {
         }
           else if(titleLabel.getText().equals("Produits")){
             mainContent.getChildren().removeAll(mainContent.getChildren());
-            addBtn.setVisible(true);
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("addProduit.fxml"));
                 Parent root = loader.load();
@@ -100,8 +88,11 @@ public class HomeController implements Initializable {
     @FXML
     private void handleClicks(ActionEvent event) {
         if (event.getSource() == btnCategories) {
+            affichage.getChildren().removeAll(affichage.getChildren());
             titleLabel.setText("Categories");
             addBtn.setVisible(true);
+            titleLabel.setVisible(true);
+            line.setVisible(true);
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Categorie.fxml"));
                 Parent root = loader.load();
@@ -113,8 +104,11 @@ public class HomeController implements Initializable {
 
         }
          else if (event.getSource() == btnProducts) {
+            affichage.getChildren().removeAll(affichage.getChildren());
             titleLabel.setText("Produits");
             addBtn.setVisible(true);
+            titleLabel.setVisible(true);
+            line.setVisible(true);
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Produit.fxml"));
                 Parent root = loader.load();
@@ -132,6 +126,9 @@ public class HomeController implements Initializable {
     public void changePage(String state) {
         if (state.equals("Categories")) {
             titleLabel.setText("Categories");
+            addBtn.setVisible(true);
+            titleLabel.setVisible(true);
+            line.setVisible(true);
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Categorie.fxml"));
                 Parent root = loader.load();
@@ -154,6 +151,9 @@ public class HomeController implements Initializable {
             }
         }
         else if (state.equals("Produits")) {
+            addBtn.setVisible(true);
+            titleLabel.setVisible(true);
+            line.setVisible(true);
             titleLabel.setText("Produits");
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Produit.fxml"));

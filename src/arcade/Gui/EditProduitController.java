@@ -121,7 +121,7 @@ public class EditProduitController implements Initializable {
         quantiteError.setText("");
         
         if (nomProduit.getText().length() != 0 && description.getText().length() != 0  && categories.getSelectionModel().isEmpty() == false) {
-            if (Pattern.matches("^[a-zA-Z]*$", nomProduit.getText()) == true && Pattern.matches("^[a-zA-Z]*$", description.getText()) == true && Pattern.matches("^[0-9]*$", prix.getText()) == true && Pattern.matches("^[0-9]*$", quantite.getText()) == true && Integer.parseInt(quantite.getText()) > -1 && Integer.parseInt(prix.getText()) > -1) {
+            if (Pattern.matches("^[a-zA-Z0-9 ,-/?:.]*$", nomProduit.getText()) == true && Pattern.matches("^[a-zA-Z0-9 ,-/?:.]*$", description.getText()) == true && Pattern.matches("^[0-9]*$", prix.getText()) == true && Pattern.matches("^[0-9]*$", quantite.getText()) == true && Integer.parseInt(quantite.getText()) > -1 && Integer.parseInt(prix.getText()) > -1) {
             
                 p.setNomProduit(nomProduit.getText());
                 p.setDescription(description.getText());
@@ -151,11 +151,12 @@ public class EditProduitController implements Initializable {
                 } catch (Exception ex) {
                     System.out.println(ex.getMessage());
                 }
-            } else {
-                if (Pattern.matches("^[a-zA-Z]*$", nomProduit.getText()) == false) {
+            }
+                else {
+                if (Pattern.matches("^[a-zA-Z0-9 ,-/?:.]*$", nomProduit.getText()) == false) {
                     nomProduitError.setText("Seulement des lettres");
                 }
-                if (Pattern.matches("^[a-zA-Z]*$", description.getText()) == false) {
+                if (Pattern.matches("^[a-zA-Z0-9 ,-/?:.]*$", description.getText()) == false) {
                     descriptionError.setText("Seulement des lettres");
                 }
                 if (Pattern.matches("^[0-9\\.\\-\\/]*$", prix.getText()) == false) {
@@ -181,9 +182,6 @@ public class EditProduitController implements Initializable {
                 descriptionError.setText("Champs Obligatoire");
             }
 
-            if (categories.getSelectionModel().isEmpty()) {
-                categoriesError.setText("Choisir categorie");
-            }
             if (prix.getText().length() == 0) {
                 prixError.setText("Champs Obligatoire");
             }
@@ -191,10 +189,10 @@ public class EditProduitController implements Initializable {
             if (quantite.getText().length() == 0) {
                 quantiteError.setText("Champs Obligatoire");
             }
-            if (Pattern.matches("^[a-zA-Z]*$", nomProduit.getText()) == false) {
+            if (Pattern.matches("^[a-zA-Z0-9 ,-/?:.]*$", nomProduit.getText()) == false) {
                 nomProduitError.setText("Seulement des lettres");
             }
-            if (Pattern.matches("^[a-zA-Z]*$", description.getText()) == false) {
+            if (Pattern.matches("^[a-zA-Z0-9 ,-/?:.]*$", description.getText()) == false) {
                 descriptionError.setText("Seulement des lettres");
             }
             if (Pattern.matches("^[0-9\\.\\-\\/]*$", prix.getText()) == false) {

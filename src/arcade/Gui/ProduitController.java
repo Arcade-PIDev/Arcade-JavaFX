@@ -32,6 +32,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.FlowPane;
 import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -89,6 +90,13 @@ public class ProduitController implements Initializable {
                     cont.setIsEnabled(c.isIsEnabled()+"");
 
                     contentProd.getChildren().add(root);
+                    
+                    if ( c.getQuantiteStock()== 0) {
+                        Image img=new Image("arcade/images/warning.png");
+                        Notifications notfBuilder = Notifications.create().title("Warning!!").text("The quantity of the product: "+c.getNomProduit()+" is zero")
+                        .darkStyle().graphic(new ImageView (img)).hideAfter(Duration.seconds(10)).position(Pos.BOTTOM_RIGHT);
+                        notfBuilder.show();
+                    }
                 } catch (IOException ex) {
                     Logger.getLogger(ContentProduitController.class.getName()).log(Level.SEVERE, null, ex);
                 }

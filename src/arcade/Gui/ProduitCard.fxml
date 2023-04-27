@@ -18,12 +18,12 @@
       <Line endX="100.0" layoutX="141.0" layoutY="146.0" startX="-100.0" stroke="#f8f9fc" />
       <Label fx:id="price" alignment="CENTER" layoutX="41.0" layoutY="175.0" prefHeight="89.0" prefWidth="201.0" text="Label" textFill="#f8f9fc" />
       <Label fx:id="prodId" layoutX="27.0" layoutY="211.0" prefHeight="17.0" prefWidth="55.0" visible="false" />
-      <ImageView fx:id="cartbtn" fitHeight="32.0" fitWidth="33.0" layoutX="233.0" layoutY="197.0" onMouseClicked="#addProductToCart" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+      <ImageView fx:id="cartbtn" fitHeight="33.0" fitWidth="33.0" layoutX="233.0" layoutY="197.0" onMouseClicked="#addProductToCart" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
          <image>
             <Image url="@../images/panier.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="wishlistBtn" fitHeight="32.0" fitWidth="33.0" layoutX="23.0" layoutY="195.0" onMouseClicked="#addProductToWishlist" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+      <ImageView fx:id="wishlistBtn" fitHeight="33.0" fitWidth="33.0" layoutX="23.0" layoutY="195.0" onMouseClicked="#addProductToWishlist" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
          <image>
             <Image url="@../images/empty.png" />
          </image>

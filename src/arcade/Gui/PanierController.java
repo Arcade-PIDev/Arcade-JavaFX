@@ -94,7 +94,6 @@ public class PanierController implements Initializable{
                     c.setPrixTotal(prixTotal);
                     cs.ajouterCommande(c);
                     
-
                     FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("HomeFront.fxml"));
                     Parent homeRoot = homeLoader.load();
                     HomeFrontController homeCtrl = homeLoader.getController();

@@ -41,11 +41,7 @@ public class ProduitFrontController implements Initializable{
             
             FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeFront.fxml"));
 
-                //Parent root = loader.load();
                 HomeFrontController cont = loader.getController();
-/*                int c = cont.getCat("");
-                System.out.println("qsdqsdqsd:" + c);
-                System.out.println("qsdqsdqsd:");*/
             try {
 
             List<Produit> products = ps.afficher();
@@ -80,5 +76,5 @@ public class ProduitFrontController implements Initializable{
         } catch (Exception ex) {
                     Logger.getLogger(ProduitFrontController.class.getName()).log(Level.SEVERE, null, ex);
                 }
-    }    
+    }
 }

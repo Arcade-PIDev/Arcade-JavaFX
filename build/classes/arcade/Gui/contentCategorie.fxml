@@ -2,60 +2,56 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="84.0" prefWidth="1269.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.ContentCategorieController">
+
+<AnchorPane id="AnchorPane" prefHeight="85.0" prefWidth="1300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="arcade.Gui.ContentCategorieController">
    <children>
-      <HBox fx:id="itemC" alignment="CENTER_LEFT" layoutX="2.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="1266.0" spacing="50.0" style="-fx-background-color: null;">
+      <HBox alignment="CENTER_LEFT" prefHeight="90.0" prefWidth="1300.0" spacing="50.0" style="-fx-background-color: null;">
          <children>
-            <Label fx:id="idCategorie" maxWidth="85.0" minWidth="15.0" prefHeight="27.0" prefWidth="85.0" text="idCategorie" textFill="#b7c3d7">
+            <Label fx:id="idCategorie" maxWidth="85.0" minWidth="15.0" prefHeight="27.0" prefWidth="85.0" style="-fx-font-weight: bold;" text="idCategorie" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="nomCategorie" maxWidth="124.0" minWidth="65.0" prefHeight="27.0" prefWidth="124.0" text="nomCategorie" textFill="#b7c3d7">
+            <Label fx:id="nomCategorie" maxWidth="124.0" minWidth="65.0" prefHeight="27.0" prefWidth="124.0" style="-fx-font-weight: bold;" text="nomCategorie" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="descriptionCategorie" maxWidth="116.0" minWidth="65.0" prefHeight="27.0" prefWidth="109.0" text="description" textFill="#b7c3d7">
+            <Label fx:id="descriptionCategorie" maxWidth="116.0" minWidth="65.0" prefHeight="27.0" prefWidth="109.0" style="-fx-font-weight: bold;" text="description" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <ImageView fx:id="imageCategorie" fitHeight="58.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../../xampp/htdocs/pi/public/eshop/categorie/9b312093b4c0b710fffcc7d3128115fe.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="creationDate" maxWidth="132.0" minWidth="67.0" prefHeight="27.0" prefWidth="132.0" text="creationDate" textFill="#b7c3d7">
+            <ImageView fx:id="imageCategorie" fitHeight="82.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="creationDate" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" style="-fx-font-weight: bold;" text="creationDate" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="modificationDate" maxWidth="171.0" minWidth="77.0" prefHeight="27.0" prefWidth="161.0" text="modificationDate" textFill="#b7c3d7">
+            <Label fx:id="modificationDate" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" style="-fx-font-weight: bold;" text="modificationDate" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="isEnabled" maxWidth="84.0" minWidth="47.0" prefHeight="27.0" prefWidth="84.0" text="isEnabled" textFill="#b7c3d7">
+            <Label fx:id="isEnabled" style="-fx-font-weight: bold;" text="isEnabled" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="79.0" spacing="25.0">
+            <HBox alignment="CENTER" prefHeight="129.0" prefWidth="195.0" spacing="25.0">
                <children>
-                  <ImageView fx:id="EditCategorie" fitHeight="21.0" fitWidth="21.0" onMouseClicked="#EditCategorie" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                  <ImageView fx:id="EditCategorie" blendMode="SCREEN" fitHeight="21.0" fitWidth="21.0" onMouseClicked="#EditCategorie" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                      <image>
                         <Image url="@../images/edit.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="deleteCategorie" fitHeight="21.0" fitWidth="21.0" onMouseClicked="#deleteCategorie" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                  <ImageView fx:id="deleteCategorie" blendMode="SCREEN" fitHeight="21.0" fitWidth="21.0" onMouseClicked="#deleteCategorie" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                      <image>
                         <Image url="@../images/delete.png" />
                      </image>
@@ -66,9 +62,6 @@
                </HBox.margin>
             </HBox>
          </children>
-         <effect>
-            <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
-         </effect>
       </HBox>
    </children>
 </AnchorPane>

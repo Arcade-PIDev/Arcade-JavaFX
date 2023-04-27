@@ -77,10 +77,7 @@ public class CategorieCardController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("homeFront.fxml"));
             Parent root = loader.load();
             HomeFrontController cont = loader.getController();
-            //cont.changePage("Produit",this.catId.getText());
             cont.changePage("Produit");
-            //cont.getCat(this.catId.getText());
-
             
             goToProductBtn.getScene().setRoot(root);
 

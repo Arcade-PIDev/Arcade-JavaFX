@@ -111,12 +111,12 @@ public class ProduitService implements IService<Produit>{
         
     @Override
     public void update(Produit t) throws SQLException {
-        String req = "UPDATE `Produit` SET `nom_produit`=" + t.getNomProduit()
-                + ",`prix`=" + t.getPrix() + ",`quantite_stock`=" + t.getQuantiteStock()
-                + ",`categorie_id`=" + t.getCategorie()
-                + ",`description`=" + t.getDescription()
-                + ",`modification_date`=NOW(),`is_enabled`=" + t.isIsEnabled() + " WHERE `id`=" + t.getId();
-                
+
+        String req = "UPDATE `Produit` SET `nom_produit`='" + t.getNomProduit()
+                + "',`prix`='" + t.getPrix() + "',`quantite_stock`='" + t.getQuantiteStock()
+                + "',`categorie_id`='" + t.getCategorie()
+                + "',`description`='" + t.getDescription()
+                + "',`modification_date`=NOW(),`is_enabled`=" + t.isIsEnabled() + " WHERE `id`=" + t.getId() + "";
         PreparedStatement pstm = con.prepareStatement(req);
         pstm.executeUpdate();
     }

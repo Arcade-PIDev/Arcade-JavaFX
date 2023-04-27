@@ -21,6 +21,7 @@ import javafx.geometry.Pos;
 import javafx.util.Duration;
 import static arcade.Arcade.panier;
 import arcade.Service.WishlistService;
+import org.controlsfx.control.Notifications;
 
 /**
  * FXML Controller class
@@ -73,9 +74,14 @@ public class ProduitCardController implements Initializable {
         if (panier.containsKey(Integer.parseInt(prodId.getText()))) {
             qt = panier.get(Integer.parseInt(prodId.getText()));
             panier.put(Integer.parseInt(prodId.getText()), qt + 1);
+            Notifications notfBuilder = Notifications.create().title("Quantity Ordered increased")
+                    .darkStyle().hideAfter(Duration.seconds(3)).position(Pos.BOTTOM_RIGHT);
+            notfBuilder.show();
         } else {
             panier.put(Integer.parseInt(prodId.getText()), 1);
-            //System.out.print(panier.keySet());
+            Notifications notfBuilder = Notifications.create().title("Item added to Cart")
+                    .darkStyle().hideAfter(Duration.seconds(3)).position(Pos.BOTTOM_RIGHT);
+            notfBuilder.show();
         }
 
     }

@@ -4,6 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,11 +14,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1580.0" style="-fx-background-color: #1d0761;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.HomeController">
-   <children>
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1580.0" style="-fx-background-color: #1d0761;-fx-background-image: url('file:C:/Users/Amira/Desktop/esprit/me/arcade/src/arcade/images/rsz_2abstract-neon-background-free-vector.png');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.HomeController">
+    <children>
       <Pane fx:id="mainContent" layoutX="300.0" layoutY="5.0" prefHeight="892.0" prefWidth="1234.0" style="-fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-size: auto;">
          <children>
-            <Button fx:id="addBtn" layoutX="1065.0" layoutY="18.0" mnemonicParsing="false" onAction="#addBtn" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em;" text="Ajouter" textFill="WHITE">
+            <Button fx:id="addBtn" visible="false" layoutX="1065.0" layoutY="18.0" mnemonicParsing="false" onAction="#addBtn" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em;" text="Ajouter" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -25,28 +26,28 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label fx:id="titleLabel" layoutX="127.0" layoutY="40.0" text="Title" textFill="#f8f8f8">
+            <Label fx:id="titleLabel" visible="false" layoutX="127.0" layoutY="40.0" text="Title" textFill="#f8f8f8">
                <font>
                   <Font name="Segoe UI" size="36.0" />
                </font>
             </Label>
-            <Line endX="1038.0" layoutX="164.0" layoutY="92.0" startX="-54.0" stroke="WHITE" strokeWidth="2.0" />
+            <Line fx:id="line" visible="false" endX="1038.0" layoutX="164.0" layoutY="92.0" startX="-54.0" stroke="WHITE" strokeWidth="2.0" />
             <Pane fx:id="affichage" layoutX="40.0" layoutY="113.0" prefHeight="766.0" prefWidth="1134.0" />
          </children>
       </Pane>
-      <VBox fx:id="vbox" alignment="TOP_CENTER" layoutY="1.0" prefHeight="900.0" prefWidth="276.0" spacing="20.0" style="-fx-background-color: #0e063d;">
+      <VBox fx:id="vbox" alignment="TOP_CENTER" layoutY="-6.0" prefHeight="907.0" prefWidth="284.0" spacing="20.0" style="-fx-background-image: url('file:C:/Users/Amira/Desktop/esprit/me/arcade/src/arcade/images/clear1.png');">
          <children>
             <VBox alignment="CENTER" prefHeight="203.0" prefWidth="195.0">
                <children>
                   <ImageView fx:id="userImage" fitHeight="95.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../pic.png" />
+                        <Image url="@../images/pic.png" />
                      </image>
                      <VBox.margin>
                         <Insets bottom="10.0" top="50.0" />
                      </VBox.margin>
                   </ImageView>
-                  <Label fx:id="usernameLabel" alignment="CENTER" prefHeight="48.0" prefWidth="120.0" text="Username" textFill="#e7e5e5">
+                  <Label fx:id="usernameLabel" alignment="CENTER" prefHeight="48.0" prefWidth="120.0" text="Amira">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
@@ -87,6 +88,13 @@
                </font>
             </Button>
          </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <Blend />
+         </effect>
+
       </VBox>
    </children>
    <effect>
