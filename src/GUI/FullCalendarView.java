@@ -113,22 +113,45 @@ public class FullCalendarView {
               int col = allCalendarDays.indexOf(ap) % 7;
               int dayNumber = row * 7 + col + 1 - firstOfMonth.getDayOfWeek().getValue();
               if (dayNumber > 0 && dayNumber <= daysInMonth) {
-                  VBox vbox = new VBox();
-                  Label label = new Label(Integer.toString(dayNumber));
-                  label.setStyle("-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-weight: bold;");
+                VBox vbox = new VBox();
+                Label label = new Label(Integer.toString(dayNumber));
+                label.setStyle("-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-weight: bold;");
+                vbox.getChildren().addAll(label);
+                ap.getChildren().add(vbox);
+                AnchorPane.setTopAnchor(vbox, 5.0);
+                AnchorPane.setLeftAnchor(vbox, 5.0);
+                AnchorPane.setRightAnchor(vbox, 5.0);
 
-                  vbox.getChildren().addAll(label);
-                  // Check if there are any events on this day
-                   if (events != null && !events.isEmpty()) {
-                      for (Evenement event : events) {
-                          highlightDays(event, yearMonth);
-                      }
-                   }
-                  ap.getChildren().add(vbox);
-                  AnchorPane.setTopAnchor(vbox, 5.0);
-                  AnchorPane.setLeftAnchor(vbox, 5.0);
-                  AnchorPane.setRightAnchor(vbox, 5.0);
-                  AnchorPane.setBottomAnchor(vbox, 5.0);
+            // Check if there are any events on this day
+            if (events != null && !events.isEmpty()) {
+                for (Evenement event : events) {
+                    Date startDate = event.getDateDebutE();
+                    Date endDate = event.getDateFinE();
+                    String eventName = event.getNomEvent();
+
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.setTime(startDate);
+
+            // Highlight the days in the range of the event in the specified month
+            while (calendar.getTime().before(endDate) || calendar.getTime().equals(endDate)) {
+                int eventDayNumber = calendar.get(Calendar.DAY_OF_MONTH);
+                if (calendar.get(Calendar.MONTH) == yearMonth.getMonthValue() - 1 && eventDayNumber == dayNumber) {
+                    // Create a VBox with the event name and set its style
+                    VBox eventBox = new VBox();
+                    eventBox.setStyle("-fx-background-color:  #781e77 ; -fx-padding: 2px;");
+                    Label eventNameLabel = new Label(eventName);
+                    eventNameLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold;");
+                    eventBox.getChildren().add(eventNameLabel);
+
+                    ap.getChildren().add(eventBox);
+                    AnchorPane.setTopAnchor(eventBox, 5.0);
+                    AnchorPane.setLeftAnchor(eventBox, 5.0);
+                    AnchorPane.setRightAnchor(eventBox, 5.0);
+                }
+                calendar.add(Calendar.DAY_OF_MONTH, 1); 
+            }
+        }
+    }
                   // Highlight the day if it is today's date
                   if (LocalDate.now().equals(yearMonth.atDay(dayNumber))) {
                       ap.setStyle("-fx-background-color:  #413f63; -fx-border-color: #ff6b00;");
@@ -164,40 +187,7 @@ public class FullCalendarView {
             return view;
         }
     
-        public void highlightDays(Evenement event, YearMonth yearMonth) {
-            Date startDate = event.getDateDebutE();
-            Date endDate = event.getDateFinE();
-            String eventName = event.getNomEvent();
-
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(startDate);
-
-            // Highlight the days in the range of the event in the specified month
-            while (calendar.getTime().before(endDate) || calendar.getTime().equals(endDate)) {
-                int dayNumber = calendar.get(Calendar.DAY_OF_MONTH);
-                if (calendar.get(Calendar.MONTH) == yearMonth.getMonthValue() - 1) {
-                    AnchorPane ap = allCalendarDays.get(dayNumber - 1);
-
-                    // Create a VBox with the event name and set its style
-                    VBox eventBox = new VBox();
-                    eventBox.setStyle("-fx-background-color:  #781e77 ; -fx-padding: 2px;");
-                    Label eventNameLabel = new Label(eventName);
-                    eventNameLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold;");
-                    eventBox.getChildren().add(eventNameLabel);
-
-                    ap.getChildren().add(eventBox);
-                    AnchorPane.setTopAnchor(eventBox, 5.0);
-                    AnchorPane.setLeftAnchor(eventBox, 5.0);
-                    AnchorPane.setRightAnchor(eventBox, 5.0);
-                }
-                calendar.add(Calendar.DAY_OF_MONTH, 1); 
-
-               
-            }
-        }
-
-
-
+       
 
 }
 
