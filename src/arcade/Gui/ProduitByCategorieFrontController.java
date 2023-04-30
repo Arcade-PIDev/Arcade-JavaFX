@@ -22,13 +22,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.FlowPane;
 import arcade.Service.WishlistService;
+import static arcade.Arcade.categorieId;
 
 /**
  * FXML Controller class
  *
  * @author Amira
  */
-public class ProduitFrontController implements Initializable{
+public class ProduitByCategorieFrontController implements Initializable{
     @FXML
     public FlowPane content;
     
@@ -44,7 +45,7 @@ public class ProduitFrontController implements Initializable{
                 HomeFrontController cont = loader.getController();
             try {
 
-            List<Produit> products = ps.afficher();
+            List<Produit> products = ps.getProduitByCategorie(categorieId);
 
         
             for (Produit p : products) {
@@ -61,25 +62,30 @@ public class ProduitFrontController implements Initializable{
                         itemController.setQuantite(p.getQuantiteStock()+ "");
                         itemController.setId(p.getId() + "");
                         itemController.setImage("http://127.0.0.1/pi/public/eshop/produit/"+p.getImage());
-
+                        
                         WishlistService ws=new WishlistService();
+                        
                         if( ws.afficher().contains(p.getId())){
                         itemController.setWishlist("http://127.0.0.1/pi/public/eshop/" +"full.png");
                         }
-
-                        content.getChildren().add(root);
                         
+                        content.getChildren().add(root);
                     }
+                    
+
+
+                    
+                    
                 } catch (IOException ex) {
-                    Logger.getLogger(ProduitFrontController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ProduitByCategorieFrontController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ProduitFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ProduitByCategorieFrontController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         } catch (Exception ex) {
-                    Logger.getLogger(ProduitFrontController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ProduitByCategorieFrontController.class.getName()).log(Level.SEVERE, null, ex);
                 }
     }
 }

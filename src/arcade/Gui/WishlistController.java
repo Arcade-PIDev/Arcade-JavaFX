@@ -59,7 +59,7 @@ public class WishlistController implements Initializable {
                     }
 
                 } catch (IOException ex) {
-                    Logger.getLogger(ProduitFrontController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ProduitByCategorieFrontController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 

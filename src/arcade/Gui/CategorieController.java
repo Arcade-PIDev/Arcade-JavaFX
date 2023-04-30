@@ -39,6 +39,7 @@ import javafx.scene.layout.FlowPane;
 public class CategorieController implements Initializable {
     @FXML
     private FlowPane content;
+    
     Categorie cat = new Categorie();
     
     @FXML

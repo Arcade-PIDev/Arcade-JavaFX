@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
@@ -45,8 +46,12 @@
                   </Label>
                </children>
             </HBox>
+            <ScrollPane hbarPolicy="NEVER" layoutX="36.0" layoutY="137.0" prefHeight="743.0" prefWidth="1235.0" style="-fx-background-color: transparent; -fx-background: transparent;">
+               <content>
+                  <FlowPane fx:id="content" prefHeight="826.0" prefWidth="1368.0" style="-fx-background-color: null; -fx-background-image: null;" />
+               </content>
+            </ScrollPane>
          </children>
       </Pane>
-      <FlowPane fx:id="content" layoutX="16.0" layoutY="162.0" prefHeight="711.0" prefWidth="1260.0" />
    </children>
 </AnchorPane>

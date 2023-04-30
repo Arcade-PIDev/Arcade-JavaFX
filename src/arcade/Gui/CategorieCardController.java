@@ -25,6 +25,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.event.ActionEvent;
+import static arcade.Arcade.categorieId;
 
 /**
  * FXML Controller class
@@ -74,10 +75,12 @@ public class CategorieCardController implements Initializable {
     @FXML
     public void goToProductBtn(ActionEvent event){
         try {
+            categorieId = Integer.parseInt(this.catId.getText());
+            System.out.println(categorieId);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("homeFront.fxml"));
             Parent root = loader.load();
             HomeFrontController cont = loader.getController();
-            cont.changePage("Produit");
+            cont.changePage("ProduitByCategorie");
             
             goToProductBtn.getScene().setRoot(root);
 

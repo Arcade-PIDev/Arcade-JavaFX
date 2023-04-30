@@ -22,11 +22,12 @@ import javafx.stage.Stage;
 public class Arcade extends Application{
     
     public static Map<Integer,Integer> panier =new HashMap();
+    public static int categorieId;
     
     @Override
     public void start(Stage primaryStage) throws IOException{
     //try {
-        Parent root = FXMLLoader.load(getClass().getResource("Gui/Home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Gui/HomeFront.fxml"));
         Scene scene = new Scene(root,1680,900);
         primaryStage.setScene(scene);
 

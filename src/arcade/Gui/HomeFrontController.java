@@ -67,7 +67,7 @@ public class HomeFrontController implements Initializable {
                 Parent root = loader.load();
                 content.getChildren().add(root);
             } catch (Exception ex) {
-                Logger.getLogger(ProduitFrontController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ProduitByCategorieFrontController.class.getName()).log(Level.SEVERE, null, ex);
             }
           }
           else if(event.getSource() == btnWishlist){
@@ -97,17 +97,26 @@ public class HomeFrontController implements Initializable {
     
     
     public void changePage(String state) {
-        if (state.equals("Produit")) {
+        if (state.equals("ProduitByCategorie")) {
                title.setVisible(true);
          content.getChildren().removeAll(content.getChildren());
                 title.setText("Produits");
-               /* System.out.println(c);
-                System.out.println(Integer.parseInt(c));*/
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ProduitByCategorieFront.fxml"));
+                Parent root = loader.load();
+                content.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        else if (state.equals("Produit")) {
+               title.setVisible(true);
+         content.getChildren().removeAll(content.getChildren());
+                title.setText("Produits");
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("ProduitFront.fxml"));
                 Parent root = loader.load();
-                //ProduitFrontController cont = loader.getController();
-                //cont.getCat(c);
                 content.getChildren().add(root);
 
             } catch (Exception ex) {
@@ -118,13 +127,9 @@ public class HomeFrontController implements Initializable {
                title.setVisible(true);
          content.getChildren().removeAll(content.getChildren());
                 title.setText("validerCommande");
-               /* System.out.println(c);
-                System.out.println(Integer.parseInt(c));*/
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("validerCommande.fxml"));
                 Parent root = loader.load();
-                //ProduitFrontController cont = loader.getController();
-                //cont.getCat(c);
                 content.getChildren().add(root);
 
             } catch (Exception ex) {

@@ -41,7 +41,7 @@ public class PanierController implements Initializable{
     @FXML
     private Button ProceedToCheckout;
     @FXML
-    private Label userName;
+    private Label TotalPrice;
 
     /**
      * Initializes the controller class.
@@ -50,7 +50,9 @@ public class PanierController implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
 
         ProduitService ps = new ProduitService();
-
+        
+        int prixTotal = 0;
+                
         for (Map.Entry<Integer, Integer> entry : panier.entrySet()) {
             //System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue());
             FXMLLoader item = new FXMLLoader(getClass().getResource("PanierItem.fxml"));
@@ -60,13 +62,17 @@ public class PanierController implements Initializable{
                 try {
                     Produit p = ps.getProduitById(entry.getKey());
                     PanierItemController.setProdId(p.getNomProduit());
+                    prixTotal += p.getPrix() * entry.getValue();
+                    TotalPrice.setText(prixTotal+"");
                 } catch (Exception ex) {
                     Logger.getLogger(PanierController.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
                 PanierItemController.setQuantite(entry.getValue());
                 PanierItemController.setProdIdHidden(entry.getKey());
+                
 
+                    
                 content.getChildren().add(itek);
             } catch (IOException ex) {
                 Logger.getLogger(PanierController.class.getName()).log(Level.SEVERE, null, ex);

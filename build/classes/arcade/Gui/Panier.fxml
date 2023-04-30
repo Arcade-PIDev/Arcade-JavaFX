@@ -16,7 +16,7 @@
    <children>
       <ScrollPane hbarPolicy="NEVER" prefHeight="497.0" prefWidth="676.0" style="-fx-background-color: transparent; -fx-background: transparent;">
          <content>
-            <FlowPane fx:id="content" alignment="TOP_CENTER" hgap="15.0" prefHeight="517.0" prefWidth="695.0" style="-fx-background-color: null; -fx-background-image: null;" vgap="15.0">
+            <FlowPane fx:id="content" alignment="TOP_CENTER" hgap="15.0" prefHeight="520.0" prefWidth="697.0" style="-fx-background-color: null; -fx-background-image: null;" vgap="15.0">
                <padding>
                   <Insets left="7.0" right="7.0" />
                </padding>
@@ -45,7 +45,7 @@
             </FlowPane>
          </content>
       </ScrollPane>
-      <VBox alignment="BASELINE_LEFT" layoutX="706.0" layoutY="16.0" prefHeight="332.0" prefWidth="456.0" spacing="10.0" style="-fx-background-color: #4609c3; -fx-background-radius: 6em; -fx-border-radius: 6em;">
+      <VBox alignment="BASELINE_LEFT" layoutX="706.0" layoutY="16.0" prefHeight="413.0" prefWidth="456.0" spacing="10.0" style="-fx-background-color: #4609c3; -fx-background-radius: 6em; -fx-border-radius: 6em;">
          <children>
             <Label text="Commande" textFill="WHITE">
                <VBox.margin>
@@ -73,6 +73,23 @@
                      </font>
                   </Label>
                   <Label fx:id="userName" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="128.0" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="68.0" prefWidth="416.0" spacing="150.0">
+               <children>
+                  <Label text="Prix Total" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="TotalPrice" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="128.0" textFill="WHITE">
                      <font>
                         <Font size="21.0" />
                      </font>
