@@ -140,7 +140,16 @@ public class FXMLControllerModifierE {
                     alert.showAndWait();
                     return;
                 }
-
+                
+                 LocalDate currentDate = LocalDate.now();
+                    if (dateDebutE.isBefore(currentDate)) {
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Erreur");
+                        alert.setHeaderText(null);
+                        alert.setContentText("La date de début doit être après la date actuelle");
+                        alert.showAndWait();
+                        return;
+                    }
 
                 Evenement e = new Evenement();
                    e.setNomEvent(TFNom.getText());

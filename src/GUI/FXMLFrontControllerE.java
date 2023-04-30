@@ -19,25 +19,48 @@ import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.util.Duration;
+
 
 public class FXMLFrontControllerE implements Initializable {
  @FXML
     private FlowPane content;
+ 
+ private Timeline timeline;
 
     /**
      * Initializes the controller class.
      */
+ 
+ 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
         
+        Timeline timeline = new Timeline(
+            new KeyFrame(Duration.ZERO, event -> {
+              Node firstNode = content.getChildren().get(0);
+              content.getChildren().remove(firstNode);
+              content.getChildren().add(firstNode);
+             }),
+            new KeyFrame(javafx.util.Duration.seconds(1.6))
+        );
+        
+        
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+              
+              
         ServiceEvenement serv = new ServiceEvenement();
         try {
             List<Evenement> evList = serv.afficher();
@@ -75,6 +98,8 @@ public class FXMLFrontControllerE implements Initializable {
         }
         
     }
-
+  
+    
+   
  
 }

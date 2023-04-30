@@ -74,7 +74,9 @@ public class FXMLEventController implements Initializable{
 
     @FXML
     private TableColumn<Evenement, String> prixE;
-
+    
+    @FXML
+    private ImageView searchNotFoundImage;
    
     @FXML
     private Button addButton;
@@ -201,20 +203,28 @@ public class FXMLEventController implements Initializable{
   
 
           @FXML
-          private void rechercheAdvanced(KeyEvent event) {
-              String searchText = searchField.getText();
-              if (searchText == null || searchText.isEmpty()) {
-                  tableViewE.setItems(evenements);
-                  return;
-              }
-              ObservableList<Evenement> searchResults = FXCollections.observableArrayList();
-              for (Evenement evenment : evenements) {
-                  if (evenment.getNomEvent().toLowerCase().contains(searchText.toLowerCase()) || evenment.getLieu().toLowerCase().contains(searchText.toLowerCase())) {
-                      searchResults.add(evenment);
-                  }
-              }
-              tableViewE.setItems(searchResults);
-          }
+            private void rechercheAdvanced(KeyEvent event) {
+                String searchText = searchField.getText();
+                if (searchText == null || searchText.isEmpty()) {
+                    tableViewE.setItems(evenements);
+                    searchNotFoundImage.setVisible(false);
+                    return;
+                }
+                ObservableList<Evenement> searchResults = FXCollections.observableArrayList();
+                for (Evenement evenment : evenements) {
+                    if (evenment.getNomEvent().toLowerCase().contains(searchText.toLowerCase()) || evenment.getLieu().toLowerCase().contains(searchText.toLowerCase())) {
+                        searchResults.add(evenment);
+                    }
+                }
+                if (searchResults.isEmpty()) {
+
+                    searchNotFoundImage.setVisible(true);
+                } else {
+                    tableViewE.setItems(searchResults);
+                    searchNotFoundImage.setVisible(false);
+                }
+            }
+
 
             @FXML
             private void linkSponsorSideBar(ActionEvent event) throws IOException {

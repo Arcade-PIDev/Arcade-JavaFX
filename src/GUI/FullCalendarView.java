@@ -22,6 +22,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
@@ -38,8 +39,7 @@ public class FullCalendarView {
     private ArrayList<AnchorPane> allCalendarDays = new ArrayList<>(35);
     private YearMonth currentYearMonth;
     private List<Evenement> listeEvenement;
-    private Button previousMonth;
-    private Button nextMonth;
+    
 
         public FullCalendarView(YearMonth yearMonth) {
             currentYearMonth = yearMonth;
@@ -80,19 +80,16 @@ public class FullCalendarView {
             calendarTitle = new Text();
             calendarTitle.setFill(Paint.valueOf("WHITE"));
             calendarTitle.setFont(Font.font("Verdana", FontWeight.BOLD, 18));
-            Button previousMonth = new Button("<<");
-            previousMonth.setStyle("-fx-background-color: linear-gradient(to bottom, #4b0082, #ee5622); -fx-text-fill: WHITE;");
-            previousMonth.setOnAction(e -> previousMonth());
-            Button nextMonth = new Button(">>");
-            nextMonth.setStyle("-fx-background-color: linear-gradient(to bottom, #4b0082, #ee5622); -fx-text-fill: WHITE");
-            nextMonth.setOnAction(e -> nextMonth());
-            HBox titleBar = new HBox(10, previousMonth, calendarTitle, nextMonth);
+           
+            HBox titleBar = new HBox(10, calendarTitle);
             titleBar.setStyle("-fx-background-color: #181b26");
             titleBar.setAlignment(Pos.BASELINE_CENTER);
             // Populate calendar with the appropriate day numbers
             populateCalendar(yearMonth, listeEvenement);
             // Create the calendar view
+            
             view = new VBox(titleBar, dayLabels, calendar);
+           
         }
 
 
@@ -131,26 +128,31 @@ public class FullCalendarView {
 
                     Calendar calendar = Calendar.getInstance();
                     calendar.setTime(startDate);
+                    
 
             // Highlight the days in the range of the event in the specified month
             while (calendar.getTime().before(endDate) || calendar.getTime().equals(endDate)) {
-                int eventDayNumber = calendar.get(Calendar.DAY_OF_MONTH);
-                if (calendar.get(Calendar.MONTH) == yearMonth.getMonthValue() - 1 && eventDayNumber == dayNumber) {
-                    // Create a VBox with the event name and set its style
-                    VBox eventBox = new VBox();
-                    eventBox.setStyle("-fx-background-color:  #781e77 ; -fx-padding: 2px;");
-                    Label eventNameLabel = new Label(eventName);
-                    eventNameLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold;");
-                    eventBox.getChildren().add(eventNameLabel);
+                if (calendar.get(Calendar.MONTH) == yearMonth.getMonthValue() - 1) {
+                    int eventDayNumber = calendar.get(Calendar.DAY_OF_MONTH);
+                    if (eventDayNumber == dayNumber) {
+                        
+                        VBox eventBox = new VBox();
+                        eventBox.setStyle("-fx-background-color:  #781e77 ; -fx-padding: 2px;");
+                        Label eventNameLabel = new Label(eventName);
+                        eventNameLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold;");
+                        eventBox.getChildren().add(eventNameLabel);
 
-                    ap.getChildren().add(eventBox);
-                    AnchorPane.setTopAnchor(eventBox, 5.0);
-                    AnchorPane.setLeftAnchor(eventBox, 5.0);
-                    AnchorPane.setRightAnchor(eventBox, 5.0);
+                        ap.getChildren().add(eventBox);
+                        AnchorPane.setTopAnchor(eventBox, 5.0);
+                        AnchorPane.setLeftAnchor(eventBox, 5.0);
+                        AnchorPane.setRightAnchor(eventBox, 5.0);
+                    }
                 }
-                calendar.add(Calendar.DAY_OF_MONTH, 1); 
+                calendar.add(Calendar.DAY_OF_MONTH, 1);
             }
+
         }
+                
     }
                   // Highlight the day if it is today's date
                   if (LocalDate.now().equals(yearMonth.atDay(dayNumber))) {
@@ -162,30 +164,56 @@ public class FullCalendarView {
                   ap.setStyle("-fx-background-color: #2d292d;");
               }
           }
+           
       }
 
 
     
  
-        private void previousMonth() {
-            currentYearMonth = currentYearMonth.minusMonths(1);
+            public void previousMonth() {
+              System.out.println("previousMonth() called");
+              currentYearMonth = currentYearMonth.minusMonths(1);
+              populateCalendar(currentYearMonth, listeEvenement);
+          }
 
-            populateCalendar(currentYearMonth, listeEvenement);
-
-        }
-
-
-        private void nextMonth() {
-            currentYearMonth = currentYearMonth.plusMonths(1);
-            populateCalendar(currentYearMonth, listeEvenement);
-
-
-        }
+          public void nextMonth() {
+              System.out.println("nextMonth() called");
+              currentYearMonth = currentYearMonth.plusMonths(1);
+              populateCalendar(currentYearMonth, listeEvenement);
+          }
 
 
         public VBox getView() {
             return view;
         }
+        
+        
+        public YearMonth getCurrentYearMonth() {
+            return currentYearMonth;
+        }
+
+            public Button getPreviousMonthButton(List<Evenement> listeEvenement) {
+             Button previousMonth = new Button("<<");
+             previousMonth.setStyle("-fx-background-color: linear-gradient(to bottom, #4b0082, #ee5622); -fx-text-fill: WHITE;");
+
+             previousMonth.setOnAction(e -> {
+                 previousMonth();
+                 populateCalendar(getCurrentYearMonth(), listeEvenement);
+             });
+             return previousMonth;
+         }
+   
+            public Button getNextMonthButton(List<Evenement> listeEvenement) {
+                Button nextMonth = new Button(">>");
+                nextMonth.setStyle("-fx-background-color: linear-gradient(to bottom, #4b0082, #ee5622); -fx-text-fill: WHITE");
+
+                nextMonth.setOnAction(e -> {
+                    nextMonth();
+                    populateCalendar(getCurrentYearMonth(), listeEvenement);
+                });
+                return nextMonth;
+            }
+
     
        
 

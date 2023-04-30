@@ -17,6 +17,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
 /**
@@ -24,48 +25,30 @@ import javafx.scene.layout.Pane;
  * @author zeine
  */
 public class FullCalendarController implements Initializable{
-
-   private Button previousMonth;
-
-    private Button nextMonth;
+    
     @FXML
     private Pane calendarPane;
 
     private FullCalendarView fullCalendarView;
+    private List<Evenement> listeEvenement;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+   @Override
+        public void initialize(URL location, ResourceBundle resources) {
+            ServiceEvenement serviceEvenement = new ServiceEvenement();
+            List<Evenement> listeEvenement = serviceEvenement.afficher();
 
-        ServiceEvenement serviceEvenement = new ServiceEvenement();
-        fullCalendarView = new FullCalendarView(YearMonth.now());
-        List<Evenement> listeEvenement = serviceEvenement.afficher();
-        ArrayList<String> eventNames = new ArrayList<>();
+            fullCalendarView = new FullCalendarView(YearMonth.now());
+            fullCalendarView.populateCalendar(YearMonth.now(), listeEvenement);
+            calendarPane.getChildren().add(fullCalendarView.getView());
 
-       fullCalendarView.populateCalendar(YearMonth.now(), listeEvenement);
+            
+            Button previousMonth = fullCalendarView.getPreviousMonthButton(listeEvenement);
+            Button nextMonth = fullCalendarView.getNextMonthButton(listeEvenement);
 
+            
+            HBox buttonsBox = new HBox(previousMonth, nextMonth);
+            buttonsBox.setSpacing(535);
+            calendarPane.getChildren().add(buttonsBox);
+        }
 
-
-/*previousMonth = fullCalendarView.getPreviousMonthButton();
-nextMonth = fullCalendarView.getNextMonthButton();
-
-// set the action for the "previous" button
-previousMonth.setOnAction(event -> {
-    YearMonth previousMonth = fullCalendarView.getCurrentMonth().minusMonths(1);
-    fullCalendarView.updateCalendar(previousMonth);
-    for (Evenement evenement : listeEvenement) {
-        fullCalendarView.highlightDays(evenement, previousMonth);
-    }
-});
-
-// set the action for the "next" button
-nextMonth.setOnAction(event -> {
-    YearMonth nextMonth = fullCalendarView.getCurrentMonth().plusMonths(1);
-    fullCalendarView.updateCalendar(nextMonth);
-    for (Evenement evenement : listeEvenement) {
-        fullCalendarView.highlightDays(evenement, nextMonth);
-    }
-});*/
-
-      calendarPane.getChildren().add(fullCalendarView.getView());
-    }
 }

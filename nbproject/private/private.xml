@@ -4,34 +4,29 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/Services/IService.java</file>
-            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLEventBox.fxml</file>
-            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLAddSponsor.fxml</file>
+            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/Utils/MyDB.java</file>
+            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLSponsor.fxml</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/gestionevenements/NewFxMain.java</file>
+            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLEventController.java</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/Entities/Evenement.java</file>
+            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLFrontControllerE.java</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLControllerModifierS.java</file>
+            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FullCalendarController.java</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLControllerModifierE.java</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLSponsorController.java</file>
-            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLModifierEvent.fxml</file>
+            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLEvenement.fxml</file>
+            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLCalendar.fxml</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLFrontE.fxml</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FrontMainController.java</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/Services/ServiceSponsor.java</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLControllerAjouterE.java</file>
-            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLExpiredEventBox.fxml</file>
-            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/Utils/MyDB.java</file>
-            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLSponsor.fxml</file>
-            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLEventController.java</file>
-            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLAjouterEvent.fxml</file>
-            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLFrontControllerE.java</file>
-            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FullCalendarController.java</file>
-            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLEvenement.fxml</file>
-            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLCalendar.fxml</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FullCalendarView.java</file>
+            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLMainFront.fxml</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/Services/ServiceEvenement.java</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/Entities/Sponsor.java</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/EventBoxController.java</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLControllerAjouterS.java</file>
             <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/Style.css</file>
-            <file>file:/C:/Users/zeine/Desktop/java_ex/GestionEvenements/src/GUI/FXMLEditSponsor.fxml</file>
         </group>
     </open-files>
 </project-private>

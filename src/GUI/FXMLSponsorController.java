@@ -68,6 +68,9 @@ public class FXMLSponsorController implements Initializable{
 
     @FXML
     private TableColumn<Sponsor, Integer> eventFk;
+    
+    @FXML
+    private ImageView searchNotFoundImage;
 
    
     @FXML
@@ -197,6 +200,7 @@ public class FXMLSponsorController implements Initializable{
               String searchText = searchField.getText();
               if (searchText == null || searchText.isEmpty()) {
                   tableViewS.setItems(sponsors);
+                   searchNotFoundImage.setVisible(false);
                   return;
               }
               ObservableList<Sponsor> searchResults = FXCollections.observableArrayList();
@@ -206,9 +210,17 @@ public class FXMLSponsorController implements Initializable{
                       searchResults.add(sponsor);
                   }
               }
-              tableViewS.setItems(searchResults);
+              if (searchResults.isEmpty()) {
+
+                    searchNotFoundImage.setVisible(true);
+                } else {
+                    tableViewS.setItems(searchResults);
+                    searchNotFoundImage.setVisible(false);
+                }
           }
-        
+          
+         
+               
            @FXML
             private void linkSponsorSideBar(ActionEvent event) throws IOException {
                 Parent sponsorView = FXMLLoader.load(getClass().getResource("FXMLSponsor.fxml"));

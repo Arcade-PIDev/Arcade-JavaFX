@@ -71,7 +71,10 @@
         <URL value="@style.css" />
     </stylesheets>
 </TableView>
-
+ <ImageView fx:id="searchNotFoundImage" fitHeight="434.0" fitWidth="1033.0" layoutX="255.0" layoutY="106.0" visible="false">
+         <image>
+            <Image url="@notFound3.jpg" />
+         </image></ImageView>
 
 
       <Button layoutX="1182.0" layoutY="610.0" mnemonicParsing="false" onAction="#editSelectedSponsor" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: linear-gradient(to bottom, #00FFFF, #40E0D0);" text="Modifier" textFill="WHITE">
