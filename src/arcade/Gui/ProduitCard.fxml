@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -10,13 +11,18 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="248.0" prefWidth="282.0" style="-fx-background-color: #0E063D; -fx-border-radius: 10px; -fx-background-radius: 2em; -fx-border-color: #EDB8FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.ProduitCardController">
    <children>
       <ImageView fx:id="image" fitHeight="114.0" fitWidth="209.0" layoutX="37.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="name" alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="168.0" prefHeight="32.0" prefWidth="151.0" text="Label" textAlignment="CENTER" textFill="#f8f9fc">
+      <Label fx:id="name" alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="148.0" prefHeight="32.0" prefWidth="151.0" text="Label" textAlignment="CENTER" textFill="#f8f9fc">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Line endX="100.0" layoutX="141.0" layoutY="146.0" startX="-100.0" stroke="#f8f9fc" />
-      <Label fx:id="price" alignment="CENTER" layoutX="41.0" layoutY="175.0" prefHeight="89.0" prefWidth="201.0" text="Label" textFill="#f8f9fc" />
+      <Line endX="100.0" layoutX="141.0" layoutY="141.0" startX="-100.0" stroke="#f8f9fc" />
+      <HBox layoutX="75.0" layoutY="172.0" prefHeight="33.0" prefWidth="151.0">
+         <children>
+            <Label prefHeight="33.0" prefWidth="65.0" text="prix:" textFill="WHITE" />
+            <Label fx:id="price" alignment="CENTER" prefHeight="114.0" prefWidth="83.0" text="Label" textFill="#f8f9fc" />
+         </children>
+      </HBox>
       <Label fx:id="prodId" layoutX="27.0" layoutY="211.0" prefHeight="17.0" prefWidth="55.0" visible="false" />
       <ImageView fx:id="cartbtn" fitHeight="33.0" fitWidth="33.0" layoutX="233.0" layoutY="197.0" onMouseClicked="#addProductToCart" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
          <image>
@@ -28,5 +34,11 @@
             <Image url="@../images/empty.png" />
          </image>
       </ImageView>
+      <HBox layoutX="75.0" layoutY="205.0" prefHeight="33.0" prefWidth="151.0">
+         <children>
+            <Label prefHeight="33.0" prefWidth="66.0" text="quantité:" textFill="WHITE" />
+            <Label fx:id="quantite" alignment="CENTER" prefHeight="114.0" prefWidth="83.0" text="Label" textFill="#f8f9fc" />
+         </children>
+      </HBox>
    </children>
 </Pane>

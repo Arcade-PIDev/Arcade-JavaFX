@@ -53,7 +53,11 @@ public class ContentProduitController implements Initializable {
     @FXML
     private Label modificationDate;
     @FXML
-    private Label isEnabled;
+    private Label enable;
+    @FXML
+    private ImageView isEnabled;
+    @FXML
+    private Label nomCat;
     @FXML
     private Pane contentProduit;
     @FXML
@@ -63,7 +67,18 @@ public class ContentProduitController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        idProduit.setVisible(false);
+        idCategorie.setVisible(false);
+        enable.setVisible(false);
     }    
+    
+    public void setNomCat(String nomCat) {
+        this.nomCat.setText(nomCat);
+    }
+    
+    public void setEnable(String enable) {
+        this.enable.setText(enable);
+    }
     
     public void setIdProduit(String idProduit) {
         this.idProduit.setText(idProduit);
@@ -89,8 +104,8 @@ public class ContentProduitController implements Initializable {
         this.creationDate.setText(creationDate);
     }
 
-    public void setIsEnabled(String isEnabled) {
-        this.isEnabled.setText(isEnabled);
+    public void setIsEnabled(String url) {
+        this.isEnabled.setImage(new Image(url));
     }
 
     public void setImage(String url) {
@@ -131,14 +146,16 @@ public class ContentProduitController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("EditProduit.fxml"));
             Parent root = loader.load();
             EditProduitController controller= loader.getController();
-            Produit c =new Produit(Integer.parseInt(idProduit.getText()),Integer.parseInt(idCategorie.getText()),nomProduit.getText(),Integer.parseInt(prix.getText()),Integer.parseInt(quantite.getText()),description.getText(),Boolean.parseBoolean(isEnabled.getText()));
-            //System.out.println(c);
+            idProduit.setVisible(true);
+            enable.setVisible(true);
+            Produit c =new Produit(Integer.parseInt(idProduit.getText()),Integer.parseInt(idCategorie.getText()),nomProduit.getText(),Integer.parseInt(prix.getText()),Integer.parseInt(quantite.getText()),description.getText(),Boolean.parseBoolean(enable.getText()));
+            System.out.println(c);
             controller.setProduct(c);
             
             FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("Home.fxml"));
             Parent homeRoot = homeLoader.load();
             HomeController homeCtrl = homeLoader.getController();
-            homeCtrl.changePage(root);
+            homeCtrl.changePage("editProduit",root);
             idProduit.getScene().setRoot(homeRoot);
         } catch (Exception ex) {
             Logger.getLogger(ProduitController.class.getName()).log(Level.SEVERE, null, ex);

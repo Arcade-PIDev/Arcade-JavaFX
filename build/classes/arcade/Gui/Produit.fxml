@@ -11,54 +11,49 @@
    <children>
       <Pane fx:id="contentProduit" layoutX="-3.0" prefHeight="900.0" prefWidth="1288.0">
          <children>
-            <HBox alignment="CENTER_LEFT" layoutX="-2.0" layoutY="14.0" prefHeight="66.0" prefWidth="1285.0" spacing="30.0" style="-fx-background-color: #0e063d; -fx-background-radius: 2em;">
+            <HBox alignment="CENTER_LEFT" layoutX="12.0" layoutY="14.0" prefHeight="66.0" prefWidth="1254.0" spacing="20.0" style="-fx-background-color: #0e063d; -fx-background-radius: 2em;">
                <children>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="34.0" text="id" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="88.0" text="Catégorie" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="80.0" text="Categorie" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="104.0" text="Nom Produit" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="115.0" text="Nom Produit" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="118.0" text="Description" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="106.0" text="Description" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="95.0" text="Image" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="98.0" text="Image" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="69.0" text="Prix" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="47.0" text="Prix" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="62.0" text="Stock" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="49.0" text="Stock" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="137.0" text="Date de creation" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="105.0" text="CreationDate" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="169.0" text="Date de modification" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="141.0" text="ModificationDate" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="74.0" text="Enabled" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="112.0" text="Activé" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -67,6 +62,6 @@
             </HBox>
          </children>
       </Pane>
-      <FlowPane fx:id="contentProd" layoutX="8.0" layoutY="162.0" prefHeight="711.0" prefWidth="1276.0" />
+      <FlowPane fx:id="contentProd" layoutX="-6.0" layoutY="162.0" prefHeight="711.0" prefWidth="1276.0" />
    </children>
 </AnchorPane>

@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="contentCategorie" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.addCategorieController">
    <children>
-      <VBox fx:id="content" alignment="TOP_CENTER" fillWidth="false" layoutX="122.0" layoutY="300.0" prefHeight="469.0" prefWidth="1012.0" spacing="10.0">
+      <VBox fx:id="content" alignment="TOP_CENTER" fillWidth="false" layoutX="115.0" layoutY="89.0" prefHeight="469.0" prefWidth="1012.0" spacing="10.0">
          <children>
             <TextField fx:id="nomCategorie" blendMode="COLOR_BURN" prefHeight="64.0" prefWidth="417.0" promptText="Nom Categorie" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
                <VBox.margin>
@@ -42,12 +42,12 @@
             <Label fx:id="imageError" textFill="#c20b0b" />
             <HBox prefHeight="84.0" prefWidth="302.0" spacing="20.0">
                <children>
-                  <Button fx:id="annulerCategorie" lineSpacing="3.0" mnemonicParsing="false" onAction="#annulerCategorie" prefHeight="45.0" prefWidth="127.0" style="-fx-background-color: #6610f2; -fx-background-radius: 2em; -fx-cursor: hand;" text="cancel" textFill="#e7e5e5">
+                  <Button fx:id="annulerCategorie" lineSpacing="3.0" mnemonicParsing="false" onAction="#annulerCategorie" prefHeight="45.0" prefWidth="127.0" style="-fx-background-color: #6610f2; -fx-background-radius: 2em; -fx-cursor: hand;" text="Annuler" textFill="#e7e5e5">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="addCategorie" lineSpacing="3.0" mnemonicParsing="false" onAction="#addCategorie" prefHeight="42.0" prefWidth="128.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Submit" textFill="#e7e5e5">
+                  <Button fx:id="addCategorie" lineSpacing="3.0" mnemonicParsing="false" onAction="#addCategorie" prefHeight="42.0" prefWidth="128.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Confirmer" textFill="#e7e5e5">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -59,7 +59,7 @@
             <Insets />
          </opaqueInsets>
       </VBox>
-      <Label layoutX="61.0" layoutY="114.0" prefHeight="75.0" prefWidth="357.0" style="-fx-font-weight: bold;" text="Ajout Categorie" textFill="WHITE">
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="75.0" prefWidth="357.0" style="-fx-font-weight: bold;" text="Ajout Categorie" textFill="WHITE">
          <font>
             <Font size="46.0" />
          </font>

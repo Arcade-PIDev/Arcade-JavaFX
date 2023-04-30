@@ -14,11 +14,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1580.0" style="-fx-background-color: #1d0761;-fx-background-image: url('file:C:/Users/Amira/Desktop/esprit/me/arcade/src/arcade/images/rsz_2abstract-neon-background-free-vector.png');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.HomeController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1580.0" style="-fx-background-color: #1d0761;-fx-background-image: url('file:C:/Users/Amira/Desktop/esprit/me/arcade/src/arcade/images/background.png');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.HomeController">
     <children>
       <Pane fx:id="mainContent" layoutX="300.0" layoutY="5.0" prefHeight="892.0" prefWidth="1234.0" style="-fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-size: auto;">
          <children>
-            <Button fx:id="addBtn" visible="false" layoutX="1065.0" layoutY="18.0" mnemonicParsing="false" onAction="#addBtn" prefHeight="44.0" prefWidth="117.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em;" text="Ajouter" textFill="WHITE">
+            <Button fx:id="addBtn" layoutX="1138.0" layoutY="37.0" mnemonicParsing="false" onAction="#addBtn" prefHeight="42.0" prefWidth="142.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em;" text="Ajouter" textFill="WHITE" visible="false">
                <font>
                   <Font size="20.0" />
                </font>
@@ -26,16 +26,16 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label fx:id="titleLabel" visible="false" layoutX="127.0" layoutY="40.0" text="Title" textFill="#f8f8f8">
+            <Label fx:id="titleLabel" layoutX="37.0" layoutY="37.0" prefHeight="54.0" prefWidth="215.0" style="-fx-font-weight: bold;" text="Title" textFill="#f8f8f8" visible="false">
                <font>
                   <Font name="Segoe UI" size="36.0" />
                </font>
             </Label>
-            <Line fx:id="line" visible="false" endX="1038.0" layoutX="164.0" layoutY="92.0" startX="-54.0" stroke="WHITE" strokeWidth="2.0" />
-            <Pane fx:id="affichage" layoutX="40.0" layoutY="113.0" prefHeight="766.0" prefWidth="1134.0" />
+            <Line fx:id="line" endX="1116.0" layoutX="164.0" layoutY="110.0" startX="-119.0" stroke="WHITE" strokeWidth="2.0" visible="false" />
+            <Pane fx:id="affichage" layoutX="25.0" layoutY="113.0" prefHeight="766.0" prefWidth="1198.0" />
          </children>
       </Pane>
-      <VBox fx:id="vbox" alignment="TOP_CENTER" layoutY="-6.0" prefHeight="907.0" prefWidth="284.0" spacing="20.0" style="-fx-background-image: url('file:C:/Users/Amira/Desktop/esprit/me/arcade/src/arcade/images/clear1.png');">
+      <VBox fx:id="vbox" alignment="TOP_CENTER" layoutY="-6.0" prefHeight="907.0" prefWidth="284.0" spacing="20.0" style="-fx-background-image: url('file:C:/Users/Amira/Desktop/esprit/me/arcade/src/arcade/images/side5.png');">
          <children>
             <VBox alignment="CENTER" prefHeight="203.0" prefWidth="195.0">
                <children>
@@ -47,7 +47,7 @@
                         <Insets bottom="10.0" top="50.0" />
                      </VBox.margin>
                   </ImageView>
-                  <Label fx:id="usernameLabel" alignment="CENTER" prefHeight="48.0" prefWidth="120.0" text="Amira">
+                  <Label fx:id="usernameLabel" alignment="CENTER" prefHeight="48.0" prefWidth="120.0" text="Amira" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
@@ -61,7 +61,7 @@
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/categories.png" />
+                        <Image url="@../images/categories1.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -76,7 +76,7 @@
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/produits.png" />
+                        <Image url="@../images/produits1.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -96,6 +96,7 @@
          </effect>
 
       </VBox>
+      <Line endY="690.0" layoutX="284.0" layoutY="220.0" startY="-221.0" stroke="WHITE" />
    </children>
    <effect>
       <DropShadow color="#1b1eeb" />

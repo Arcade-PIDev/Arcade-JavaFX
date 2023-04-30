@@ -75,20 +75,25 @@ public class ProduitController implements Initializable {
 
                     cont.setIdProduit(c.getId()+"");
                     cont.setIdCategorie(c.getCategorie()+"");
+                    cont.setNomCat(ps.getCategorieName(c.getCategorie()));
                     
                     cont.setNomProduit(c.getNomProduit());
                     
                     cont.setPrix(c.getPrix()+"");
                     cont.setQuantiteStock(c.getQuantiteStock()+"");
                     
-                    cont.setImage("http://127.0.0.1:8000/eshop/produit/"+c.getImage());
+                    cont.setImage("http://127.0.0.1/pi/public/eshop/produit/"+c.getImage());
                     cont.setDescription(c.getDescription());
                     
                     cont.setCreationDate(c.getCreationDate()+"");
                     cont.setModificationDate(c.getModificationDate()+"");
                     
-                    cont.setIsEnabled(c.isIsEnabled()+"");
+                    //cont.setIsEnabled(c.isIsEnabled()+"");
 
+                    if (c.isIsEnabled())
+                        cont.setIsEnabled("http://127.0.0.1/pi/public/eshop/IsEnabled.png");
+                    else
+                        cont.setIsEnabled("http://127.0.0.1/pi/public/eshop/IsDisabled.png");
                     contentProd.getChildren().add(root);
                     
                     if ( c.getQuantiteStock()== 0) {

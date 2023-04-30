@@ -13,37 +13,32 @@
          <children>
             <HBox alignment="CENTER_LEFT" layoutX="6.0" layoutY="15.0" prefHeight="66.0" prefWidth="1276.0" spacing="40.0" style="-fx-background-color: #0e063d; -fx-background-radius: 2em;">
                <children>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="91.0" text="id" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="136.0" text="Nom Catégorie" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="136.0" text="Nom Categorie" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="201.0" text="Description" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="119.0" text="Description" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="108.0" text="Image" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="126.0" text="Image" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="137.0" text="Date de creation" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="112.0" text="Creation Date" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="173.0" text="Date de modification" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="157.0" text="Modification Date" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="104.0" text="Enabled" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="104.0" text="Activé" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>

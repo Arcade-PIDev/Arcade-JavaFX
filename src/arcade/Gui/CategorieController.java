@@ -69,11 +69,16 @@ public class CategorieController implements Initializable {
                     cont.setIdCategorie(c.getId()+"");
                     cont.setNomCategorie(c.getNomCategorie());
                     cont.setDescription(c.getDescription());
-                    cont.setImage("http://127.0.0.1:8000/eshop/categorie/"+c.getImage());
+                    cont.setImage("http://127.0.0.1/pi/public/eshop/categorie/"+c.getImage());
                     
                     cont.setCreationDate(c.getCreationDate()+"");
                     cont.setModificationDate(c.getModificationDate()+"");
-                    cont.setIsEnabled(c.isIsEnabled()+"");
+                    //cont.setIsEnabled(c.isIsEnabled()+"");
+                    
+                    if (c.isIsEnabled())
+                        cont.setIsEnabled("http://127.0.0.1/pi/public/eshop/IsEnabled.png");
+                    else
+                        cont.setIsEnabled("http://127.0.0.1/pi/public/eshop/IsDisabled.png");
                     
                 content.getChildren().add(root);
             }

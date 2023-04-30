@@ -80,10 +80,10 @@ public class WishlistCardController implements Initializable{
             WishlistService ws = new WishlistService();
             if (ws.afficher().contains(Integer.parseInt(prodId.getText()))) {
                 ws.remove(Integer.parseInt(prodId.getText()));
-                wishlistBtn.setImage(new Image("http://127.0.0.1:8000/eshop/" + "empty.png", 32, 32, false, false));
+                wishlistBtn.setImage(new Image("http://127.0.0.1/pi/public/eshop/" + "empty.png", 32, 32, false, false));
             } else {
                 ws.add(Integer.parseInt(prodId.getText()));
-                wishlistBtn.setImage(new Image("http://127.0.0.1:8000/eshop/" + "full.png", 32, 32, false, false));
+                wishlistBtn.setImage(new Image("http://127.0.0.1/pi/public/eshop/" + "full.png", 32, 32, false, false));
             }
 
         } catch (SQLException ex) {

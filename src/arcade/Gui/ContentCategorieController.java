@@ -34,7 +34,7 @@ public class ContentCategorieController implements Initializable {
      * Initializes the controller class.
      */
     
-        @FXML
+    @FXML
     private Label idCategorie;
     @FXML
     private Label nomCategorie;
@@ -47,7 +47,9 @@ public class ContentCategorieController implements Initializable {
     @FXML
     private Label modificationDate;
     @FXML
-    private Label isEnabled;
+    private Label enable;
+    @FXML
+    private ImageView isEnabled;
     @FXML
     private Pane contentCategorie;
     @FXML
@@ -59,6 +61,8 @@ public class ContentCategorieController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        idCategorie.setVisible(false);
+        enable.setVisible(false);
     }    
     
         public void setIdCategorie(String IdCategorie) {
@@ -72,9 +76,13 @@ public class ContentCategorieController implements Initializable {
     public void setCreationDate(String creationDate) {
         this.creationDate.setText(creationDate);
     }
+    
+    public void setEnable(String enable) {
+        this.enable.setText(enable);
+    }
 
-    public void setIsEnabled(String isEnabled) {
-        this.isEnabled.setText(isEnabled);
+    public void setIsEnabled(String url) {
+        this.isEnabled.setImage(new Image(url));
     }
 
     public void setImage(String url) {
@@ -113,7 +121,7 @@ public class ContentCategorieController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("EditCategorie.fxml"));
             Parent root = loader.load();
             EditCategorieController controller= loader.getController();
-            Categorie c =new Categorie(Integer.parseInt(this.idCategorie.getText()),this.nomCategorie.getText(),this.descriptionCategorie.getText(),Boolean.parseBoolean(this.isEnabled.getText()));
+            Categorie c =new Categorie(Integer.parseInt(this.idCategorie.getText()),this.nomCategorie.getText(),this.descriptionCategorie.getText(),Boolean.parseBoolean(this.enable.getText()));
             System.out.println(c);
                 System.out.println("amira");
             controller.setCategorie(c);
@@ -121,7 +129,7 @@ public class ContentCategorieController implements Initializable {
             FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("Home.fxml"));
             Parent homeRoot = homeLoader.load();
             HomeController homeCtrl = homeLoader.getController();
-            homeCtrl.changePage(root);
+            homeCtrl.changePage("editCategorie",root);
             idCategorie.getScene().setRoot(homeRoot);
 
         } catch (Exception ex) {

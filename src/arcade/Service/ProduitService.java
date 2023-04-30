@@ -29,6 +29,17 @@ public class ProduitService implements IService<Produit>{
         con = database.getInstance().getCon();
     }
     
+    
+    public String getCategorieName(int id) throws SQLException
+    {
+        String req = "Select `nom_categorie` from `categorie` where `id` =" +id;
+        stm = con.createStatement();
+        ResultSet rs = stm.executeQuery(req);
+
+        rs.next();
+        return rs.getString(1);
+    }
+    
         
     public List<Produit> getProduitByCategorie(int id) throws SQLException {
         String req = "select * from `Produit` where categorie_id=" + id;
@@ -121,7 +132,7 @@ public class ProduitService implements IService<Produit>{
         pstm.executeUpdate();
     }
     
-    public void update2(Produit t) throws SQLException {
+    public void updatePanier(Produit t) throws SQLException {
         String req = "UPDATE `Produit` SET `quantite_stock`=" + t.getQuantiteStock()+ " WHERE `id`=" + t.getId();
                 
         PreparedStatement pstm = con.prepareStatement(req);

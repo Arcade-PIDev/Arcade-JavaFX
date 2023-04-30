@@ -9,6 +9,7 @@ import arcade.Entities.Categorie;
 import arcade.Entities.Produit;
 import arcade.Service.CategorieService;
 import arcade.Service.ProduitService;
+import javafx.scene.control.CheckBox;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -60,6 +61,8 @@ public class EditProduitController implements Initializable {
     private Label quantiteError;
     @FXML
     private Button editProduit;
+    @FXML
+    private CheckBox checkbox;
 
     private Produit p;
     
@@ -72,8 +75,9 @@ public class EditProduitController implements Initializable {
         quantite.setText(p.getQuantiteStock() + "");
         prix.setText(p.getPrix() + "");
         categories.setValue(p.getCategorie() + "");
-
-        //set combobox
+        //checkbox.setState(p.isIsEnabled());
+        
+        
         try {
             CategorieService serv = new CategorieService();
             List<Categorie> list = serv.afficher();
@@ -131,10 +135,14 @@ public class EditProduitController implements Initializable {
                 String[] categoriesIdCombo = categories.getValue().split(":", 2);
                 p.setCategorie(Integer.parseInt(categoriesIdCombo[0]));
                 
-
+                if(checkbox.isSelected()==true){
+                    p.setIsEnabled(true);
+                }
+                else
+                    p.setIsEnabled(false);
+                
                 ProduitService serv = new ProduitService();
                 try {
-                    
                     System.out.println("amira");
                     serv.update(p);
                     try {

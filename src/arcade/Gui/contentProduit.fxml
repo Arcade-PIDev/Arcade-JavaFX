@@ -10,14 +10,19 @@
 
 <AnchorPane id="AnchorPane" prefHeight="85.0" prefWidth="1300.0" style="-fx-background-color: null;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.ContentProduitController">
    <children>
-      <HBox alignment="CENTER_LEFT" layoutX="5.0" prefHeight="90.0" prefWidth="1300.0" spacing="40.0" style="-fx-background-color: null;">
+      <HBox alignment="CENTER_LEFT" layoutX="-18.0" prefHeight="90.0" prefWidth="1323.0" spacing="30.0" style="-fx-background-color: null;">
          <children>
-            <Label fx:id="idProduit" maxWidth="85.0" minWidth="30.0" prefHeight="27.0" prefWidth="30.0" style="-fx-font-weight: bold;" text="idProduit" textFill="WHITE">
+            <Label fx:id="idProduit" maxWidth="85.0" minWidth="0.0" prefHeight="27.0" prefWidth="0.0" style="-fx-font-weight: bold;" text="idProduit" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="idCategorie" maxWidth="85.0" minWidth="26.0" prefHeight="27.0" prefWidth="34.0" style="-fx-font-weight: bold;" text="idCategorie" textFill="WHITE">
+            <Label fx:id="idCategorie" maxWidth="284.0" minWidth="0.0" prefHeight="27.0" prefWidth="0.0" style="-fx-font-weight: bold;" text="idCategorie" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="nomCat" maxWidth="284.0" minWidth="26.0" prefHeight="27.0" prefWidth="60.0" style="-fx-font-weight: bold;" text="nomCat" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -43,31 +48,32 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="creationDate" maxWidth="125.0" minWidth="109.0" prefHeight="27.0" prefWidth="109.0" style="-fx-font-weight: bold;" text="creationDate" textFill="WHITE">
+            <Label fx:id="creationDate" maxWidth="131.0" minWidth="109.0" prefHeight="27.0" prefWidth="131.0" style="-fx-font-weight: bold;" text="creationDate" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="modificationDate" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" style="-fx-font-weight: bold;" text="modificationDate" textFill="WHITE">
+            <Label fx:id="modificationDate" maxWidth="170.0" minWidth="125.0" prefHeight="27.0" prefWidth="127.0" style="-fx-font-weight: bold;" text="modificationDate" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="isEnabled" style="-fx-font-weight: bold;" text="isEnabled" textFill="WHITE">
+            <Label fx:id="enable" maxWidth="170.0" minWidth="0.0" prefHeight="27.0" prefWidth="0.0" style="-fx-font-weight: bold;" text="enable" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
+            <ImageView fx:id="isEnabled" fitHeight="23.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true" />
             <HBox alignment="CENTER" prefHeight="90.0" prefWidth="116.0" spacing="25.0">
                <children>
-                  <ImageView fx:id="editProduit" blendMode="SCREEN" fitHeight="21.0" fitWidth="21.0" onMouseClicked="#EditProduit" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                  <ImageView fx:id="editProduit" blendMode="ADD" fitHeight="21.0" fitWidth="21.0" onMouseClicked="#EditProduit" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                      <image>
-                        <Image url="@../images/edit.png" />
+                        <Image url="@../images/edit1.png" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="delete" blendMode="SCREEN" fitHeight="21.0" fitWidth="21.0" onMouseClicked="#delete" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                      <image>
-                        <Image url="@../images/delete.png" />
+                        <Image url="@../images/delete1.png" />
                      </image>
                   </ImageView>
                </children>

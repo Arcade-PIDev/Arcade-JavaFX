@@ -72,13 +72,14 @@ public class HomeController implements Initializable {
             }
         }
           else if(titleLabel.getText().equals("Produits")){
+            anchorPane.getChildren().removeAll(anchorPane.getChildren());
             mainContent.getChildren().removeAll(mainContent.getChildren());
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("addProduit.fxml"));
                 Parent root = loader.load();
                 addProduitController cont = loader.getController();
                 cont.setCombo();
-                mainContent.getChildren().add(root);
+                anchorPane.getChildren().add(root);
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
             }
@@ -139,17 +140,6 @@ public class HomeController implements Initializable {
                 System.out.println(ex.getMessage());
             }
         }
-        else if (state.equals("editCategorie")) {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("editCategorie.fxml"));
-                Parent root = loader.load();
-                mainContent.getChildren().clear(); // clear previous view
-                mainContent.getChildren().add(root);
-
-            } catch (Exception ex) {
-                System.out.println(ex.getMessage());
-            }
-        }
         else if (state.equals("Produits")) {
             addBtn.setVisible(true);
             titleLabel.setVisible(true);
@@ -165,17 +155,7 @@ public class HomeController implements Initializable {
                 System.out.println(ex.getMessage());
             }
         }
-        else if (state.equals("editProduit")) {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("EditProduit.fxml"));
-                Parent root = loader.load();
-                mainContent.getChildren().clear(); // clear previous view
-                mainContent.getChildren().add(root);
-
-            } catch (Exception ex) {
-                System.out.println(ex.getMessage());
-            }
-        }
+        
         
     }
     
@@ -184,4 +164,17 @@ public class HomeController implements Initializable {
         mainContent.getChildren().add(node);
     }
 
+    public void changePage(String title, Parent node) {
+        if (title.equals("editCategorie")) {
+            anchorPane.getChildren().removeAll(anchorPane.getChildren());
+            mainContent.getChildren().removeAll(mainContent.getChildren());
+            anchorPane.getChildren().add(node);
+        }
+        else if (title.equals("editProduit")) {
+            anchorPane.getChildren().removeAll(anchorPane.getChildren());
+            mainContent.getChildren().removeAll(mainContent.getChildren());
+            anchorPane.getChildren().add(node);
+
+        }
+    }
 }

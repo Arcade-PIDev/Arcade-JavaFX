@@ -22,6 +22,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.CheckBox;
 
 /**
  * FXML Controller class
@@ -43,11 +44,14 @@ public class EditCategorieController implements Initializable {
     @FXML
     private Button editCategorie;
     private Categorie categorie;
-
+    @FXML
+    private CheckBox checkbox;
+    
     public void setCategorie(Categorie c) {
         this.categorie = c;
         nomCategorie.setText(categorie.getNomCategorie());
         description.setText(categorie.getDescription());
+System.out.println(categorie);
     }
 
     /**
@@ -80,6 +84,12 @@ public class EditCategorieController implements Initializable {
 
                 categorie.setNomCategorie(nomCategorie.getText());
                 categorie.setDescription(description.getText());
+                
+                if(checkbox.isSelected()==true){
+                    categorie.setIsEnabled(true);
+                }
+                else
+                    categorie.setIsEnabled(false);
                 
                 CategorieService serv = new CategorieService();
                 try {

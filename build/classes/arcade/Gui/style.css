@@ -1,9 +1,8 @@
 .button{
 -fx-background-color :  null;
--fx-text-fill : black;
+-fx-text-fill : white;
 }
 
 .button:hover{
--fx-background-color : rgb(117, 157, 255);
+   -fx-background-color: linear-gradient(from 65px 25px to 100px 100px, #4552d7, #ad3169);
 }
-

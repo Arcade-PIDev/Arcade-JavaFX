@@ -109,8 +109,9 @@ public class Categorie {
 
     @Override
     public String toString() {
-        return "Categorie{" + "id=" + id + ", nomCategorie=" + nomCategorie + ", image=" + image + ", description=" + description + "}";
-    }   
+        return "Categorie{" + "id=" + id + ", nomCategorie=" + nomCategorie + ", image=" + image + ", description=" + description + ", isEnabled=" + isEnabled + ", creationDate=" + creationDate + ", ModificationDate=" + ModificationDate + "}";
+    }
+
 
     public void delete(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -37,6 +37,8 @@ public class ProduitCardController implements Initializable {
     @FXML
     private Label price;
     @FXML
+    private Label quantite;
+    @FXML
     private Label prodId;
     @FXML
     private ImageView cartbtn;
@@ -59,6 +61,10 @@ public class ProduitCardController implements Initializable {
     public void setPrix(String prix) {
         this.price.setText(prix);
     }
+    
+    public void setQuantite(String quantite) {
+        this.quantite.setText(quantite);
+    }
 
     public void setId(String id) {
         this.prodId.setText(id);
@@ -73,15 +79,49 @@ public class ProduitCardController implements Initializable {
         int qt = 0;
         if (panier.containsKey(Integer.parseInt(prodId.getText()))) {
             qt = panier.get(Integer.parseInt(prodId.getText()));
+            if ( (Integer.parseInt(this.quantite.getText()) - qt) == 0) {
+            System.out.println(Integer.parseInt(this.quantite.getText()) - qt);
+            System.out.println("2 "+qt);
+                        Image img=new Image("arcade/images/warning.png");
+                        Notifications notfBuilder = Notifications.create().title("Warning!!").text("The quantity of the product: "+this.name.getText()+" is zero")
+                        .darkStyle().graphic(new ImageView (img)).hideAfter(Duration.seconds(10)).position(Pos.BOTTOM_RIGHT);
+                        notfBuilder.show();
+                    }
+            else {
             panier.put(Integer.parseInt(prodId.getText()), qt + 1);
             Notifications notfBuilder = Notifications.create().title("Quantity Ordered increased")
                     .darkStyle().hideAfter(Duration.seconds(3)).position(Pos.BOTTOM_RIGHT);
             notfBuilder.show();
-        } else {
-            panier.put(Integer.parseInt(prodId.getText()), 1);
+                        System.out.println(Integer.parseInt(this.quantite.getText()) - qt);
+            }
+
+        } /*
+        else if ( (Integer.parseInt(this.quantite.getText()) - qt) == 0) {
+            System.out.println(Integer.parseInt(this.quantite.getText()) - qt);
+            System.out.println("2 "+qt);
+                        Image img=new Image("arcade/images/warning.png");
+                        Notifications notfBuilder = Notifications.create().title("Warning!!").text("The quantity of the product: "+this.name.getText()+" is zero")
+                        .darkStyle().graphic(new ImageView (img)).hideAfter(Duration.seconds(10)).position(Pos.BOTTOM_RIGHT);
+                        notfBuilder.show();
+                    }*/
+        else {
+            
+            if ( (Integer.parseInt(this.quantite.getText()) - qt) == 0) {
+            System.out.println(Integer.parseInt(this.quantite.getText()) - qt);
+            System.out.println("2 "+qt);
+                        Image img=new Image("arcade/images/warning.png");
+                        Notifications notfBuilder = Notifications.create().title("Warning!!").text("The quantity of the product: "+this.name.getText()+" is zero")
+                        .darkStyle().graphic(new ImageView (img)).hideAfter(Duration.seconds(10)).position(Pos.BOTTOM_RIGHT);
+                        notfBuilder.show();
+                    }
+            else {
+                panier.put(Integer.parseInt(prodId.getText()), 1);
+            qt++;
             Notifications notfBuilder = Notifications.create().title("Item added to Cart")
                     .darkStyle().hideAfter(Duration.seconds(3)).position(Pos.BOTTOM_RIGHT);
             notfBuilder.show();
+            System.out.println("3 "+qt);
+            }
         }
 
     }
@@ -92,10 +132,10 @@ public class ProduitCardController implements Initializable {
             WishlistService ws = new WishlistService();
             if (ws.afficher().contains(Integer.parseInt(prodId.getText()))) {
                 ws.remove(Integer.parseInt(prodId.getText()));
-                wishlistBtn.setImage(new Image("http://127.0.0.1:8000/eshop/" + "empty.png", 32, 32, false, false));
+                wishlistBtn.setImage(new Image("http://127.0.0.1/pi/public/eshop/" + "empty.png", 32, 32, false, false));
             } else {
                 ws.add(Integer.parseInt(prodId.getText()));
-                wishlistBtn.setImage(new Image("http://127.0.0.1:8000/eshop/" + "full.png", 32, 32, false, false));
+                wishlistBtn.setImage(new Image("http://127.0.0.1/pi/public/eshop/" + "full.png", 32, 32, false, false));
             }
 
         } catch (SQLException ex) {

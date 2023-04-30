@@ -88,7 +88,7 @@ public class PanierController implements Initializable{
                     prixTotal += p.getPrix() * entry.getValue();
                     p.setQuantiteStock(p.getQuantiteStock() - entry.getValue());
                     //System.out.println(p);
-                    ps.update2(p);
+                    ps.updatePanier(p);
                     PanierService cs = new PanierService();
                     Commande c = new Commande();
                     c.setPrixTotal(prixTotal);
