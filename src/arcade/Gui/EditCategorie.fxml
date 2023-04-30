@@ -22,12 +22,18 @@
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
             </TextField>
             <Label fx:id="nomCategorieError" textFill="#c20b0b" />
             <TextField fx:id="description" blendMode="COLOR_BURN" prefHeight="68.0" prefWidth="494.0" promptText="Description" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
             </TextField>
             <Label fx:id="descriptionError" textFill="#c20b0b" />
             <HBox prefHeight="52.0" prefWidth="417.0">

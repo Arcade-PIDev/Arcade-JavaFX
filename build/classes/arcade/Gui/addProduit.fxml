@@ -22,12 +22,18 @@
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
             </TextField>
             <Label fx:id="nomProduitError" textFill="#c20b0b" />
             <TextField fx:id="description" blendMode="COLOR_BURN" prefHeight="52.0" prefWidth="417.0" promptText="Description" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
             </TextField>
             <Label fx:id="descriptionError" textFill="#c20b0b" />
             <HBox alignment="CENTER_LEFT" prefHeight="91.0" prefWidth="431.0" spacing="10.0">
@@ -36,6 +42,9 @@
                      <cursor>
                         <Cursor fx:constant="TEXT" />
                      </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
                   </TextField>
                   <Button fx:id="upload" mnemonicParsing="false" onAction="#upload" prefHeight="53.0" prefWidth="128.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Upload" textFill="#e7e5e7" />
                </children>
@@ -45,15 +54,21 @@
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
             </TextField>
             <Label fx:id="prixError" textFill="#c20b0b" />
             <TextField fx:id="quantite" blendMode="COLOR_BURN" prefHeight="52.0" prefWidth="417.0" promptText="Quantite" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
             </TextField>
             <Label fx:id="quantiteError" textFill="#c20b0b" />
-            <ComboBox fx:id="categories" blendMode="COLOR_BURN" prefHeight="48.0" prefWidth="399.0" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;" />
+            <ComboBox fx:id="categories" blendMode="COLOR_BURN" prefHeight="48.0" prefWidth="399.0" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;" visibleRowCount="20" />
             <Label fx:id="categoriesError" textFill="#c20b0b" />
             <HBox prefHeight="63.0" prefWidth="302.0" spacing="20.0">
                <children>

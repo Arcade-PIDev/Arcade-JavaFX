@@ -82,7 +82,7 @@ public class validerCommandeController implements Initializable{
         Notifications.create().text("Votre facture a été envoyée par email.")
             .darkStyle().hideAfter(Duration.seconds(10)).position(Pos.BOTTOM_RIGHT).show();
         
-        Mailing m = new Mailing("waterproof.application@gmail.com", "jadifaaqzvlxtagw");
+        Mailing m = new Mailing("waterproof.application@gmail.com", "");
         m.sendMail("Votre Facture", msg, "waterproof.application@gmail.com", "amira.benmbarek@esprit.tn");
             panier.clear();
             FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("HomeFront.fxml"));

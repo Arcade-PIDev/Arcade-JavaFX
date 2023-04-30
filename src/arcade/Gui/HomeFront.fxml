@@ -56,21 +56,21 @@
                   </Button>
                </children>
             </HBox>
-            <HBox alignment="CENTER_RIGHT" layoutX="1351.0" layoutY="21.0" prefHeight="51.0" prefWidth="296.0" spacing="30.0">
+            <HBox alignment="CENTER_RIGHT" layoutX="1251.0" layoutY="21.0" prefHeight="60.0" prefWidth="396.0" spacing="30.0">
                <children>
-                  <Button fx:id="logout" mnemonicParsing="false" onAction="#handleClicks" prefHeight="45.0" prefWidth="154.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Logout" textFill="WHITE">
+                  <Button fx:id="logout" mnemonicParsing="false" onAction="#handleClicks" prefHeight="54.0" prefWidth="203.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Déconnexion" textFill="WHITE">
                      <font>
                         <Font name="Segoe UI" size="28.0" />
                      </font>
                   </Button>
-                  <Button fx:id="profile" mnemonicParsing="false" onAction="#handleClicks" prefHeight="51.0" prefWidth="163.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Profile" textFill="WHITE">
+                  <Button fx:id="profile" mnemonicParsing="false" onAction="#handleClicks" prefHeight="51.0" prefWidth="163.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Profil" textFill="WHITE">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
                </children>
             </HBox>
-            <Line endX="100.0" layoutX="1272.0" layoutY="48.0" rotate="-90.0" startX="25.0" stroke="#909090b2" strokeWidth="2.0" />
+            <Line endX="100.0" layoutX="1184.0" layoutY="48.0" rotate="-90.0" startX="25.0" stroke="#909090b2" strokeWidth="2.0" />
          </children>
       </Pane>
       <VBox layoutY="104.0" prefHeight="798.0" prefWidth="1680.0">

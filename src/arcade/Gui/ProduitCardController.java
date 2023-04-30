@@ -80,47 +80,32 @@ public class ProduitCardController implements Initializable {
         if (panier.containsKey(Integer.parseInt(prodId.getText()))) {
             qt = panier.get(Integer.parseInt(prodId.getText()));
             if ( (Integer.parseInt(this.quantite.getText()) - qt) == 0) {
-            System.out.println(Integer.parseInt(this.quantite.getText()) - qt);
-            System.out.println("2 "+qt);
                         Image img=new Image("arcade/images/warning.png");
-                        Notifications notfBuilder = Notifications.create().title("Warning!!").text("The quantity of the product: "+this.name.getText()+" is zero")
+                        Notifications notfBuilder = Notifications.create().title("Warning!!").text("La quantité de produit: '"+this.name.getText()+"' est nulle")
                         .darkStyle().graphic(new ImageView (img)).hideAfter(Duration.seconds(10)).position(Pos.BOTTOM_RIGHT);
                         notfBuilder.show();
                     }
             else {
             panier.put(Integer.parseInt(prodId.getText()), qt + 1);
-            Notifications notfBuilder = Notifications.create().title("Quantity Ordered increased")
+            Notifications notfBuilder = Notifications.create().title("La quantité commandée a augmenté")
                     .darkStyle().hideAfter(Duration.seconds(3)).position(Pos.BOTTOM_RIGHT);
             notfBuilder.show();
-                        System.out.println(Integer.parseInt(this.quantite.getText()) - qt);
             }
 
-        } /*
-        else if ( (Integer.parseInt(this.quantite.getText()) - qt) == 0) {
-            System.out.println(Integer.parseInt(this.quantite.getText()) - qt);
-            System.out.println("2 "+qt);
-                        Image img=new Image("arcade/images/warning.png");
-                        Notifications notfBuilder = Notifications.create().title("Warning!!").text("The quantity of the product: "+this.name.getText()+" is zero")
-                        .darkStyle().graphic(new ImageView (img)).hideAfter(Duration.seconds(10)).position(Pos.BOTTOM_RIGHT);
-                        notfBuilder.show();
-                    }*/
+        }
         else {
-            
             if ( (Integer.parseInt(this.quantite.getText()) - qt) == 0) {
-            System.out.println(Integer.parseInt(this.quantite.getText()) - qt);
-            System.out.println("2 "+qt);
                         Image img=new Image("arcade/images/warning.png");
-                        Notifications notfBuilder = Notifications.create().title("Warning!!").text("The quantity of the product: "+this.name.getText()+" is zero")
+                        Notifications notfBuilder = Notifications.create().title("Warning!!").text("La quantité de produit: '"+this.name.getText()+"' est nulle")
                         .darkStyle().graphic(new ImageView (img)).hideAfter(Duration.seconds(10)).position(Pos.BOTTOM_RIGHT);
                         notfBuilder.show();
                     }
             else {
                 panier.put(Integer.parseInt(prodId.getText()), 1);
             qt++;
-            Notifications notfBuilder = Notifications.create().title("Item added to Cart")
+            Notifications notfBuilder = Notifications.create().title("Produit ajouté au panier")
                     .darkStyle().hideAfter(Duration.seconds(3)).position(Pos.BOTTOM_RIGHT);
             notfBuilder.show();
-            System.out.println("3 "+qt);
             }
         }
 

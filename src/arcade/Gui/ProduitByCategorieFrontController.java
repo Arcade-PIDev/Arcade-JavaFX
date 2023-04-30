@@ -72,10 +72,6 @@ public class ProduitByCategorieFrontController implements Initializable{
                         content.getChildren().add(root);
                     }
                     
-
-
-                    
-                    
                 } catch (IOException ex) {
                     Logger.getLogger(ProduitByCategorieFrontController.class.getName()).log(Level.SEVERE, null, ex);
                 }

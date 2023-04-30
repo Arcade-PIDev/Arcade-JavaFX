@@ -21,12 +21,18 @@
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
             </TextField>
             <Label fx:id="nomCategorieError" textFill="#c20b0b" />
             <TextField fx:id="descriptionCategorie" blendMode="COLOR_BURN" prefHeight="52.0" prefWidth="417.0" promptText="Description" style="-fx-background-color: null; -fx-background-radius: 2em; -fx-border-color: #b7c3d7; -fx-border-radius: 2em;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
+               <font>
+                  <Font size="20.0" />
+               </font>
             </TextField>
             <Label fx:id="descriptionError" textFill="#c20b0b" />
             <HBox alignment="CENTER_LEFT" prefHeight="91.0" prefWidth="431.0" spacing="10.0">
@@ -35,6 +41,9 @@
                      <cursor>
                         <Cursor fx:constant="TEXT" />
                      </cursor>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
                   </TextField>
                   <Button fx:id="uploadCategorie" mnemonicParsing="false" onAction="#uploadCategorie" prefHeight="40.0" prefWidth="117.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Upload" textFill="#e7e5e7" />
                </children>

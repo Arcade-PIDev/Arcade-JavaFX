@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="1203.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.PanierController">
    <children>
@@ -45,7 +44,7 @@
             </FlowPane>
          </content>
       </ScrollPane>
-      <VBox alignment="BASELINE_LEFT" layoutX="706.0" layoutY="16.0" prefHeight="413.0" prefWidth="456.0" spacing="10.0" style="-fx-background-color: #4609c3; -fx-background-radius: 6em; -fx-border-radius: 6em;">
+      <VBox alignment="BASELINE_LEFT" layoutX="706.0" layoutY="16.0" prefHeight="340.0" prefWidth="456.0" spacing="10.0" style="-fx-background-color: #4609c3; -fx-background-radius: 6em; -fx-border-radius: 6em;">
          <children>
             <Label text="Commande" textFill="WHITE">
                <VBox.margin>
@@ -57,31 +56,26 @@
             </Label>
             <HBox prefHeight="81.0" prefWidth="423.0">
                <children>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Price can change depending on shipping method and taxes of your state" wrappingWidth="390.333984375">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
+                  <HBox prefHeight="68.0" prefWidth="416.0" spacing="150.0">
+                     <children>
+                        <Label text="UserName" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userName" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="128.0" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </HBox>
                </children>
             </HBox>
             <Line endX="228.2928924560547" endY="1.6033649444580078E-5" startX="-100.0" stroke="#e7e7e7" />
-            <HBox prefHeight="68.0" prefWidth="416.0" spacing="150.0">
-               <children>
-                  <Label text="UserName" textFill="WHITE">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="userName" layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="128.0" textFill="WHITE">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Label>
-               </children>
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
-            </HBox>
             <HBox prefHeight="68.0" prefWidth="416.0" spacing="150.0">
                <children>
                   <Label text="Prix Total" textFill="WHITE">
@@ -99,7 +93,7 @@
                   <Insets top="10.0" />
                </padding>
             </HBox>
-            <Button fx:id="ProceedToCheckout" alignment="CENTER" mnemonicParsing="false" onAction="#ProceedToCheckout" prefHeight="27.0" prefWidth="385.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Proceed to checkout" textFill="WHITE">
+            <Button fx:id="ProceedToCheckout" alignment="CENTER" mnemonicParsing="false" onAction="#ProceedToCheckout" prefHeight="27.0" prefWidth="385.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Passer à la caisse" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>

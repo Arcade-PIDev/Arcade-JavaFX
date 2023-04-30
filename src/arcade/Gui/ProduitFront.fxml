@@ -7,7 +7,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1680.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.ProduitFrontController">
    <children>
-      <ScrollPane hbarPolicy="NEVER" layoutX="287.0" layoutY="24.0" prefHeight="743.0" prefWidth="1235.0" style="-fx-background-color: transparent; -fx-background: transparent;">
+      <ScrollPane hbarPolicy="NEVER" layoutX="217.0" layoutY="24.0" prefHeight="743.0" prefWidth="1250.0" style="-fx-background-color: transparent; -fx-background: transparent;">
          <content>
             <FlowPane fx:id="content" hgap="20.0" prefHeight="820.0" prefWidth="1310.0" vgap="20.0">
                <padding>

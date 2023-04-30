@@ -61,7 +61,7 @@
                   </Label>
                </children>
             </HBox>
-            <ScrollPane hbarPolicy="NEVER" layoutX="22.0" layoutY="125.0" prefHeight="743.0" prefWidth="1235.0" style="-fx-background-color: transparent; -fx-background: transparent;">
+            <ScrollPane hbarPolicy="NEVER" layoutX="4.0" layoutY="125.0" prefHeight="743.0" prefWidth="1285.0" style="-fx-background-color: transparent; -fx-background: transparent;">
                <content>
                   <FlowPane fx:id="contentProd" prefHeight="826.0" prefWidth="1368.0" style="-fx-background-color: null; -fx-background-image: null;" />
                </content>

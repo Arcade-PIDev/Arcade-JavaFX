@@ -54,7 +54,6 @@ public class PanierController implements Initializable{
         int prixTotal = 0;
                 
         for (Map.Entry<Integer, Integer> entry : panier.entrySet()) {
-            //System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue());
             FXMLLoader item = new FXMLLoader(getClass().getResource("PanierItem.fxml"));
             try {
                 Parent itek = item.load();

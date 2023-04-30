@@ -98,7 +98,7 @@ public class ProduitController implements Initializable {
                     
                     if ( c.getQuantiteStock()== 0) {
                         Image img=new Image("arcade/images/warning.png");
-                        Notifications notfBuilder = Notifications.create().title("Warning!!").text("The quantity of the product: "+c.getNomProduit()+" is zero")
+                        Notifications notfBuilder = Notifications.create().title("Warning!!").text("La quantité de produit: '"+c.getNomProduit()+"' est nulle")
                         .darkStyle().graphic(new ImageView (img)).hideAfter(Duration.seconds(10)).position(Pos.BOTTOM_RIGHT);
                         notfBuilder.show();
                     }
