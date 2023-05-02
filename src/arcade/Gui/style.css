@@ -1,0 +1,13 @@
+.button{
+-fx-background-color :  #0e063d;
+-fx-text-fill : #e7e5e5;
+}
+
+.button:hover{
+-fx-background-color : #10165F;
+}
+.root {
+  -fx-background-image: url("file:///C:/Users/Ghada/Downloads/back.jpg");
+   -fx-background-size: cover;
+    -fx-background-position: center;
+}
