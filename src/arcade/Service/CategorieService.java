@@ -84,4 +84,14 @@ public class CategorieService implements IService<Categorie>{
         PreparedStatement pstm = con.prepareStatement(req);
         pstm.executeUpdate();
     }
+
+    @Override
+    public void modifier(int id, Categorie c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void supprimer(Categorie c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

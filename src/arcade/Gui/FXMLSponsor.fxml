@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1280.0" style="-fx-background-color: null;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.FXMLSponsorController">
+   <children>
+        <GridPane layoutY="-14.0" prefHeight="703.0" prefWidth="216.0" style="-fx-background-color: linear-gradient(to bottom, #0a0a1a, #0d0d29, #101038, #141449); " visible="false">
+        <Button fx:id="sponsorLink" onAction="#linkSponsorSideBar" prefHeight="39.0" prefWidth="211.0" style="-fx-background-color: linear-gradient(to bottom, #400080, #4600a6, #4c00cc, #5200e6);   -fx-text-fill: white;" text="Sponsor" GridPane.rowIndex="9">
+            <font>
+                <Font name="Impact" size="16.0" />
+            </font>
+        </Button>
+         <ImageView fitHeight="108.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+            <image>
+               <Image url="@../images/logo.png" />
+            </image>
+         </ImageView>
+         <Label alignment="TOP_LEFT" prefHeight="55.0" prefWidth="208.0" text="ARCADE" textFill="#fffefe" GridPane.rowIndex="1">
+            <font>
+               <Font name="PT Bold Mirror" size="20.0" />
+            </font>
+         </Label>
+        <Button fx:id="eventLink" onAction="#linkEvenementSideBar" prefHeight="40.0" prefWidth="211.0" style="-fx-background-color: linear-gradient(to bottom, #400080, #4600a6, #4c00cc, #5200e6);  -fx-text-fill: white;" text="Evenement" GridPane.rowIndex="8">
+            <font>
+                <Font name="Impact" size="16.0" />
+            </font>
+        </Button>
+         <columnConstraints>
+            <ColumnConstraints maxWidth="228.0" minWidth="211.0" prefWidth="211.0" />
+            <ColumnConstraints maxWidth="22.0" minWidth="5.0" prefWidth="22.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+            <RowConstraints maxHeight="48.0" minHeight="48.0" prefHeight="48.0" />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+    </GridPane>
+  <TableView fx:id="tableViewS" layoutX="21.0" layoutY="75.0" prefHeight="521.0" prefWidth="1251.0" style="-fx-background-color: #222; -fx-font-size: 14px;">
+    <columns>
+        <TableColumn fx:id="nomSp" prefWidth="150.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Nom" />
+        <TableColumn fx:id="logo" prefWidth="161.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Logo" />
+        <TableColumn fx:id="numTel" prefWidth="134.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Num Tel" />
+        <TableColumn fx:id="email" prefWidth="176.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Email" />
+        <TableColumn fx:id="adresse" prefWidth="136.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Adresse" />
+        <TableColumn fx:id="domaine" prefWidth="131.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Domaine" />
+        <TableColumn fx:id="montant" prefWidth="135.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Montant" />
+        <TableColumn fx:id="eventFk" prefWidth="227.0" style="-fx-background-color: linear-gradient(to bottom, #1a002a, #1c0035, #1e0040, #21004d); ; -fx-text-fill: #fff;" text="Evenement" />
+    </columns>
+    
+    <stylesheets>
+        <URL value="@StyleEventSponsor.css" />
+    </stylesheets>
+</TableView>
+ <ImageView fx:id="searchNotFoundImage" fitHeight="491.0" fitWidth="1251.0" layoutX="20.0" layoutY="106.0" visible="false">
+         <image>
+            <Image url="@../images/notFound3.jpg" />
+         </image></ImageView>
+
+
+      <Button layoutX="1138.0" layoutY="610.0" mnemonicParsing="false" onAction="#editSelectedSponsor" prefHeight="51.0" prefWidth="134.0" style="-fx-background-color: linear-gradient(to bottom, #00FFFF, #40E0D0);" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="Impact" size="15.0" />
+         </font></Button>
+      <Button layoutX="976.0" layoutY="610.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="51.0" prefWidth="134.0" style="-fx-background-color: linear-gradient(to bottom, #FF0080, #FF00FF);" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="Impact" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="21.0" layoutY="9.0" prefHeight="51.0" prefWidth="481.0" text="Liste Des Sponsors" textFill="#00FFFF">
+            <font>
+               <Font name="PT Bold Mirror" size="22.0" />
+            </font>
+      </Label>
+       
+      <Button layoutX="720.0" layoutY="21.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="134.0" style="-fx-background-color: linear-gradient(to bottom, #9400D3, #00FFFF);" text="Recherche" textFill="WHITE">
+      <font>
+            <Font name="Impact" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="searchField" layoutX="884.0" layoutY="19.0" prefHeight="39.0" prefWidth="395.0" />
+   </children>
+</AnchorPane>

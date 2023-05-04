@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="867.0" prefWidth="1425.0" style="-fx-background-color: null;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.userController">
+    <stylesheets>
+        <URL value="@ticket.css" />
+      <URL value="@style.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane layoutX="-79.0" layoutY="2.0" prefHeight="563.0" prefWidth="525.0" styleClass="box1">
+         <children>
+            <Button fx:id="updatebutton" layoutX="157.0" layoutY="415.0" mnemonicParsing="false" onAction="#onupdate" style="-fx-background-color: #d473d4; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="Update" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="57.0" layoutY="155.0" prefHeight="17.0" prefWidth="60.0" text="Email" textFill="WHITE" />
+            <TextField fx:id="emailtf" layoutX="190.0" layoutY="150.0" prefHeight="26.0" prefWidth="274.0" />
+            <Label layoutX="58.0" layoutY="236.0" prefHeight="17.0" prefWidth="118.0" text="Password" textFill="WHITE" />
+            <TextField fx:id="pwdtf" accessibleRole="PASSWORD_FIELD" layoutX="190.0" layoutY="231.0" prefHeight="26.0" prefWidth="274.0" />
+            <Label layoutX="57.0" layoutY="192.0" prefHeight="21.0" prefWidth="104.0" text="Username" textFill="WHITE" />
+            <TextField fx:id="usernametf" layoutX="190.0" layoutY="188.0" prefHeight="26.0" prefWidth="274.0" />
+            <ComboBox fx:id="roletf" layoutX="190.0" layoutY="270.0" prefHeight="31.0" prefWidth="274.0" promptText="choisir roles" style="-fx-background-color: fffff;" />
+            <Label layoutX="58.0" layoutY="274.0" prefHeight="17.0" prefWidth="118.0" text="Role" textFill="WHITE" />
+            <TextField fx:id="imagetf" accessibleRole="PASSWORD_FIELD" editable="false" layoutX="190.0" layoutY="316.0" prefHeight="26.0" prefWidth="274.0" />
+            <Label layoutX="58.0" layoutY="321.0" prefHeight="17.0" prefWidth="118.0" text="Avatar" textFill="WHITE" />
+            <Button fx:id="btnajouter1" layoutX="272.0" layoutY="415.0" mnemonicParsing="false" onAction="#browse" style="-fx-background-color: #d473d4; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="browse" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <!--<FontAwesomeIconView fill="#723e64" glyphName="USERS" layoutX="234.0" layoutY="78.0" size="60" text="" />-->
+            <Button fx:id="stat" layoutX="381.0" layoutY="415.0" mnemonicParsing="false" onAction="#Stat" style="-fx-background-color: #d473d4; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="Stat" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="446.0" layoutY="31.0" prefHeight="550.0" prefWidth="918.0" styleClass="box1">
+         <children>
+            <TableView fx:id="tabuser" layoutX="16.0" layoutY="25.0" prefHeight="514.0" prefWidth="853.0" style="-fx-background-color: null; -fx-background-image: null;">
+              <columns>
+                <TableColumn fx:id="colemail" prefWidth="142.0" text="Email" />
+                  <TableColumn fx:id="colusername" prefWidth="139.0" text="Username" />
+                  <TableColumn fx:id="colimage" minWidth="0.0" prefWidth="153.0" text="Image" />
+                  <TableColumn fx:id="colrole" minWidth="0.0" prefWidth="153.0" text="Role" />
+                  <TableColumn fx:id="colpwd" minWidth="0.0" prefWidth="126.0" text="Password" />
+                  <TableColumn fx:id="actions" prefWidth="135.0" text="Actions" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <PieChart fx:id="chartpie" layoutX="966.0" layoutY="581.0" prefHeight="286.0" prefWidth="500.0" />
+   </children>
+   <styleClass>
+      <String fx:value="mainFxmlClass" />
+      <String fx:value="root" />
+   </styleClass>
+</AnchorPane>

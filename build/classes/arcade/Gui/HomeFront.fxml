@@ -31,8 +31,7 @@
                   </Button>
                   <MenuButton mnemonicParsing="false" onAction="#handleClicks" style="-fx-background-color: transparent;" text="Activités" textFill="WHITE">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Jeux" />
-                      <MenuItem mnemonicParsing="false" text="Coaching" />
+                      <MenuItem fx:id="btnJeux" mnemonicParsing="false" onAction="#handleClicks" text="Jeux" />
                     </items>
                      <font>
                         <Font size="28.0" />
@@ -49,28 +48,24 @@
                         <Font size="28.0" />
                      </font>
                   </MenuButton>
-                  <Button mnemonicParsing="false" onAction="#handleClicks" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Evenements" textFill="WHITE">
+                  <Button fx:id="btnEvenement" mnemonicParsing="false" onAction="#handleClicks" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Evenements" textFill="WHITE">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
+                 
                </children>
             </HBox>
-            <HBox alignment="CENTER_RIGHT" layoutX="1251.0" layoutY="21.0" prefHeight="60.0" prefWidth="396.0" spacing="30.0">
+            <HBox alignment="CENTER_RIGHT" layoutX="1405.0" layoutY="21.0" prefHeight="60.0" prefWidth="242.0" spacing="30.0">
                <children>
-                  <Button fx:id="logout" mnemonicParsing="false" onAction="#handleClicks" prefHeight="54.0" prefWidth="203.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Déconnexion" textFill="WHITE">
-                     <font>
-                        <Font name="Segoe UI" size="28.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="profile" mnemonicParsing="false" onAction="#handleClicks" prefHeight="51.0" prefWidth="163.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Profil" textFill="WHITE">
+                  <Button fx:id="logout" mnemonicParsing="false" onAction="#logout" prefHeight="60.0" prefWidth="215.0" style="-fx-background-color: #f04086; -fx-background-radius: 2em; -fx-cursor: hand;" text="Déconnexion" textFill="WHITE">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Button>
                </children>
             </HBox>
-            <Line endX="100.0" layoutX="1184.0" layoutY="48.0" rotate="-90.0" startX="25.0" stroke="#909090b2" strokeWidth="2.0" />
+            <Line endX="100.0" layoutX="1345.0" layoutY="48.0" rotate="-90.0" startX="25.0" stroke="#909090b2" strokeWidth="2.0" />
          </children>
       </Pane>
       <VBox layoutY="104.0" prefHeight="798.0" prefWidth="1680.0">

@@ -5,6 +5,7 @@
  */
 package arcade.Gui;
 
+import static arcade.Arcade.loggedInUser;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -115,7 +116,7 @@ public class ProduitCardController implements Initializable {
     private void addProductToWishlist(MouseEvent event) {
         try {
             WishlistService ws = new WishlistService();
-            if (ws.afficher().contains(Integer.parseInt(prodId.getText()))) {
+            if (ws.afficher(loggedInUser.getId()).contains(Integer.parseInt(prodId.getText()))) {
                 ws.remove(Integer.parseInt(prodId.getText()));
                 wishlistBtn.setImage(new Image("http://127.0.0.1/pi/public/eshop/" + "empty.png", 32, 32, false, false));
             } else {

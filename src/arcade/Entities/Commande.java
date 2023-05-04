@@ -12,6 +12,7 @@ package arcade.Entities;
 public class Commande {
     private int id,prixTotal;
     private boolean isCanceled, isPaid;
+    int users_id;
     
     public Commande() {
     }
@@ -28,6 +29,14 @@ public class Commande {
 
     public void setIsCanceled(boolean isCanceled) {
         this.isCanceled = isCanceled;
+    }
+
+    public int getUsers_id() {
+        return users_id;
+    }
+
+    public void setUsers_id(int users_id) {
+        this.users_id = users_id;
     }
 
     public boolean isIsPaid() {

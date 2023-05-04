@@ -5,6 +5,7 @@
  */
 package arcade.Gui;
 
+import static arcade.Arcade.loggedInUser;
 import arcade.Entities.Produit;
 import arcade.Service.ProduitService;
 import arcade.Service.WishlistService;
@@ -48,7 +49,7 @@ public class WishlistController implements Initializable {
 
                     //wishlist
                     WishlistService ws = new WishlistService();
-                    if (ws.afficher().contains(p.getId())) {
+                    if (ws.afficher(loggedInUser.getId()).contains(p.getId())) {
                         WishlistCardController itemController = item.getController();
 
                         itemController.setNomProduit(p.getNomProduit());

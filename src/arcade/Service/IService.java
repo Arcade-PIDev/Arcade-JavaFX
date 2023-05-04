@@ -17,4 +17,6 @@ public interface IService <C>{
     List<C> afficher() throws SQLException;
     void delete(int id) throws SQLException;
     void update(C c) throws SQLException;
+    public void modifier (int id, C c);
+    public void supprimer (C c);
 }

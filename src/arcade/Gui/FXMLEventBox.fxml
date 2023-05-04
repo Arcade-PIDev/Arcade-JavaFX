@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="evenementBox" prefHeight="325.0" prefWidth="232.0" style="-fx-background-color: #0E063D; -fx-border-radius: 10px; -fx-background-radius: 2em; -fx-border-color: #EDB8FF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.EventBoxController">
+   <children>
+      <ImageView fx:id="affiche" fitHeight="171.0" fitWidth="193.0" layoutX="18.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="nomE" alignment="CENTER" contentDisplay="CENTER" layoutX="-3.0" layoutY="191.0" prefHeight="32.0" prefWidth="232.0" text="Label" textFill="#f8f9fc">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Label>
+      <Line endX="69.0" layoutX="141.0" layoutY="188.0" startX="-123.0" stroke="#f8f9fc" />
+      <Label fx:id="descriptionE" layoutX="20.0" layoutY="268.0" prefHeight="45.0" prefWidth="193.0" text="Label" textFill="#f8f9fc" />
+      <Label fx:id="EventId" layoutX="27.0" layoutY="211.0" prefHeight="17.0" prefWidth="55.0" visible="false" />
+      <Label fx:id="lieu" alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="223.0" prefHeight="19.0" prefWidth="171.0" text="Label" textAlignment="CENTER" textFill="#06fbff">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateD" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="19.0" layoutY="251.0" prefHeight="17.0" prefWidth="71.0" text="Label" textFill="#f201ff" />
+      <Label fx:id="dateF" layoutX="138.0" layoutY="252.0" prefHeight="17.0" prefWidth="71.0" text="Label" textFill="#f201ff" />
+      <ImageView fitHeight="26.0" fitWidth="45.0" layoutX="104.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/date.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

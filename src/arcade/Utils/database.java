@@ -8,6 +8,7 @@ package arcade.Utils;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -15,13 +16,14 @@ import java.sql.SQLException;
  */
 public class database {
  
-    final String url ="jdbc:mysql://localhost:3306/arcade";
+    final String url ="jdbc:mysql://localhost:3306/arcadeint";
     final String user="root";
     final String password="";
     
     static database instance;
     private Connection con;
-    
+    private static Connection cnx;
+
     private database(){
         try {
             con = DriverManager.getConnection(url, user, password);

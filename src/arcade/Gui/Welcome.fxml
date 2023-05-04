@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #004AAD;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="WHITE" layoutX="103.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Guest !" wrappingWidth="393.13671875">
+         <font>
+            <Font size="52.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="217.0" fitWidth="244.0" layoutX="191.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../user/logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

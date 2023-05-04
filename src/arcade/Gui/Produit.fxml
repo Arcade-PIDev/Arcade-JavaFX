@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
@@ -12,7 +16,7 @@
    <children>
       <Pane fx:id="contentProduit" layoutX="-3.0" prefHeight="900.0" prefWidth="1288.0">
          <children>
-            <HBox alignment="CENTER_LEFT" layoutX="12.0" layoutY="14.0" prefHeight="66.0" prefWidth="1254.0" spacing="20.0" style="-fx-background-color: #0e063d; -fx-background-radius: 2em;">
+            <HBox alignment="CENTER_LEFT" layoutX="12.0" layoutY="72.0" prefHeight="66.0" prefWidth="1254.0" spacing="20.0" style="-fx-background-color: #0e063d; -fx-background-radius: 2em;">
                <children>
                   <Label alignment="CENTER" prefHeight="33.0" prefWidth="88.0" text="Catégorie" textFill="WHITE">
                      <font>
@@ -61,11 +65,24 @@
                   </Label>
                </children>
             </HBox>
-            <ScrollPane hbarPolicy="NEVER" layoutX="4.0" layoutY="125.0" prefHeight="743.0" prefWidth="1285.0" style="-fx-background-color: transparent; -fx-background: transparent;">
+            <ScrollPane hbarPolicy="NEVER" layoutX="4.0" layoutY="157.0" prefHeight="711.0" prefWidth="1285.0" style="-fx-background-color: transparent; -fx-background: transparent;">
                <content>
                   <FlowPane fx:id="contentProd" prefHeight="826.0" prefWidth="1368.0" style="-fx-background-color: null; -fx-background-image: null;" />
                </content>
             </ScrollPane>
+            <HBox prefHeight="66.0" prefWidth="859.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="search" prefHeight="40.0" prefWidth="757.0" style="-fx-background-color: null; -fx-border-radius: 2em; -fx-border-color: black;" />
+                  <ImageView fitHeight="39.0" fitWidth="69.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/edit.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
          </children>
       </Pane>
    </children>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.SignInController">
+   <children>
+      <AnchorPane fx:id="login_form">
+         <children>
+            <AnchorPane fx:id="mdp_oublie_page" prefHeight="490.0" prefWidth="490.0" style="-fx-background-color: #151928;">
+               <children>
+                  <FontAwesomeIconView fill="#2196f3" glyphName="LOCK" layoutX="214.0" layoutY="116.0" size="80" />
+                  <Label layoutX="141.0" layoutY="132.0" text="Mot de passe oublié" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <HBox fx:id="mdp_oublie_mail" alignment="CENTER_LEFT" layoutX="30.0" layoutY="205.0" prefHeight="40.0" prefWidth="427.0">
+                     <children>
+                        <TextField fx:id="mdp_oublier_email" prefWidth="426.0" promptText="Email" styleClass="tf_box" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <ComboBox fx:id="mdp_oublie_question" layoutX="29.0" layoutY="265.0" prefHeight="31.0" prefWidth="427.0" promptText="Question" />
+                  <TextField fx:id="mdp_oublie_reponse" layoutX="31.0" layoutY="319.0" prefHeight="31.0" prefWidth="426.0" promptText="Reponse" styleClass="tf_box" />
+                  <Button fx:id="mdp_oublie_continue" alignment="CENTER" layoutX="16.0" layoutY="393.0" mnemonicParsing="false" onAction="#forgotpw" prefHeight="38.0" prefWidth="456.0" style="-fx-background-color: #2196F3;" styleClass="blue-btn" text="Continuer" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="mdp_oublie_back" alignment="CENTER" layoutX="17.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchpage" prefHeight="38.0" prefWidth="103.0" style="-fx-background-color: #2196F3;" styleClass="blue-btn" text="Retourner" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="new_mdp_page" prefHeight="490.0" prefWidth="490.0" style="-fx-background-color: #151928;">
+               <children>
+                  <FontAwesomeIconView fill="#2196f3" glyphName="LOCK" layoutX="214.0" layoutY="116.0" size="80" />
+                  <Label layoutX="141.0" layoutY="132.0" text="Mot de passe oublié" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" layoutX="30.0" layoutY="205.0" prefHeight="40.0" prefWidth="427.0">
+                     <children>
+                        <PasswordField fx:id="new_mdp" prefHeight="31.0" prefWidth="425.0" promptText="Password" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="new_mdp_continuer" alignment="CENTER" layoutX="12.0" layoutY="364.0" mnemonicParsing="false" onAction="#changerMdp" prefHeight="38.0" prefWidth="456.0" style="-fx-background-color: #2196F3;" styleClass="blue-btn" text="Continuer" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="mdp_oublie_back1" alignment="CENTER" layoutX="17.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchpage" prefHeight="38.0" prefWidth="103.0" style="-fx-background-color: #2196F3;" styleClass="blue-btn" text="Retourner" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <PasswordField fx:id="confirm_new_mdp" layoutX="30.0" layoutY="274.0" prefHeight="31.0" prefWidth="427.0" promptText="Confirm password" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="login_page">
+               <children>
+                  <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="490.0" styleClass="blue-panel" stylesheets="@styles.css">
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="133.0" text="se connecter" textFill="#2196f3">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="emailtf" promptText="Email" styleClass="tf_box" HBox.hgrow="ALWAYS" />
+                              <FontAwesomeIconView fill="WHITE" glyphName="USER" size="1.3em" />
+                           </children>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="15.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane>
+                                 <children>
+                                    <TextField fx:id="afficher_mdp_txt" prefHeight="32.0" prefWidth="447.0" styleClass="tf_box" />
+                                    <PasswordField fx:id="passwordtf" prefHeight="32.0" prefWidth="447.0" promptText="Password" styleClass="tf_box" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Hyperlink fx:id="login_mdp_oublie" onAction="#switchpage" text="Mot de passe oublié ?" textFill="#2196f3">
+                           <VBox.margin>
+                              <Insets left="310.0" />
+                           </VBox.margin>
+                        </Hyperlink>
+                        <CheckBox fx:id="login_afficher_mdp" mnemonicParsing="false" onAction="#showpassword" text="Afficher mot de passe" textFill="#2196f3">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <Button fx:id="loginbtn" mnemonicParsing="false" onAction="#login" prefHeight="38.0" prefWidth="456.0" styleClass="blue-btn" text="se connecter" textFill="WHITE">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="20.0" top="50.0" />
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

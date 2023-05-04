@@ -66,6 +66,7 @@ public class ProduitService implements IService<Produit>{
         return produits;
     }
     
+    
     @Override
     public void ajouter(Produit t) throws SQLException {
         String req = "INSERT INTO `produit`(`categorie_id`, `nom_produit`, `prix`, `quantite_stock`, `image`, `description`,"
@@ -87,6 +88,34 @@ public class ProduitService implements IService<Produit>{
        List<Produit> produits = new ArrayList<>();
         try {
              String req ="SELECT * FROM `produit` ";
+             
+            Statement st = con.createStatement();
+            ResultSet rs= st.executeQuery(req);
+            while (rs.next()){
+                Produit p = new Produit();
+                p.setId(rs.getInt(1));
+                p.setCategorie(rs.getInt(2));
+                p.setNomProduit(rs.getString(3));
+                p.setPrix(rs.getInt(4));
+                p.setQuantiteStock(rs.getInt(5));
+                p.setImage(rs.getString(6));
+                p.setDescription(rs.getString(7));
+                p.setCreationDate(rs.getDate(8));
+                p.setModificationDate(rs.getDate(9));
+                p.setIsEnabled(rs.getBoolean(10));
+                produits.add(p);
+            }
+         } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+   return produits;
+    }
+    
+    public List<Produit> searchByName(String nom) throws SQLException{
+       List<Produit> produits = new ArrayList<>();
+        try {
+             String req ="SELECT * FROM `produit` where `nom_produit` like '%" + nom +"%'";
              
             Statement st = con.createStatement();
             ResultSet rs= st.executeQuery(req);
@@ -157,6 +186,16 @@ public class ProduitService implements IService<Produit>{
                 p.setIsEnabled(rs.getBoolean(10));
             
         return p;
+    }
+
+    @Override
+    public void modifier(int id, Produit c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void supprimer(Produit c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
         
 }

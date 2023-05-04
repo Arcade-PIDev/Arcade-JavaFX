@@ -23,6 +23,7 @@ import javafx.scene.Parent;
 import javafx.scene.layout.FlowPane;
 import arcade.Service.WishlistService;
 import static arcade.Arcade.categorieId;
+import static arcade.Arcade.loggedInUser;
 
 /**
  * FXML Controller class
@@ -65,7 +66,7 @@ public class ProduitByCategorieFrontController implements Initializable{
                         
                         WishlistService ws=new WishlistService();
                         
-                        if( ws.afficher().contains(p.getId())){
+                        if( ws.afficher(loggedInUser.getId()).contains(p.getId())){
                         itemController.setWishlist("http://127.0.0.1/pi/public/eshop/" +"full.png");
                         }
                         

@@ -41,8 +41,8 @@ public class WishlistService {
 
         pstm.executeUpdate();
     }
-    public List<Integer> afficher() throws SQLException {
-        String req = "Select `produits_id` from `wishlist`";
+    public List<Integer> afficher(int id) throws SQLException {
+        String req = "Select `produits_id` from `wishlist` where `user_id` = " + id;
         stm = con.createStatement();
         ResultSet rst = stm.executeQuery(req);
         System.out.println(rst.toString());

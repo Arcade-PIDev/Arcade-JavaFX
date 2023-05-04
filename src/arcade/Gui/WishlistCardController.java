@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import static arcade.Arcade.loggedInUser;
 
 /**
  *
@@ -78,7 +79,7 @@ public class WishlistCardController implements Initializable{
     private void removeProductFromWishlist(MouseEvent event) {
         try {
             WishlistService ws = new WishlistService();
-            if (ws.afficher().contains(Integer.parseInt(prodId.getText()))) {
+            if (ws.afficher(loggedInUser.getId()).contains(Integer.parseInt(prodId.getText()))) {
                 ws.remove(Integer.parseInt(prodId.getText()));
                 wishlistBtn.setImage(new Image("http://127.0.0.1/pi/public/eshop/" + "empty.png", 32, 32, false, false));
             } else {

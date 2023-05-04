@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="84.0" prefWidth="1269.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.ContentJeuxController">
+   <children>
+      <HBox fx:id="itemC" alignment="CENTER_LEFT" layoutX="2.0" layoutY="16.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="1266.0" spacing="50.0" style="-fx-background-color: null;">
+         <children>
+            <Label fx:id="id" maxWidth="85.0" minWidth="15.0" prefHeight="27.0" prefWidth="85.0" text="idJeux" textFill="#b7c3d7">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="nom" maxWidth="124.0" minWidth="65.0" prefHeight="27.0" prefWidth="124.0" text="nom" textFill="#b7c3d7">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="description" maxWidth="116.0" minWidth="65.0" prefHeight="27.0" prefWidth="109.0" text="description" textFill="#b7c3d7">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="image" fitHeight="58.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../xampp/htdocs/pi/public/eshop/categorie/9b312093b4c0b710fffcc7d3128115fe.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="genre" maxWidth="132.0" minWidth="67.0" prefHeight="27.0" prefWidth="132.0" text="Genre" textFill="#b7c3d7">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="color" maxWidth="171.0" minWidth="77.0" prefHeight="27.0" prefWidth="161.0" text="Color" textFill="#b7c3d7">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="79.0" spacing="25.0">
+               <children>
+                  <ImageView fx:id="EditJeux" fitHeight="21.0" fitWidth="21.0" onMouseClicked="#EditJeux" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                     <image>
+                        <Image url="@../images/edit1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="deleteJeux" fitHeight="21.0" fitWidth="21.0" onMouseClicked="#deleteJeux" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                     <image>
+                        <Image url="@../images/delete1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
+         </effect>
+      </HBox>
+   </children>
+</AnchorPane>

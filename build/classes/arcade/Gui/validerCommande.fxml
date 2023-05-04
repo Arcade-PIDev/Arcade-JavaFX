@@ -30,9 +30,9 @@
                         <Font size="21.0" />
                      </font>
                   </Label>
-                  <Label fx:id="userName" prefHeight="31.0" prefWidth="128.0" textFill="#00fadf">
+                  <Label fx:id="userName" prefHeight="31.0" prefWidth="128.0" text="Amira" textFill="#00fadf">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
                   <Label text="Prix Total" textFill="#f8f9fc">

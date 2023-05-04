@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1280.0" style="-fx-background-color: null;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.FXMLControllerModifierS">
+
+     <children>
+          <Label layoutX="490.0" layoutY="53.0" prefHeight="51.0" prefWidth="481.0" text="Ajouter Sponsors: " textFill="WHITE">
+         <font>
+            <Font name="Impact" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TFNomSp" layoutX="643.0" layoutY="169.0" prefHeight="43.0" prefWidth="371.0" />
+      <Label layoutX="468.0" layoutY="181.0" text="Nom:" textFill="WHITE">
+         <font>
+              <Font name="Eras Demi ITC" size="16.0" />
+         </font></Label>
+      <Label layoutX="458.0" layoutY="328.0" prefHeight="27.0" prefWidth="85.0" text="Logo" textFill="WHITE">
+         <font>
+              <Font name="Eras Demi ITC" size="16.0" />
+         </font></Label>
+      <Label layoutX="462.0" layoutY="543.0" text="Montant sponsoring:" textFill="WHITE">
+         <font>
+              <Font name="Eras Demi ITC" size="16.0" />
+         </font></Label>
+      <Label layoutX="464.0" layoutY="264.0" text="Num Telephone:" textFill="WHITE">
+         <font>
+             <Font name="Eras Demi ITC" size="16.0" />
+         </font></Label>
+      <TextField fx:id="TFNumTel" layoutX="643.0" layoutY="242.0" prefHeight="43.0" prefWidth="371.0" />
+      <TextArea fx:id="TAadresse" layoutX="647.0" layoutY="670.0" prefHeight="136.0" prefWidth="371.0" />
+      <Label layoutX="468.0" layoutY="738.0" text="Adresse:" textFill="WHITE">
+         <font>
+              <Font name="Eras Demi ITC" size="16.0" />
+         </font></Label>
+      <Label layoutX="463.0" layoutY="618.0" text="Evenement sponsorisé:" textFill="WHITE">
+         <font>
+              <Font name="Eras Demi ITC" size="16.0" />
+         </font></Label>
+      <TextField fx:id="TFemail" layoutX="647.0" layoutY="394.0" prefHeight="43.0" prefWidth="371.0" />
+      <Label layoutX="462.0" layoutY="406.0" text="Email:" textFill="WHITE">
+         <font>
+              <Font name="Eras Demi ITC" size="16.0" />
+         </font></Label>
+      <Label layoutX="461.0" layoutY="474.0" text="Domaine:" textFill="WHITE">
+         <font>
+              <Font name="Eras Demi ITC" size="16.0" />
+         </font></Label>
+      <TextField fx:id="TFdomaine" layoutX="645.0" layoutY="462.0" prefHeight="43.0" prefWidth="371.0" />
+      <TextField fx:id="TFLogo" layoutX="645.0" layoutY="320.0" prefHeight="43.0" prefWidth="283.0" />
+      <Button layoutX="841.0" layoutY="829.0" mnemonicParsing="false" onAction="#modifier" prefHeight="43.0" prefWidth="174.0" style="-fx-background-color: linear-gradient(to bottom, #d400ff, #7a00cc);" text="Modifier Sponsor" textFill="WHITE">
+         <font>
+             <Font name="Impact" size="14.0" />
+         </font></Button>
+       <Button fx:id="backButtonEdit" layoutX="642.0" layoutY="842.0" mnemonicParsing="false" onAction="#initialize" prefHeight="27.0" prefWidth="132.0" style="-fx-background-color: linear-gradient(to bottom, #00FFFF, #40E0D0);" text="Retour Liste" textFill="WHITE">
+         <font>
+            <Font name="Impact" size="15.0" />
+         </font></Button>
+      
+       <Button fx:id="chooseLogo" layoutX="943.0" layoutY="320.0" mnemonicParsing="false" onAction="#chooseLogo" prefHeight="43.0" prefWidth="73.0" style="-fx-background-color: linear-gradient(to bottom, #FF0080, #FF00FF);" text="Choisir" textFill="WHITE">
+      <font>
+            <Font name="Impact" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="TFmontant" layoutX="647.0" layoutY="531.0" prefHeight="43.0" prefWidth="371.0" />
+      <SplitMenuButton fx:id="SPMeventFK" layoutX="647.0" layoutY="603.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="371.0" text="choisir evenement">
+        
+      </SplitMenuButton>
+       <ImageView fitHeight="177.0" fitWidth="174.0" layoutX="856.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.png" />
+         </image>
+      </ImageView>
+       
+   </children>
+</AnchorPane>

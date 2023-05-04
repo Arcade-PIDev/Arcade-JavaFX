@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="569.0" prefWidth="1389.0" style="-fx-background-color: null;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.userAddController">
+   <children>
+      <AnchorPane layoutX="460.0" layoutY="26.0" prefHeight="556.0" prefWidth="470.0" styleClass="box1" stylesheets="@ticket.css">
+         <children>
+            <AnchorPane layoutX="137.0" layoutY="-14.0" prefHeight="164.0" prefWidth="186.0" styleClass="box1">
+               <children>
+                  <!--<FontAwesomeIconView fill="#d473d4" glyphName="USER_PLUS" layoutX="61.0" layoutY="102.0" size="80" />-->
+               </children></AnchorPane>
+            <Button fx:id="btnajouter" layoutX="144.0" layoutY="401.0" mnemonicParsing="false" onAction="#cancel" style="-fx-background-color: d473d4; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="add" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="38.0" layoutY="168.0" prefHeight="17.0" prefWidth="60.0" text="Email" textFill="WHITE" />
+            <TextField fx:id="emailtf" layoutX="171.0" layoutY="163.0" prefHeight="26.0" prefWidth="274.0" />
+            <Label layoutX="39.0" layoutY="249.0" prefHeight="17.0" prefWidth="118.0" text="Password" textFill="WHITE" />
+            <TextField fx:id="pwdtf" accessibleRole="PASSWORD_FIELD" layoutX="171.0" layoutY="244.0" prefHeight="26.0" prefWidth="274.0" />
+            <Label layoutX="38.0" layoutY="205.0" prefHeight="21.0" prefWidth="102.0" text="Username" textFill="#f5f5f5" />
+            <TextField fx:id="usernametf" layoutX="171.0" layoutY="201.0" prefHeight="26.0" prefWidth="274.0" />
+            <ComboBox fx:id="roletf" layoutX="171.0" layoutY="283.0" prefHeight="31.0" prefWidth="274.0" promptText="choisir roles" style="-fx-background-color: #FFFFFF;" />
+            <Label layoutX="39.0" layoutY="287.0" prefHeight="17.0" prefWidth="118.0" text="Role" textFill="WHITE" />
+            <TextField fx:id="imagetf" accessibleRole="PASSWORD_FIELD" editable="false" layoutX="171.0" layoutY="329.0" prefHeight="26.0" prefWidth="274.0" />
+            <Label layoutX="39.0" layoutY="334.0" prefHeight="17.0" prefWidth="118.0" text="Avatar" textFill="WHITE" />
+            <Button fx:id="btnajouter1" layoutX="235.0" layoutY="401.0" mnemonicParsing="false" onAction="#browse" style="-fx-background-color: #d473d4; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="browse" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancelBtn" layoutX="341.0" layoutY="401.0" mnemonicParsing="false" onAction="#cancel" style="-fx-background-color: #d473d4; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="cancel" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="919.0" prefHeight="583.0" prefWidth="470.0" style="-fx-background-image: #FFFFFF;" stylesheets="@style.css">
+         <children>
+            <ImageView fitHeight="247.0" fitWidth="254.0" layoutX="190.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/pngtree-neon-game-png-image_2899088-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <ImageView fitHeight="321.0" fitWidth="383.0" layoutX="-62.0" layoutY="435.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Game-Over-Glitch-Transparent-PNG.png" />
+         </image>
+      </ImageView>
+   </children>
+   <styleClass>
+      <String fx:value="box1" />
+      <String fx:value="root" />
+   </styleClass>
+   <stylesheets>
+      <URL value="@Style.css" />
+      <URL value="@style.css" />
+   </stylesheets>
+</AnchorPane>

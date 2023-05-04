@@ -5,6 +5,7 @@
  */
 package arcade.Gui;
 
+import static arcade.Arcade.loggedInUser;
 import arcade.Entities.Categorie;
 import arcade.Entities.Produit;
 import arcade.Service.CategorieService;
@@ -63,7 +64,7 @@ public class ProduitFrontController implements Initializable{
                         itemController.setImage("http://127.0.0.1/pi/public/eshop/produit/"+p.getImage());
 
                         WishlistService ws=new WishlistService();
-                        if( ws.afficher().contains(p.getId())){
+                        if( ws.afficher(loggedInUser.getId()).contains(p.getId())){
                         itemController.setWishlist("http://127.0.0.1/pi/public/eshop/" +"full.png");
                         }
 

@@ -5,7 +5,9 @@
  */
 package arcade.Gui;
 
+import static arcade.Arcade.loggedInUser;
 import arcade.Entities.Categorie;
+import java.io.IOException;
 import javafx.scene.control.MenuItem;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
@@ -19,6 +21,11 @@ import javafx.scene.layout.Pane;
 import javafx.event.ActionEvent;
 import java.util.logging.Logger;
 import java.util.logging.Level;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -36,17 +43,30 @@ public class HomeFrontController implements Initializable {
     @FXML
     private MenuItem btnProduits;
     @FXML
+    private MenuItem btnCommandes;
+    @FXML
+    private MenuItem btnJeux;
+    @FXML
+    private MenuItem btnCoaching;
+    @FXML
     private Label title;
     @FXML
     private Pane content;
     
+    @FXML
+    private Button btnEvenement;
+   
+    @FXML
+    private Button logout;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
     }
     
     @FXML
-    private void handleClicks(ActionEvent event) {
+    private void handleClicks(ActionEvent event) throws IOException {
          content.getChildren().removeAll(content.getChildren());
            if(event.getSource() == btnCategories){
                title.setVisible(true);
@@ -92,6 +112,33 @@ public class HomeFrontController implements Initializable {
                 Logger.getLogger(PanierController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+       else if(event.getSource() == btnJeux){
+               title.setVisible(true);
+                title.setText("Jeux");
+          try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("JeuxFront.fxml"));
+                Parent root = loader.load();
+                content.getChildren().add(root);
+            } catch (Exception ex) {
+                Logger.getLogger(JeuxFrontController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+           
+       else if (event.getSource() == btnEvenement) {
+        //System.out.println("Clicked button: " + btnEvenement.toString());
+        title.setVisible(false);
+        
+
+        if (content != null) {
+            content.getChildren().clear();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLFrontE.fxml"));
+            Parent root = loader.load();
+            content.getChildren().add(root);
+        } else {
+            System.out.println("content is null");
+        }
+          }
            
     }
     
@@ -138,4 +185,21 @@ public class HomeFrontController implements Initializable {
         }
     }
     
+        @FXML
+private void logout(ActionEvent event) {
+    try {
+        // Close the current window
+        Stage stage = (Stage) logout.getScene().getWindow();
+        stage.close();
+
+        // Load the new FXML file and show it in the same window
+        Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        
+    } catch (IOException ex) {
+        ex.printStackTrace();
+    }
+}
 }

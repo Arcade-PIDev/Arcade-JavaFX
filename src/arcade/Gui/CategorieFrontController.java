@@ -5,6 +5,7 @@
  */
 package arcade.Gui;
 
+import static arcade.Arcade.loggedInUser;
 import arcade.Entities.Categorie;
 import arcade.Service.CategorieService;
 import java.io.IOException;
@@ -44,6 +45,7 @@ public class CategorieFrontController implements Initializable{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("CategorieCard.fxml"));
                 Parent root = loader.load();
                 CategorieCardController cont = loader.getController();
+                    System.out.println(loggedInUser.getId());
 
                     if (c.isIsEnabled())
                     {

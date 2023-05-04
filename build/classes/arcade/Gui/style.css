@@ -1,8 +1,14 @@
-.button{
--fx-background-color :  null;
--fx-text-fill : white;
+.button {
+    -fx-background-color: null;
+    -fx-text-fill: white;
 }
 
-.button:hover{
-   -fx-background-color: linear-gradient(from 65px 25px to 100px 100px, #4552d7, #ad3169);
+.button:hover {
+    -fx-background-color: linear-gradient(from 65px 25px to 100px 100px, #4552d7, #ad3169);
+}
+
+.root {
+    -fx-background-image: url("file:///C:/Users/nadak/Downloads/back.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
 }

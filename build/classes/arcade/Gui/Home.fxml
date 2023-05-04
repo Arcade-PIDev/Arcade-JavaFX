@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1580.0" style="-fx-background-color: #1d0761;-fx-background-image: url('file:C:/Users/Amira/Desktop/esprit/me/arcade/src/arcade/images/background.png');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.HomeController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1680.0" style="-fx-background-color: #1d0761;-fx-background-image: url('file:C:/Users/Amira/Desktop/esprit/me/arcade/src/arcade/images/background.png');" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.HomeController">
     <children>
       <Pane fx:id="mainContent" layoutX="300.0" layoutY="5.0" prefHeight="892.0" prefWidth="1234.0" style="-fx-background-color: transparent; -fx-background-repeat: no-repeat; -fx-background-size: auto;">
          <children>
@@ -57,6 +57,21 @@
                   </Label>
                </children>
             </VBox>
+            <Button fx:id="btnUser" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="User">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
             <Button fx:id="btnCategories" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Categories">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
@@ -77,6 +92,81 @@
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/produits1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnJeux" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Jeux">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/jeux.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnCoaching" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Coaching">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/coaching.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnEvenements" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Evenements">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/event.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSponsor" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Sponsors">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/sponsor.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="logout" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#logout" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Deconnexion">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logout.png" />
                      </image>
                   </ImageView>
                </graphic>
