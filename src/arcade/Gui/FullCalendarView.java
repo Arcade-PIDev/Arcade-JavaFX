@@ -45,13 +45,13 @@ public class FullCalendarView {
             currentYearMonth = yearMonth;
             // Create the calendar grid pane
             GridPane calendar = new GridPane();
-            calendar.setPrefSize(600, 400);
+            calendar.setPrefSize(1680, 900);
             calendar.setGridLinesVisible(true);
             // Create rows and columns with anchor panes for the calendar
             for (int i = 0; i < 5; i++) {
                 for (int j = 0; j < 7; j++) {
                     AnchorPane ap = new AnchorPane();
-                    ap.setPrefSize(200, 200);
+                    ap.setPrefSize(300, 165);
                     ap.setStyle("-fx-background-color: #2d292d; ");
 
                     calendar.add(ap, j, i);
@@ -63,14 +63,14 @@ public class FullCalendarView {
                     new Text("Wednesday"), new Text("Thursday"), new Text("Friday"),
                     new Text("Saturday")};
             GridPane dayLabels = new GridPane();
-            dayLabels.setPrefWidth(600);
+            dayLabels.setPrefWidth(700);
             int col = 0;
             for (Text txt : dayNames) {
                 AnchorPane ap = new AnchorPane();
-                ap.setPrefSize(200, 10);
+                ap.setPrefSize(300, 40);
                 ap.setStyle("-fx-background-color: #180d1b");
                 txt.setFill(Paint.valueOf("#FFFFFF"));
-                txt.setFont(Font.font("Verdana", FontWeight.BOLD, 12));
+                txt.setFont(Font.font("Verdana", FontWeight.BOLD, 20));
                 AnchorPane.setBottomAnchor(txt, 5.0);
                 ap.getChildren().add(txt);
                 dayLabels.add(ap, col++, 0);
@@ -79,7 +79,7 @@ public class FullCalendarView {
 
             calendarTitle = new Text();
             calendarTitle.setFill(Paint.valueOf("WHITE"));
-            calendarTitle.setFont(Font.font("Verdana", FontWeight.BOLD, 18));
+            calendarTitle.setFont(Font.font("Verdana", FontWeight.BOLD, 35));
            
             HBox titleBar = new HBox(10, calendarTitle);
             titleBar.setStyle("-fx-background-color: #181b26");
@@ -137,9 +137,9 @@ public class FullCalendarView {
                     if (eventDayNumber == dayNumber) {
                         
                         VBox eventBox = new VBox();
-                        eventBox.setStyle("-fx-background-color:  #781e77 ; -fx-padding: 2px;");
+                        eventBox.setStyle("-fx-background-color:  #781e77 ; -fx-padding: 15px;");
                         Label eventNameLabel = new Label(eventName);
-                        eventNameLabel.setStyle("-fx-text-fill: white; -fx-font-weight: bold;");
+                        eventNameLabel.setStyle("-fx-font-size: 20px;-fx-text-fill: white; -fx-font-weight: bold;");
                         eventBox.getChildren().add(eventNameLabel);
 
                         ap.getChildren().add(eventBox);
@@ -166,9 +166,6 @@ public class FullCalendarView {
           }
            
       }
-
-
-    
  
             public void previousMonth() {
               System.out.println("previousMonth() called");
@@ -194,8 +191,9 @@ public class FullCalendarView {
 
             public Button getPreviousMonthButton(List<Evenement> listeEvenement) {
              Button previousMonth = new Button("<<");
-             previousMonth.setStyle("-fx-background-color: linear-gradient(to bottom, #4b0082, #ee5622); -fx-text-fill: WHITE;");
-
+             previousMonth.setStyle("-fx-font-size: 20px;-fx-background-color: linear-gradient(to bottom, #4b0082, #ee5622); -fx-text-fill: WHITE;");
+                 previousMonth.setPrefSize(200, 30);
+                 
              previousMonth.setOnAction(e -> {
                  previousMonth();
                  populateCalendar(getCurrentYearMonth(), listeEvenement);
@@ -205,17 +203,15 @@ public class FullCalendarView {
    
             public Button getNextMonthButton(List<Evenement> listeEvenement) {
                 Button nextMonth = new Button(">>");
-                nextMonth.setStyle("-fx-background-color: linear-gradient(to bottom, #4b0082, #ee5622); -fx-text-fill: WHITE");
-
+                nextMonth.setStyle("-fx-font-size: 20px;-fx-background-color: linear-gradient(to bottom, #4b0082, #ee5622); -fx-text-fill: WHITE");
+                    nextMonth.setPrefSize(200, 30);
+                    
                 nextMonth.setOnAction(e -> {
                     nextMonth();
                     populateCalendar(getCurrentYearMonth(), listeEvenement);
                 });
                 return nextMonth;
             }
-
-    
-       
 
 }
 

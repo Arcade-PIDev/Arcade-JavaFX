@@ -29,24 +29,14 @@ public class Arcade extends Application{
 
     @Override
     public void start(Stage primaryStage) throws IOException{
-    //try {
-        Parent root = FXMLLoader.load(getClass().getResource("Gui/main.fxml"));
-        /*Scene scene = new Scene(root,1680,900);
-        primaryStage.setScene(scene);
-
-        primaryStage.setTitle("Arcade");
-        primaryStage.show();*/
+        Parent root = FXMLLoader.load(getClass().getResource("Gui/home.fxml"));
         
         Scene scene = new Scene(root,1680,900);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Arcade");
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
+        //primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.show();
-        /*
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage()); 
-        }*/
     }
     public static void main(String[] args) {
         launch(args);

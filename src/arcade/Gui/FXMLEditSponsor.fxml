@@ -60,7 +60,7 @@
          <font>
              <Font name="Impact" size="14.0" />
          </font></Button>
-       <Button fx:id="backButtonEdit" layoutX="642.0" layoutY="842.0" mnemonicParsing="false" onAction="#initialize" prefHeight="27.0" prefWidth="132.0" style="-fx-background-color: linear-gradient(to bottom, #00FFFF, #40E0D0);" text="Retour Liste" textFill="WHITE">
+       <Button fx:id="backButtonEdit" layoutX="642.0" layoutY="842.0" mnemonicParsing="false" onAction="#cancelButton" prefHeight="27.0" prefWidth="132.0" style="-fx-background-color: linear-gradient(to bottom, #00FFFF, #40E0D0);" text="Retour Liste" textFill="WHITE">
          <font>
             <Font name="Impact" size="15.0" />
          </font></Button>

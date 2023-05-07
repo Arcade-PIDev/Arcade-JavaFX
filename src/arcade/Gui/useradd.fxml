@@ -19,7 +19,7 @@
                <children>
                   <!--<FontAwesomeIconView fill="#d473d4" glyphName="USER_PLUS" layoutX="61.0" layoutY="102.0" size="80" />-->
                </children></AnchorPane>
-            <Button fx:id="btnajouter" layoutX="144.0" layoutY="401.0" mnemonicParsing="false" onAction="#cancel" style="-fx-background-color: d473d4; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="add" textFill="WHITE">
+            <Button fx:id="btnajouter" layoutX="144.0" layoutY="401.0" mnemonicParsing="false" onAction="#OnCreate" style="-fx-background-color: d473d4; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="add" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>

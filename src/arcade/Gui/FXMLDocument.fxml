@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="main_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.HomeFrontController">
+   <children>
+      <ImageView fx:id="image1" fitHeight="350.0" fitWidth="600.0" layoutY="25.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/5db9cc93a28db58b3bc317e2dba59ced.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="image2" fitHeight="350.0" fitWidth="600.0" layoutX="-600.0" layoutY="25.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/9074a32f54a7ce42842f6c430d1cf60e.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="image3" fitHeight="350.0" fitWidth="600.0" layoutX="-600.0" layoutY="25.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/be031ad95dca3261ae8461a6e7d617db.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="image4" fitHeight="350.0" fitWidth="600.0" layoutX="-600.0" layoutY="25.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/c603f65f33927a5b0714a774ae8d7855.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

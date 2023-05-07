@@ -127,7 +127,7 @@ public class addProduitController implements Initializable{
         categoriesError.setText("");
         prixError.setText("");
         quantiteError.setText("");
-        
+
         if (nomProduit.getText().length() != 0 && description.getText().length() != 0  && categories.getSelectionModel().isEmpty() == false && image.getText().length() != 0) {
             if (Pattern.matches("^[a-zA-Z0-9 ,-/?:.]*$", nomProduit.getText()) == true && Pattern.matches("^[a-zA-Z0-9 ,-/?:.]*$", description.getText()) == true && Pattern.matches("^[0-9]*$", prix.getText()) == true && Pattern.matches("^[0-9]*$", quantite.getText()) == true && Integer.parseInt(quantite.getText()) > -1 && Integer.parseInt(prix.getText()) > -1) {
             
@@ -139,7 +139,7 @@ public class addProduitController implements Initializable{
                 String[] categoryIdCombo = categories.getValue().split(":", 2);
                 p.setCategorie(Integer.parseInt(categoryIdCombo[0]));
 
-                ProduitService ps = new ProduitService();
+        ProduitService ps = new ProduitService();
                 try {
                     ps.ajouter(p);
 
@@ -157,6 +157,7 @@ public class addProduitController implements Initializable{
                 } catch (Exception ex) {
                     System.out.println(ex.getMessage());
                 }
+            
             } else {
                 if (Pattern.matches("^[a-zA-Z]*$", nomProduit.getText()) == false) {
                     nomProduitError.setText("Seulement des lettres");
@@ -229,8 +230,8 @@ public class addProduitController implements Initializable{
     private void upload(ActionEvent event) {
 
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
-                new FileChooser.ExtensionFilter("PNG", "*.png"));
+                new FileChooser.ExtensionFilter("PNG", "*.png"),
+                new FileChooser.ExtensionFilter("JPG", "*.jpg"));
         fileChooser.setTitle("Save");
         File file = fileChooser.showOpenDialog(primaryStage);
         image.clear();

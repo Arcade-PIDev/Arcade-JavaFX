@@ -73,7 +73,11 @@ public class CategorieController implements Initializable {
                     cont.setImage("http://127.0.0.1/pi/public/eshop/categorie/"+c.getImage());
                     
                     cont.setCreationDate(c.getCreationDate()+"");
+                    if (c.getModificationDate()==null)
+                        cont.setModificationDate("        -");
+                    else
                     cont.setModificationDate(c.getModificationDate()+"");
+                    
                     //cont.setIsEnabled(c.isIsEnabled()+"");
                     
                     if (c.isIsEnabled())

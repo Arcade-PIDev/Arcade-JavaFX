@@ -5,12 +5,14 @@
  */
 package arcade.Gui;
 
+import arcade.Entities.Evenement;
 import arcade.Gui.seancecoachingController;
 import arcade.Entities.seancecoaching;
 import arcade.Utils.database;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.awt.Desktop;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -118,6 +120,10 @@ public class seancecoachingController implements Initializable {
     @FXML
     private TextField searchField;
 
+    private ObservableList<seancecoaching> seances = FXCollections.observableArrayList();
+
+    @FXML
+    private ImageView searchNotFoundImage;
     /**
      * Initializes the controller class.
      */
@@ -127,8 +133,37 @@ public class seancecoachingController implements Initializable {
         showseancecoachings();
         //showRec();
         //searchRec();
+        
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+        rechercheAdvanced(null);
+    });
     }
 
+    @FXML
+            private void rechercheAdvanced(KeyEvent event) {
+                System.out.println(seances);
+                String searchText = searchField.getText();
+                System.out.println();
+                if (searchText == null || searchText.isEmpty()) {
+                    tabseance.setItems(seances);
+                    searchNotFoundImage.setVisible(false);
+                    return;
+                }
+                ObservableList<seancecoaching> searchResults = FXCollections.observableArrayList();
+                for (seancecoaching seance : seances) {
+                    if (seance.getTitre_seance().toLowerCase().contains(searchText.toLowerCase()) || seance.getDescription_seance().toLowerCase().contains(searchText.toLowerCase())) {
+                        searchResults.add(seance);
+                    }
+                }
+
+                if (searchResults.isEmpty()) {
+                    searchNotFoundImage.setVisible(true);
+                } else {
+                    tabseance.setItems(searchResults);
+                    searchNotFoundImage.setVisible(false);
+                }
+            }
+            
     public ObservableList<seancecoaching> getseancecoachingList() {
         ObservableList<seancecoaching> compteList = FXCollections.observableArrayList();
         Connection conn = database.getInstance().getCon();
@@ -259,6 +294,7 @@ public ObservableList<seancecoaching> getseancecoachingListfiltre(LocalDate from
             coldesc.setCellValueFactory(new PropertyValueFactory<>("description_seance"));
             colimage.setCellValueFactory(new PropertyValueFactory<>("image_seance"));
             tabseance.setItems(list);
+            seances.addAll(list);
         }
 
         Callback<TableColumn<seancecoaching, String>, TableCell<seancecoaching, String>> cellFoctory = (TableColumn<seancecoaching, String> param) -> {

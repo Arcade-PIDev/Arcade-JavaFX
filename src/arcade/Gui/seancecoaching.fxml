@@ -67,7 +67,7 @@
             <ImageView fx:id="imageview" fitHeight="94.0" fitWidth="131.0" layoutX="33.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
             <DatePicker fx:id="datedebtf" layoutX="181.0" layoutY="229.0" prefHeight="25.0" prefWidth="274.0" />
             <DatePicker fx:id="datefintf" layoutX="179.0" layoutY="266.0" prefHeight="31.0" prefWidth="274.0" />
-            <TextField fx:id="searchField" layoutX="32.0" layoutY="551.0" onAction="#search" />
+            <TextField fx:id="searchField" layoutX="32.0" layoutY="551.0" />
             <Button fx:id="btnfiltre2" layoutX="260.0" layoutY="545.0" mnemonicParsing="false" onAction="#filtre" style="-fx-background-color: B19CD9; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="Recherche" textFill="WHITE">
                <font>
                   <Font size="20.0" />
@@ -108,6 +108,11 @@
                   <Font size="20.0" />
                </font>
             </Button>
+            <ImageView fx:id="searchNotFoundImage" fitHeight="578.0" fitWidth="917.0" layoutX="17.0" layoutY="122.0" visible="false">
+               <image>
+                  <Image url="@../images/notFound3.jpg" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

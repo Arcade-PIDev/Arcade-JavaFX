@@ -47,7 +47,7 @@ public class FullCalendarController implements Initializable{
 
             
             HBox buttonsBox = new HBox(previousMonth, nextMonth);
-            buttonsBox.setSpacing(535);
+            buttonsBox.setSpacing(1280);
             calendarPane.getChildren().add(buttonsBox);
         }
 

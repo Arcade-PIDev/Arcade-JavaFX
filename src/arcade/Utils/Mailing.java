@@ -51,10 +51,9 @@ public void sendMail(String Sub,String msg,String sender,String to) {
         message.setFrom(new InternetAddress(sender));
         message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(to));
         message.setSubject(Sub);
-        message.setText(msg);
+        message.setContent(msg ,"text/html");
 
         Transport.send(message);
-        System.out.println("Done");
 
     } catch (MessagingException e) {
         throw new RuntimeException(e);

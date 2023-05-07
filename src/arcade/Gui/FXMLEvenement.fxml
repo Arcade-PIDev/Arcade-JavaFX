@@ -33,7 +33,7 @@
                <Image url="@../images/logo.png" />
             </image>
          </ImageView>
-         <Label alignment="TOP_LEFT" prefHeight="55.0" prefWidth="208.0" text="                     ARCADE" textFill="#fffefe" GridPane.rowIndex="1">
+         <Label alignment="TOP_LEFT" prefHeight="55.0" prefWidth="208.0" text="ARCADE" textFill="#fffefe" GridPane.rowIndex="1">
             <font>
                <Font name="PT Bold Mirror" size="20.0" />
             </font>

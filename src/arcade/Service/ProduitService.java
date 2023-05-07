@@ -112,34 +112,6 @@ public class ProduitService implements IService<Produit>{
    return produits;
     }
     
-    public List<Produit> searchByName(String nom) throws SQLException{
-       List<Produit> produits = new ArrayList<>();
-        try {
-             String req ="SELECT * FROM `produit` where `nom_produit` like '%" + nom +"%'";
-             
-            Statement st = con.createStatement();
-            ResultSet rs= st.executeQuery(req);
-            while (rs.next()){
-                Produit p = new Produit();
-                p.setId(rs.getInt(1));
-                p.setCategorie(rs.getInt(2));
-                p.setNomProduit(rs.getString(3));
-                p.setPrix(rs.getInt(4));
-                p.setQuantiteStock(rs.getInt(5));
-                p.setImage(rs.getString(6));
-                p.setDescription(rs.getString(7));
-                p.setCreationDate(rs.getDate(8));
-                p.setModificationDate(rs.getDate(9));
-                p.setIsEnabled(rs.getBoolean(10));
-                produits.add(p);
-            }
-         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-
-   return produits;
-    }
-    
     @Override
     public void delete(int id) throws SQLException {
         String req = "DELETE FROM `Produit` WHERE `id`=?;";
@@ -186,6 +158,16 @@ public class ProduitService implements IService<Produit>{
                 p.setIsEnabled(rs.getBoolean(10));
             
         return p;
+    }
+    
+    public String duplicateProducts(String nom) throws SQLException
+    {
+        String req = "Select `nom_produit` from produit where `nom_produit` =" + nom;
+        stm = con.createStatement();
+        ResultSet rs = stm.executeQuery(req);
+        
+        rs.next();
+        return rs.getString(1);
     }
 
     @Override

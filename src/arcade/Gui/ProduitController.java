@@ -92,6 +92,9 @@ public class ProduitController implements Initializable {
                     cont.setDescription(c.getDescription());
                     
                     cont.setCreationDate(c.getCreationDate()+"");
+                     if (c.getModificationDate()==null)
+                        cont.setModificationDate("        -");
+                    else
                     cont.setModificationDate(c.getModificationDate()+"");
                     
                     //cont.setIsEnabled(c.isIsEnabled()+"");
@@ -118,61 +121,4 @@ public class ProduitController implements Initializable {
         }
     }   
     
-
-        @FXML
-            private void search(MouseEvent event) {
-            ProduitService ps = new ProduitService();
-        try {
-
-            List<Produit> produits = ps.searchByName(search.getText());
-            
-            for (Produit c : produits) {
-            System.out.println(produits);
-
-                FXMLLoader item = new FXMLLoader(getClass().getResource("contentProduit.fxml"));
-                try {
-                    Parent root = item.load();
-                    ContentProduitController cont = item.getController();
-
-                    cont.setIdProduit(c.getId()+"");
-                    cont.setIdCategorie(c.getCategorie()+"");
-                    cont.setNomCat(ps.getCategorieName(c.getCategorie()));
-                    
-                    cont.setNomProduit(c.getNomProduit());
-                    
-                    cont.setPrix(c.getPrix()+"");
-                    cont.setQuantiteStock(c.getQuantiteStock()+"");
-                    
-                    cont.setImage("http://127.0.0.1/pi/public/eshop/produit/"+c.getImage());
-                    cont.setDescription(c.getDescription());
-                    
-                    cont.setCreationDate(c.getCreationDate()+"");
-                    cont.setModificationDate(c.getModificationDate()+"");
-                    
-                    //cont.setIsEnabled(c.isIsEnabled()+"");
-
-                    if (c.isIsEnabled())
-                        cont.setIsEnabled("http://127.0.0.1/pi/public/eshop/IsEnabled.png");
-                    else
-                        cont.setIsEnabled("http://127.0.0.1/pi/public/eshop/IsDisabled.png");
-                    
-                    contentProd.getChildren().clear(); // clear previous view
-                    contentProd.getChildren().add(root);
-                    
-                    if ( c.getQuantiteStock()== 0) {
-                        Image img=new Image("arcade/images/warning.png");
-                        Notifications notfBuilder = Notifications.create().title("Warning!!").text("La quantité de produit: '"+c.getNomProduit()+"' est nulle")
-                        .darkStyle().graphic(new ImageView (img)).hideAfter(Duration.seconds(10)).position(Pos.BOTTOM_RIGHT);
-                        notfBuilder.show();
-                    }
-                } catch (IOException ex) {
-                    Logger.getLogger(ContentProduitController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-
-        } catch (Exception ex) {
-            Logger.getLogger(ContentProduitController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            }
-
 }

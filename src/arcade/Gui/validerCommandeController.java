@@ -54,7 +54,15 @@ public class validerCommandeController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-      
+        msg = "<table style=\"height: 90px; width: 100%; border-collapse: collapse; border-style: solid;\" border=\"1\">\n" +
+"  <thead>\n" +
+"    <tr style=\"font-size: 22px;font-weight:bold;background-color:darkblue;color:white\">\n" +
+"      <th style=\"width: 50%;\">Nom Produit</th>\n" +
+"      <th style=\"width: 25%;\">Prix</th>\n" +
+"      <th style=\"width: 25%;\">Quantité</th>\n" +
+"    </tr>\n" +
+"  </thead>\n" +
+"  <tbody>\n";
          ProduitService ps = new ProduitService();
          String data="";
         for (Map.Entry<Integer, Integer> entry : panier.entrySet()) {
@@ -62,7 +70,13 @@ public class validerCommandeController implements Initializable{
                 Produit p = ps.getProduitById(entry.getKey());
                 data+="Nom du produit:"+p.getNomProduit() + " Description:"+p.getDescription()+ " Prix:"+p.getPrix() +" Quantite:"+ entry.getValue()+" ";
                 
-                msg += p.getNomProduit() + ":\t" + p.getPrix() + "*" + entry.getValue() + "\n";
+                msg += "    <tr style=\"font-size: 16px;text-align:center;\">\n" +
+                            "<td style=\"width: 50%;\">" + p.getNomProduit() +
+                        "</td>\n" +
+"      <td style=\"width: 25%;\">" + p.getPrix() + "</td>\n" +
+"      <td style=\"width: 25%;\">" +
+                        entry.getValue() + "</td>\n" +
+"    </tr>\n";
                 
                 prixTotal+=p.getPrix()*entry.getValue();
             } catch (Exception ex) {
@@ -71,8 +85,15 @@ public class validerCommandeController implements Initializable{
         }
         String qr="http://api.qrserver.com/v1/create-qr-code/?data="+data+"  Prix Total :"+prixTotal+" ";
          QrCode.setImage(new Image(qr, 300, 300, false, false));
-         msg += "\n" + "prixTotal:\t" + prixTotal;
          prixTotalText.setText(prixTotal+"");
+      msg += "  </tbody></table>"+
+              "<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\n" +
+"  <tbody>\n" +
+"    <tr>\n" +
+"      <td style=\"font-size: 22px;font-weight:bold;\"><pre>Prix Total:" +"&emsp;&emsp;&emsp;&emsp;&emsp;                                                  &emsp;&emsp;&emsp;&emsp;" +prixTotal + "</pre></td>\n" +
+"    </tr>\n" +
+"  </tbody>\n" +
+"</table>";
     }    
 
     @FXML
@@ -89,7 +110,7 @@ public class validerCommandeController implements Initializable{
             HomeFrontController homeCtrl = homeLoader.getController();
             homeCtrl.changePage("Produits");
             userName.getScene().setRoot(homeRoot);
-            Mailing m = new Mailing("waterproof.application@gmail.com", "");
+            Mailing m = new Mailing("waterproof.application@gmail.com", "jadifaaqzvlxtagw");
         m.sendMail("Votre Facture", msg, "waterproof.application@gmail.com", "amira.benmbarek@esprit.tn");
             
         } catch (IOException ex) {

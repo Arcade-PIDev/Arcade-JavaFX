@@ -194,25 +194,6 @@ public class FXMLControllerModifierS {
         
     public void initialize() {
     
-            backButtonEdit.setOnAction(event -> {
-                
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLSponsor.fxml"));
-                Parent displayParent = null;
-                try {
-                    displayParent = loader.load();
-                } catch (IOException ex) {
-                    Logger.getLogger(FXMLControllerModifierS.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-                FXMLSponsorController SponsorController = loader.getController();
-
-                Scene displayScene = new Scene(displayParent);
-                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                window.setScene(displayScene);
-                window.show();
-
-                SponsorController.refreshTable();
-            });
             
             chooseLogo.setOnAction(this::chooseLogo);
              ServiceEvenement serviceEvenement = new ServiceEvenement();
