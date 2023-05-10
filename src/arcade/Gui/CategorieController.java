@@ -70,7 +70,7 @@ public class CategorieController implements Initializable {
                     cont.setIdCategorie(c.getId()+"");
                     cont.setNomCategorie(c.getNomCategorie());
                     cont.setDescription(c.getDescription());
-                    cont.setImage("http://127.0.0.1/pi/public/eshop/categorie/"+c.getImage());
+                    cont.setImage("http://127.0.0.1/integration/public/eshop/categorie/"+c.getImage());
                     
                     cont.setCreationDate(c.getCreationDate()+"");
                     if (c.getModificationDate()==null)

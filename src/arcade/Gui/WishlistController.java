@@ -55,7 +55,7 @@ public class WishlistController implements Initializable {
                         itemController.setNomProduit(p.getNomProduit());
                         itemController.setPrix(p.getPrix() + "");
                         itemController.setId(p.getId() + "");
-                        itemController.setImage("http://127.0.0.1/pi/public/eshop/produit/"+p.getImage());
+                        itemController.setImage("http://127.0.0.1/integration/public/eshop/produit/"+p.getImage());
                         content.getChildren().add(itek);
                     }
 

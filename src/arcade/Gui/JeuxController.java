@@ -88,7 +88,7 @@ Stage primaryStage;
 
                     cont.setNom(c.getNom());
                     cont.setDescription(c.getDescription());
-                    cont.setImage("http://127.0.0.1/pi/public/Jeux/"+c.getImage());
+                    cont.setImage("http://127.0.0.1/integration/public/Jeux/"+c.getImage());
                     
                     cont.setgenre(c.getGenre()+"");
                     cont.setcolor(c.getColor()+"");

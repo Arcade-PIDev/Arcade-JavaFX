@@ -86,6 +86,7 @@ public class FXMLSponsorController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
  
+        String str = "http://127.0.0.1/integration/public/logoSponsor/";
         ServiceSponsor sp = new ServiceSponsor();
         sponsors.addAll(sp.afficher());
         nomSp.setCellValueFactory(new PropertyValueFactory<>("NomSponsor"));
@@ -101,7 +102,7 @@ public class FXMLSponsorController implements Initializable{
                     if (empty || logoPath == null) {
                         setGraphic(null);
                     } else {
-                        Image image = new Image(new File(logoPath).toURI().toString());
+                        Image image = new Image(str+logoPath);
                         imageView.setImage(image);
                         imageView.setFitWidth(100);
                         imageView.setFitHeight(100);

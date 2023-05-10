@@ -273,6 +273,7 @@ public ObservableList<seancecoaching> getseancecoachingListfiltre(LocalDate from
     }
 
     public void showseancecoachings() {
+        String str = "http://127.0.0.1/integration/public/userpic/";
         LocalDate fromDate = startDate.getValue();
         LocalDate toDate = endDate.getValue();
         ObservableList<seancecoaching> list;
@@ -304,7 +305,7 @@ public ObservableList<seancecoaching> getseancecoachingListfiltre(LocalDate from
                 public void updateItem(String item, boolean empty) {
 
                     seancecoaching seancecoaching = null;
-                    super.updateItem(item, empty);
+                    super.updateItem(str+item, empty);
                     if (empty) {
                         setGraphic(null);
                         setText(null);

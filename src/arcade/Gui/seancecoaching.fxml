@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="688.0" prefWidth="1680.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.seancecoachingController">
+<AnchorPane id="AnchorPane" prefHeight="688.0" prefWidth="1680.0" style="-fx-background-color: null; -fx-background-image: null;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="arcade.Gui.seancecoachingController">
    <children>
       <AnchorPane layoutX="-76.0" layoutY="6.0" prefHeight="596.0" prefWidth="466.0" styleClass="box1" stylesheets="@style.css">
          <children>

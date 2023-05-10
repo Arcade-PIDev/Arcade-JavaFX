@@ -48,8 +48,7 @@ public class JeuxFrontController implements Initializable{
                     
                     cont.setNom(c.getNom());
                     cont.setGenre(c.getGenre());
-                    cont.setImage("http://127.0.0.1/pi/public/Jeux/"+c.getImage());
-                   // System.out.println("http://127.0.0.1:8000/Jeux/"+c.getImage());
+                    cont.setImage("http://127.0.0.1/integration/public/Jeux/"+c.getImage());
                 content.getChildren().add(root);
             }
 

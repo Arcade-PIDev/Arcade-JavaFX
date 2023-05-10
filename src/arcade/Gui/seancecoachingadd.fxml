@@ -63,6 +63,11 @@
             <ImageView fx:id="imageview" fitHeight="94.0" fitWidth="131.0" layoutX="23.0" layoutY="437.0" pickOnBounds="true" preserveRatio="true" />
             <DatePicker fx:id="datedebtf" layoutX="170.0" layoutY="220.0" prefHeight="25.0" prefWidth="274.0" />
             <DatePicker fx:id="datefintf" layoutX="170.0" layoutY="257.0" prefHeight="25.0" prefWidth="274.0" />
+            <Button fx:id="cancel" layoutX="339.0" layoutY="462.0" mnemonicParsing="false" onAction="#cancel" style="-fx-background-color: #d473d4; -fx-background-radius: 20; -fx-border-color: 7187E;" stylesheets="@ticket.css" text="cancel" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="993.0" layoutY="-1.0" prefHeight="688.0" prefWidth="486.0" />

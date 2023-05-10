@@ -326,6 +326,21 @@ public class HomeController implements Initializable {
                 System.out.println(ex.getMessage());
             }
         }
+        else if (state.equals("seancecoachinggg")) {
+            titleLabel.setText("seance coaching");
+            addBtn.setVisible(true);
+            titleLabel.setVisible(true);
+            line.setVisible(true);
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("seancecoaching.fxml"));
+                Parent root = loader.load();
+                affichage.getChildren().clear(); // clear previous view
+                affichage.getChildren().add(root);
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
         else if (state.equals("Sponsor")) {
             titleLabel.setText("Sponsor");
             addBtn.setVisible(true);

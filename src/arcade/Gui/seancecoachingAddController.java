@@ -6,26 +6,38 @@
 package arcade.Gui;
 
 
+import arcade.Entities.seancecoaching;
+import arcade.Entities.user;
 import arcade.Utils.database;
 import static arcade.Utils.database.getInstance;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
+import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -66,6 +78,11 @@ public class seancecoachingAddController implements Initializable {
     @FXML
     private ImageView imageview;
 
+    final FileChooser fileChooser = new FileChooser();
+    seancecoaching seances = new seancecoaching();
+        
+    Stage primaryStage; 
+    
     /**
      * Initializes the controller class.
      */
@@ -208,5 +225,64 @@ private void insert() {
     
     
         }  
+    }
+    
+    @FXML
+        public void cancel(ActionEvent event)
+        {
+            try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
+                    Parent root = loader.load();
+                    HomeController controller = loader.getController();
+                    controller.changePage("seancecoachinggg");
+
+                    btnajouter.getScene().setRoot(root);
+
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+        }
+    
+        @FXML
+    private void browse(ActionEvent event) {
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("PNG", "*.png"),
+                new FileChooser.ExtensionFilter("JPG", "*.jpg"));
+        fileChooser.setTitle("Save");
+        File file = fileChooser.showOpenDialog(primaryStage);
+        imagetf.clear();
+
+        if (file != null) {
+            // generate a fileName
+            String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijk" + "lmnopqrstuvwxyz!@#$%&";
+            Random rnd = new Random();
+            StringBuilder sb = new StringBuilder(10);
+            for (int i = 0; i < 10; i++) {
+                sb.append(chars.charAt(rnd.nextInt(chars.length())));
+            }
+           String fileName = sb.toString();
+
+            File source = file;
+            File dest = new File("C:\\xampp\\htdocs\\integration\\public\\nadaimages\\" + fileName + ".png");
+
+            try {
+                Files.copy(source.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            } catch (IOException ex) {
+                Logger.getLogger(addCategorieController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            List<File> files = Arrays.asList(file);
+            printLog(imagetf, files,fileName);
+            seances.setImage_seance(fileName+".png");
+        }
+    }
+    
+        private void printLog(TextField textArea, List<File> files,String fileName) {
+        if (files == null || files.isEmpty()) {
+            return;
+        }
+        for (File file : files) {
+            textArea.appendText(fileName+".png");
+        }
     }
 }

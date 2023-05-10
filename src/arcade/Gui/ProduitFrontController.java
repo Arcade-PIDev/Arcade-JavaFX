@@ -61,12 +61,12 @@ public class ProduitFrontController implements Initializable{
                         itemController.setPrix(p.getPrix() + "");
                         itemController.setQuantite(p.getQuantiteStock()+ "");
                         itemController.setId(p.getId() + "");
-                        itemController.setImage("http://127.0.0.1/pi/public/eshop/produit/"+p.getImage());
+                        itemController.setImage("http://127.0.0.1/integration/public/eshop/produit/"+p.getImage());
 
                         WishlistService ws=new WishlistService();
                         //if( ws.afficher(loggedInUser.getId()).contains(p.getId())){
                         if( ws.afficher(2).contains(p.getId())){
-                        itemController.setWishlist("http://127.0.0.1/pi/public/eshop/" +"full.png");
+                        itemController.setWishlist("http://127.0.0.1/integration/public/eshop/" +"full.png");
                         }
 
                         content.getChildren().add(root);

@@ -9,7 +9,12 @@ import arcade.Entities.Evenement;
 import arcade.Service.ServiceEvenement;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
@@ -55,19 +60,52 @@ public class FXMLControllerAjouterE {
     private Button chooseAffiche;
     @FXML
     private AnchorPane content;
-    
+    final FileChooser fileChooser = new FileChooser();
+    Evenement events = new Evenement();
+        
+    Stage primaryStage;    
     @FXML
-        private void chooseAffiche(ActionEvent event) {
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.setTitle("Choisir une affiche");
-            fileChooser.getExtensionFilters().addAll(
-                    new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif")
-            );
-            File file = fileChooser.showOpenDialog(((Node) event.getSource()).getScene().getWindow());
-            if (file != null) {
-                TFAffiche.setText(file.getAbsolutePath());
+    private void chooseAffiche(ActionEvent event) {
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("PNG", "*.png"),
+                new FileChooser.ExtensionFilter("JPG", "*.jpg"));
+        fileChooser.setTitle("Save");
+        File file = fileChooser.showOpenDialog(primaryStage);
+        TFAffiche.clear();
+
+        if (file != null) {
+            // generate a fileName
+            String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijk" + "lmnopqrstuvwxyz!@#$%&";
+            Random rnd = new Random();
+            StringBuilder sb = new StringBuilder(10);
+            for (int i = 0; i < 10; i++) {
+                sb.append(chars.charAt(rnd.nextInt(chars.length())));
             }
+           String fileName = sb.toString();
+
+            File source = file;
+            File dest = new File("C:\\xampp\\htdocs\\integration\\public\\afficheEvent\\" + fileName + ".png");
+
+            try {
+                Files.copy(source.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            } catch (IOException ex) {
+                Logger.getLogger(addCategorieController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            List<File> files = Arrays.asList(file);
+            printLog(TFAffiche, files,fileName);
+            events.setAfficheE(fileName+".png");
         }
+    }
+
+    private void printLog(TextField textArea, List<File> files,String fileName) {
+        if (files == null || files.isEmpty()) {
+            return;
+        }
+        for (File file : files) {
+            textArea.appendText(fileName+".png");
+        }
+    }
     
      @FXML
     private void ajouter(ActionEvent event) {

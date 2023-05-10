@@ -88,7 +88,7 @@ public class ProduitController implements Initializable {
                     cont.setPrix(c.getPrix()+"");
                     cont.setQuantiteStock(c.getQuantiteStock()+"");
                     
-                    cont.setImage("http://127.0.0.1/pi/public/eshop/produit/"+c.getImage());
+                    cont.setImage("http://127.0.0.1/integration/public/eshop/produit/"+c.getImage());
                     cont.setDescription(c.getDescription());
                     
                     cont.setCreationDate(c.getCreationDate()+"");
@@ -100,9 +100,9 @@ public class ProduitController implements Initializable {
                     //cont.setIsEnabled(c.isIsEnabled()+"");
 
                     if (c.isIsEnabled())
-                        cont.setIsEnabled("http://127.0.0.1/pi/public/eshop/IsEnabled.png");
+                        cont.setIsEnabled("http://127.0.0.1/integration/public/eshop/IsEnabled.png");
                     else
-                        cont.setIsEnabled("http://127.0.0.1/pi/public/eshop/IsDisabled.png");
+                        cont.setIsEnabled("http://127.0.0.1/integration/public/eshop/IsDisabled.png");
                     contentProd.getChildren().add(root);
                     
                     if ( c.getQuantiteStock()== 0) {

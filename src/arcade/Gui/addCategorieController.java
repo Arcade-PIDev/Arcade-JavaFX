@@ -164,7 +164,7 @@ public class addCategorieController implements Initializable{
            String fileName = sb.toString();
 
             File source = file;
-            File dest = new File("C:\\xampp\\htdocs\\pi\\public\\eshop\\categorie\\" + fileName + ".png");
+            File dest = new File("C:\\xampp\\htdocs\\integration\\public\\eshop\\categorie\\" + fileName + ".png");
 
             try {
                 Files.copy(source.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);

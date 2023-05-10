@@ -69,15 +69,8 @@ public class EventBoxController implements Initializable {
         this.nomE.setText(NomEvent);
     }
      
-  public void setAfficheE(String imagePath) {
-    try {
-        File file = new File(imagePath);
-        URI uri = file.toURI();
-        URL url = uri.toURL(); 
-        this.affiche.setImage(new Image(url.toString(), 190, 167, false, false));
-    } catch (Exception e) {
-        System.out.println("Image not found: " + imagePath);
-    }
+  public void setAfficheE(String url) {
+        this.affiche.setImage(new Image(url, 190, 167, false, false));
 }
 
 

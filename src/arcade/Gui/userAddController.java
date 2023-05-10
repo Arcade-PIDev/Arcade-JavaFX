@@ -4,12 +4,16 @@
  * and open the template in the editor.
  */
 package arcade.Gui;
+import arcade.Entities.user;
 import arcade.Utils.database;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,6 +37,11 @@ import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
+import java.util.Random;
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * FXML Controller class
@@ -62,6 +71,10 @@ public class userAddController implements Initializable {
     @FXML
     private Button btnajouter1;
 
+    final FileChooser fileChooser = new FileChooser();
+    user users = new user();
+        
+    Stage primaryStage; 
     /**
      * Initializes the controller class.
      */
@@ -187,29 +200,45 @@ executeQuery(queryInsert, true, username, email, pwd, image, role);
     }
     
     @FXML
-    private void browse(ActionEvent event) throws FileNotFoundException {
-                FileChooser filechooser = new FileChooser();
+    private void browse(ActionEvent event) {
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("PNG", "*.png"),
+                new FileChooser.ExtensionFilter("JPG", "*.jpg"));
+        fileChooser.setTitle("Save");
+        File file = fileChooser.showOpenDialog(primaryStage);
+        imagetf.clear();
 
-        FileChooser.ExtensionFilter extFilterJPG
-                = new FileChooser.ExtensionFilter("JPG files (*.JPG)", "*.JPG");
-        FileChooser.ExtensionFilter extFilterjpg
-                = new FileChooser.ExtensionFilter("jpg files (*.jpg)", "*.jpg");
-        FileChooser.ExtensionFilter extFilterPNG
-                = new FileChooser.ExtensionFilter("PNG files (*.PNG)", "*.PNG");
-        FileChooser.ExtensionFilter extFilterpng
-                = new FileChooser.ExtensionFilter("png files (*.png)", "*.png");
-
-        //filechooser.setInitialDirectory(new File("C:\\Users\\ASUS\\Documents\\NetBeansProjects\\Notex\\src\\com\\gn\\module\\evenements\\image"));
-        filechooser.getExtensionFilters()
-                .addAll(extFilterJPG, extFilterjpg, extFilterPNG, extFilterpng);
-
-        File file = filechooser.showOpenDialog(new Stage());
         if (file != null) {
-            Image image = new Image(new FileInputStream(file));
-            imagetf.setText(file.getName());
-            // set fit height and width of ImageView to the image size
-            
-            // set the image view in your UI, e.g.
+            // generate a fileName
+            String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijk" + "lmnopqrstuvwxyz!@#$%&";
+            Random rnd = new Random();
+            StringBuilder sb = new StringBuilder(10);
+            for (int i = 0; i < 10; i++) {
+                sb.append(chars.charAt(rnd.nextInt(chars.length())));
+            }
+           String fileName = sb.toString();
+
+            File source = file;
+            File dest = new File("C:\\xampp\\htdocs\\integration\\public\\userpic\\" + fileName + ".png");
+
+            try {
+                Files.copy(source.toPath(), dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            } catch (IOException ex) {
+                Logger.getLogger(addCategorieController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            List<File> files = Arrays.asList(file);
+            printLog(imagetf, files,fileName);
+            users.setAvatar(fileName+".png");
+        }
     }
+    
+        private void printLog(TextField textArea, List<File> files,String fileName) {
+        if (files == null || files.isEmpty()) {
+            return;
+        }
+        for (File file : files) {
+            textArea.appendText(fileName+".png");
+        }
     }
 }

@@ -91,10 +91,12 @@ public class FXMLEventController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
  
+        String str = "http://127.0.0.1/integration/public/afficheEvent/";
         ServiceEvenement sp = new ServiceEvenement();
         evenements.addAll(sp.afficher());
         nomE.setCellValueFactory(new PropertyValueFactory<>("NomEvent"));
         lieuE.setCellValueFactory(new PropertyValueFactory<>("lieu"));
+        
         afficheE.setCellValueFactory(new PropertyValueFactory<>("afficheE"));
             afficheE.setCellFactory(column -> new TableCell<Evenement, String>() {
                 private final ImageView imageView = new ImageView();
@@ -106,7 +108,8 @@ public class FXMLEventController implements Initializable{
                     if (empty || imagePath == null) {
                         setGraphic(null);
                     } else {
-                        Image image = new Image(new File(imagePath).toURI().toString());
+                        Image image = new Image(str+imagePath);
+                        System.out.println(image);
                         imageView.setImage(image);
                         imageView.setFitWidth(100);
                         imageView.setFitHeight(100);

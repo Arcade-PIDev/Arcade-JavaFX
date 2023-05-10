@@ -3,31 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/EditProduitController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/FXMLFrontControllerE.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/MainController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/ContentCategorieController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/addProduitController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/seancecoaching.fxml</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/FXMLControllerModifierE.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Arcade.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/CategorieController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/ProduitController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/FullCalendarView.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/validerCommandeController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/SignInController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/FXMLEventController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/HomeFrontController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Service/ProduitService.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/ProduitByCategorieFrontController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/FullCalendarController.java</file>
             <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/FXMLControllerAjouterS.java</file>
+            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/seancecoachingAddController.java</file>
+            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/FXMLControllerAjouterE.java</file>
             <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/seancecoachingController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/ProduitFrontController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/FXMLEvenement.fxml</file>
+            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/EventBoxController.java</file>
+            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Entities/seancecoaching.java</file>
+            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/userController.java</file>
+            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/FXMLFrontControllerE.java</file>
+            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/HomeController.java</file>
+            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/FXMLSponsorController.java</file>
             <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/userAddController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/SignUpController.java</file>
-            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Utils/Mailing.java</file>
+            <file>file:/C:/Users/Amira/Desktop/integration/src/arcade/Gui/FXMLEventController.java</file>
         </group>
     </open-files>
 </project-private>

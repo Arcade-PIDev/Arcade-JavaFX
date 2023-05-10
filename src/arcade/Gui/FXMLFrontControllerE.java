@@ -88,7 +88,7 @@ public class FXMLFrontControllerE implements Initializable {
                     cont.setLieu(e.getLieu());
                     cont.setDateDebutE(e.getDateDebutE());
                     cont.setDateFinE(e.getDateFinE());
-                    cont.setAfficheE( e.getAfficheE());
+                    cont.setAfficheE("http://127.0.0.1/integration/public/afficheEvent/" + e.getAfficheE());
                   
                 content.getChildren().add(root);
             }

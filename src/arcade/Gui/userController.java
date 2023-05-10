@@ -184,6 +184,7 @@ public class userController implements Initializable {
     }
 
     public void showusers() {
+        String str = "http://127.0.0.1/integration/public/userpic/";
         ObservableList<user> list = getuserList();
         colemail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colusername.setCellValueFactory(new PropertyValueFactory<>("username"));
@@ -200,7 +201,7 @@ public class userController implements Initializable {
                 public void updateItem(String item, boolean empty) {
 
                     user user = null;
-                    super.updateItem(item, empty);
+                    super.updateItem(str+item, empty);
                     if (empty) {
                         setGraphic(null);
                         setText(null);

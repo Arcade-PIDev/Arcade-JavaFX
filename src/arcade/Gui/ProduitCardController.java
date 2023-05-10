@@ -56,7 +56,7 @@ public class ProduitCardController implements Initializable {
     }
 
     public void setImage(String url) {
-        this.image.setImage(new Image(url, 209, 114, false, false));
+        this.image.setImage(new Image(url, 209, 114, false, true));
     }
 
     public void setPrix(String prix) {
@@ -118,10 +118,10 @@ public class ProduitCardController implements Initializable {
             WishlistService ws = new WishlistService();
             if (ws.afficher(loggedInUser.getId()).contains(Integer.parseInt(prodId.getText()))) {
                 ws.remove(Integer.parseInt(prodId.getText()));
-                wishlistBtn.setImage(new Image("http://127.0.0.1/pi/public/eshop/" + "empty.png", 32, 32, false, false));
+                wishlistBtn.setImage(new Image("http://127.0.0.1/integration/public/eshop/" + "empty.png", 32, 32, false, false));
             } else {
                 ws.add(Integer.parseInt(prodId.getText()));
-                wishlistBtn.setImage(new Image("http://127.0.0.1/pi/public/eshop/" + "full.png", 32, 32, false, false));
+                wishlistBtn.setImage(new Image("http://127.0.0.1/integration/public/eshop/" + "full.png", 32, 32, false, false));
             }
 
         } catch (SQLException ex) {
